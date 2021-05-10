@@ -1,4 +1,5 @@
 ﻿using HoboSimulator.Config.Objects.World.Maps;
+using HoboSimulator.Config.Objects.World.Maps.City;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,7 +12,7 @@ namespace HoboSimulator.Config.Objects.World
 
         public List<ILocation> locationList = new List<ILocation>
         {
-            new City("Тестовая локация")
+            new City()
         };
 
         public World (DateTime dateTime)

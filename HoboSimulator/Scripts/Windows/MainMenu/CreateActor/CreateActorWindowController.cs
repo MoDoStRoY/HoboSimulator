@@ -24,6 +24,9 @@ namespace HoboSimulator.Scripts.Windows.CreateActor
         {
             try 
             {
+                //Инициализация объекта игрового мира
+                user.world = new World(new DateTime(2016, 6, 10, 11, 20, 0));
+
                 //Инициализация ГГ
                 user.actor = new Actor(user.createActorWindow.fxName.Text, //Имя 
                 Convert.ToInt32(user.createActorWindow.fxAge.Text), // Возраст 
@@ -36,9 +39,6 @@ namespace HoboSimulator.Scripts.Windows.CreateActor
                 10, // Скиллпоинты
                 new List<object>()
                 );
-
-                //Инициализация объекта игрового мира
-                user.world = new World(new DateTime(2016, 6, 10, 11, 20, 0));
 
                 user.createActorWindow.Hide();
                 user.mainGameWindow.ShowWindow();

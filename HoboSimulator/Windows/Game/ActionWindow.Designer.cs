@@ -29,6 +29,7 @@ namespace HoboSimulator.Windows.Game.Action
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.fxThirstLabel = new System.Windows.Forms.Label();
             this.fxThirstPB = new System.Windows.Forms.ProgressBar();
             this.label7 = new System.Windows.Forms.Label();
@@ -45,21 +46,37 @@ namespace HoboSimulator.Windows.Game.Action
             this.fxHealthPB = new System.Windows.Forms.ProgressBar();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.fxMainTP = new System.Windows.Forms.TabControl();
+            this.ActionTP = new System.Windows.Forms.TabPage();
+            this.fxActionsTP = new System.Windows.Forms.TabControl();
+            this.City_DistrictsTP = new System.Windows.Forms.TabPage();
+            this.fxLookAroundBtn = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.fxLootAbaddonedHousesBtn = new System.Windows.Forms.Button();
+            this.fxLootTrashCanSmallBtn = new System.Windows.Forms.Button();
+            this.fxLootTrashCanBigBtn = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.fxHuntCatBtn = new System.Windows.Forms.Button();
+            this.fxHuntBirdBtn = new System.Windows.Forms.Button();
+            this.fxHuntDogBtn = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.fxDescriptionOfZoneText = new System.Windows.Forms.RichTextBox();
+            this.fxNameOfZoneLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.DialogTP = new System.Windows.Forms.TabPage();
+            this.FightTP = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.fxResultOfAction = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.fxCurrentTimeLabel = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.fxHuntBirdTT = new System.Windows.Forms.ToolTip(this.components);
+            this.fxHuntDogTT = new System.Windows.Forms.ToolTip(this.components);
+            this.fxHuntCatTT = new System.Windows.Forms.ToolTip(this.components);
+            this.fxMainTP.SuspendLayout();
+            this.ActionTP.SuspendLayout();
+            this.fxActionsTP.SuspendLayout();
+            this.City_DistrictsTP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -198,79 +215,180 @@ namespace HoboSimulator.Windows.Game.Action
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.BackBtn);
             // 
-            // tabControl1
+            // fxMainTP
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(375, 13);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(913, 752);
-            this.tabControl1.TabIndex = 59;
+            this.fxMainTP.Controls.Add(this.ActionTP);
+            this.fxMainTP.Controls.Add(this.DialogTP);
+            this.fxMainTP.Controls.Add(this.FightTP);
+            this.fxMainTP.Location = new System.Drawing.Point(375, 13);
+            this.fxMainTP.Name = "fxMainTP";
+            this.fxMainTP.SelectedIndex = 0;
+            this.fxMainTP.Size = new System.Drawing.Size(913, 752);
+            this.fxMainTP.TabIndex = 59;
             // 
-            // tabPage1
+            // ActionTP
             // 
-            this.tabPage1.Controls.Add(this.button4);
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.richTextBox1);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.pictureBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(905, 719);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.ActionTP.Controls.Add(this.fxActionsTP);
+            this.ActionTP.Controls.Add(this.fxDescriptionOfZoneText);
+            this.ActionTP.Controls.Add(this.fxNameOfZoneLabel);
+            this.ActionTP.Controls.Add(this.pictureBox1);
+            this.ActionTP.Location = new System.Drawing.Point(4, 29);
+            this.ActionTP.Name = "ActionTP";
+            this.ActionTP.Padding = new System.Windows.Forms.Padding(3);
+            this.ActionTP.Size = new System.Drawing.Size(905, 719);
+            this.ActionTP.TabIndex = 0;
+            this.ActionTP.Text = "ActionTP";
+            this.ActionTP.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // fxActionsTP
             // 
-            this.button4.Location = new System.Drawing.Point(4, 473);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(228, 29);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Охота на кошку";
-            this.button4.UseVisualStyleBackColor = true;
+            this.fxActionsTP.Controls.Add(this.City_DistrictsTP);
+            this.fxActionsTP.Controls.Add(this.tabPage4);
+            this.fxActionsTP.Location = new System.Drawing.Point(4, 402);
+            this.fxActionsTP.Name = "fxActionsTP";
+            this.fxActionsTP.SelectedIndex = 0;
+            this.fxActionsTP.Size = new System.Drawing.Size(898, 314);
+            this.fxActionsTP.TabIndex = 6;
             // 
-            // button3
+            // City_DistrictsTP
             // 
-            this.button3.Location = new System.Drawing.Point(4, 438);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(228, 29);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Охота на собаку";
-            this.button3.UseVisualStyleBackColor = true;
+            this.City_DistrictsTP.Controls.Add(this.fxLookAroundBtn);
+            this.City_DistrictsTP.Controls.Add(this.label9);
+            this.City_DistrictsTP.Controls.Add(this.fxLootAbaddonedHousesBtn);
+            this.City_DistrictsTP.Controls.Add(this.fxLootTrashCanSmallBtn);
+            this.City_DistrictsTP.Controls.Add(this.fxLootTrashCanBigBtn);
+            this.City_DistrictsTP.Controls.Add(this.label8);
+            this.City_DistrictsTP.Controls.Add(this.label1);
+            this.City_DistrictsTP.Controls.Add(this.fxHuntCatBtn);
+            this.City_DistrictsTP.Controls.Add(this.fxHuntBirdBtn);
+            this.City_DistrictsTP.Controls.Add(this.fxHuntDogBtn);
+            this.City_DistrictsTP.Location = new System.Drawing.Point(4, 29);
+            this.City_DistrictsTP.Name = "City_DistrictsTP";
+            this.City_DistrictsTP.Padding = new System.Windows.Forms.Padding(3);
+            this.City_DistrictsTP.Size = new System.Drawing.Size(890, 281);
+            this.City_DistrictsTP.TabIndex = 0;
+            this.City_DistrictsTP.Text = "City_DistrictsTP";
+            this.City_DistrictsTP.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // fxLookAroundBtn
             // 
-            this.button2.Location = new System.Drawing.Point(4, 403);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(228, 29);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Охота на голубя";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.HuntBirdBtn);
+            this.fxLookAroundBtn.Location = new System.Drawing.Point(237, 23);
+            this.fxLookAroundBtn.Name = "fxLookAroundBtn";
+            this.fxLookAroundBtn.Size = new System.Drawing.Size(227, 29);
+            this.fxLookAroundBtn.TabIndex = 12;
+            this.fxLookAroundBtn.Text = "Осмотреться";
+            this.fxLookAroundBtn.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // label9
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(4, 281);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
-            this.richTextBox1.Size = new System.Drawing.Size(898, 115);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "Обычный спальный район, образ которого знаком любому жителю пост советского прост" +
-    "ранства. А ещё тут много вкусных толстых голубей.";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(237, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 20);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Разведка:";
+            // 
+            // fxLootAbaddonedHousesBtn
+            // 
+            this.fxLootAbaddonedHousesBtn.Location = new System.Drawing.Point(4, 224);
+            this.fxLootAbaddonedHousesBtn.Name = "fxLootAbaddonedHousesBtn";
+            this.fxLootAbaddonedHousesBtn.Size = new System.Drawing.Size(227, 29);
+            this.fxLootAbaddonedHousesBtn.TabIndex = 10;
+            this.fxLootAbaddonedHousesBtn.Text = "Заброшенные строения";
+            this.fxLootAbaddonedHousesBtn.UseVisualStyleBackColor = true;
+            // 
+            // fxLootTrashCanSmallBtn
+            // 
+            this.fxLootTrashCanSmallBtn.Location = new System.Drawing.Point(4, 189);
+            this.fxLootTrashCanSmallBtn.Name = "fxLootTrashCanSmallBtn";
+            this.fxLootTrashCanSmallBtn.Size = new System.Drawing.Size(227, 29);
+            this.fxLootTrashCanSmallBtn.TabIndex = 9;
+            this.fxLootTrashCanSmallBtn.Text = "Урны на улицах";
+            this.fxLootTrashCanSmallBtn.UseVisualStyleBackColor = true;
+            // 
+            // fxLootTrashCanBigBtn
+            // 
+            this.fxLootTrashCanBigBtn.Location = new System.Drawing.Point(4, 153);
+            this.fxLootTrashCanBigBtn.Name = "fxLootTrashCanBigBtn";
+            this.fxLootTrashCanBigBtn.Size = new System.Drawing.Size(227, 29);
+            this.fxLootTrashCanBigBtn.TabIndex = 8;
+            this.fxLootTrashCanBigBtn.Text = "Мусорные баки";
+            this.fxLootTrashCanBigBtn.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(4, 129);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 20);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Лутать:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 257);
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Спальный район";
+            this.label1.Size = new System.Drawing.Size(53, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Охота:";
+            // 
+            // fxHuntCatBtn
+            // 
+            this.fxHuntCatBtn.Location = new System.Drawing.Point(3, 93);
+            this.fxHuntCatBtn.Name = "fxHuntCatBtn";
+            this.fxHuntCatBtn.Size = new System.Drawing.Size(228, 29);
+            this.fxHuntCatBtn.TabIndex = 5;
+            this.fxHuntCatBtn.Text = "На кошку";
+            this.fxHuntCatBtn.UseVisualStyleBackColor = true;
+            // 
+            // fxHuntBirdBtn
+            // 
+            this.fxHuntBirdBtn.Location = new System.Drawing.Point(3, 23);
+            this.fxHuntBirdBtn.Name = "fxHuntBirdBtn";
+            this.fxHuntBirdBtn.Size = new System.Drawing.Size(228, 29);
+            this.fxHuntBirdBtn.TabIndex = 3;
+            this.fxHuntBirdBtn.Text = "На голубя";
+            this.fxHuntBirdBtn.UseVisualStyleBackColor = true;
+            this.fxHuntBirdBtn.Click += new System.EventHandler(this.HuntBirdBtn);
+            // 
+            // fxHuntDogBtn
+            // 
+            this.fxHuntDogBtn.Location = new System.Drawing.Point(3, 58);
+            this.fxHuntDogBtn.Name = "fxHuntDogBtn";
+            this.fxHuntDogBtn.Size = new System.Drawing.Size(228, 29);
+            this.fxHuntDogBtn.TabIndex = 4;
+            this.fxHuntDogBtn.Text = "На собаку";
+            this.fxHuntDogBtn.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(890, 281);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // fxDescriptionOfZoneText
+            // 
+            this.fxDescriptionOfZoneText.Location = new System.Drawing.Point(4, 281);
+            this.fxDescriptionOfZoneText.Name = "fxDescriptionOfZoneText";
+            this.fxDescriptionOfZoneText.ReadOnly = true;
+            this.fxDescriptionOfZoneText.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
+            this.fxDescriptionOfZoneText.Size = new System.Drawing.Size(898, 115);
+            this.fxDescriptionOfZoneText.TabIndex = 2;
+            this.fxDescriptionOfZoneText.Text = "%Описание зоны%";
+            // 
+            // fxNameOfZoneLabel
+            // 
+            this.fxNameOfZoneLabel.AutoSize = true;
+            this.fxNameOfZoneLabel.Location = new System.Drawing.Point(4, 257);
+            this.fxNameOfZoneLabel.Name = "fxNameOfZoneLabel";
+            this.fxNameOfZoneLabel.Size = new System.Drawing.Size(141, 20);
+            this.fxNameOfZoneLabel.TabIndex = 1;
+            this.fxNameOfZoneLabel.Text = "%Название зоны%";
             // 
             // pictureBox1
             // 
@@ -281,20 +399,30 @@ namespace HoboSimulator.Windows.Game.Action
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // tabPage2
+            // DialogTP
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(905, 719);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.DialogTP.Location = new System.Drawing.Point(4, 29);
+            this.DialogTP.Name = "DialogTP";
+            this.DialogTP.Padding = new System.Windows.Forms.Padding(3);
+            this.DialogTP.Size = new System.Drawing.Size(905, 719);
+            this.DialogTP.TabIndex = 1;
+            this.DialogTP.Text = "DialogTP";
+            this.DialogTP.UseVisualStyleBackColor = true;
+            // 
+            // FightTP
+            // 
+            this.FightTP.Location = new System.Drawing.Point(4, 29);
+            this.FightTP.Name = "FightTP";
+            this.FightTP.Padding = new System.Windows.Forms.Padding(3);
+            this.FightTP.Size = new System.Drawing.Size(905, 719);
+            this.FightTP.TabIndex = 2;
+            this.FightTP.Text = "FightTP";
+            this.FightTP.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 386);
+            this.label4.Location = new System.Drawing.Point(10, 272);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(145, 20);
             this.label4.TabIndex = 60;
@@ -302,10 +430,10 @@ namespace HoboSimulator.Windows.Game.Action
             // 
             // fxResultOfAction
             // 
-            this.fxResultOfAction.Location = new System.Drawing.Point(10, 410);
+            this.fxResultOfAction.Location = new System.Drawing.Point(10, 299);
             this.fxResultOfAction.Name = "fxResultOfAction";
             this.fxResultOfAction.ReadOnly = true;
-            this.fxResultOfAction.Size = new System.Drawing.Size(358, 205);
+            this.fxResultOfAction.Size = new System.Drawing.Size(358, 316);
             this.fxResultOfAction.TabIndex = 61;
             this.fxResultOfAction.Text = "";
             // 
@@ -327,6 +455,18 @@ namespace HoboSimulator.Windows.Game.Action
             this.fxCurrentTimeLabel.TabIndex = 63;
             this.fxCurrentTimeLabel.Text = "%Время%";
             // 
+            // fxHuntBirdTT
+            // 
+            this.fxHuntBirdTT.ToolTipTitle = "Охота на голубей";
+            // 
+            // fxHuntDogTT
+            // 
+            this.fxHuntDogTT.ToolTipTitle = "Охота на собак";
+            // 
+            // fxHuntCatTT
+            // 
+            this.fxHuntCatTT.ToolTipTitle = "Охота на котов";
+            // 
             // ActionWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -336,7 +476,7 @@ namespace HoboSimulator.Windows.Game.Action
             this.Controls.Add(this.label6);
             this.Controls.Add(this.fxResultOfAction);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.fxMainTP);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.fxThirstLabel);
             this.Controls.Add(this.fxThirstPB);
@@ -356,9 +496,12 @@ namespace HoboSimulator.Windows.Game.Action
             this.Name = "ActionWindow";
             this.Text = "HoboSimulator";
             this.Load += new System.EventHandler(this.InitializeForm);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.fxMainTP.ResumeLayout(false);
+            this.ActionTP.ResumeLayout(false);
+            this.ActionTP.PerformLayout();
+            this.fxActionsTP.ResumeLayout(false);
+            this.City_DistrictsTP.ResumeLayout(false);
+            this.City_DistrictsTP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -383,18 +526,32 @@ namespace HoboSimulator.Windows.Game.Action
         public System.Windows.Forms.ProgressBar fxHealthPB;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        public System.Windows.Forms.TabControl fxMainTP;
+        public System.Windows.Forms.TabPage ActionTP;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TabPage DialogTP;
+        public System.Windows.Forms.Button fxHuntCatBtn;
+        public System.Windows.Forms.Button fxHuntDogBtn;
+        public System.Windows.Forms.Button fxHuntBirdBtn;
+        public System.Windows.Forms.RichTextBox fxDescriptionOfZoneText;
+        public System.Windows.Forms.Label fxNameOfZoneLabel;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.RichTextBox fxResultOfAction;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.Label fxCurrentTimeLabel;
+        public System.Windows.Forms.TabControl fxActionsTP;
+        public System.Windows.Forms.TabPage City_DistrictsTP;
+        private System.Windows.Forms.TabPage tabPage4;
+        public System.Windows.Forms.TabPage FightTP;
+        private System.Windows.Forms.Button fxLookAroundBtn;
+        private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Button fxLootAbaddonedHousesBtn;
+        public System.Windows.Forms.Button fxLootTrashCanSmallBtn;
+        public System.Windows.Forms.Button fxLootTrashCanBigBtn;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.ToolTip fxHuntBirdTT;
+        public System.Windows.Forms.ToolTip fxHuntDogTT;
+        public System.Windows.Forms.ToolTip fxHuntCatTT;
     }
 }

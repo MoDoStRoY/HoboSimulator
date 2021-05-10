@@ -1,4 +1,5 @@
 ﻿using HoboSimulator.Config.Objects.System;
+using HoboSimulator.Scripts.Actions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,6 +12,24 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
 
         public static void InitializeForm()
         {
+            user.actionWindow.fxNameOfZoneLabel.Text = user.actor.zone.GetName();
+            user.actionWindow.fxDescriptionOfZoneText.Text = user.actor.zone.GetDescription();
+            user.actionWindow.fxActionsTP.SelectedTab = user.actionWindow.fxActionsTP.TabPages[user.actor.zone.GetActionTPName()];
+
+            user.actionWindow.fxHuntBirdTT.SetToolTip(user.actionWindow.fxHuntBirdBtn, 
+                "Рекомендуемые навыки:\n" +
+                "Ловкость: 3\n" +
+                "Выносливость: 2");
+            user.actionWindow.fxHuntDogTT.SetToolTip(user.actionWindow.fxHuntDogBtn, 
+                "Рекомендуемые навыки:\n" +
+                "Ловкость: 3\n" +
+                "Сила: 4");
+            user.actionWindow.fxHuntCatTT.SetToolTip(user.actionWindow.fxHuntCatBtn, 
+                "Рекомендуемые навыки:\n" +
+                "Ловкость: 5\n" +
+                "Выносливость: 4\n" +
+                "Сила: 2");
+
             user.actionWindow.fxCurrentTimeLabel.Text = user.world.dateTime.ToString();
             user.actionWindow.fxHealthPB.Value = user.actor.health;
             user.actionWindow.fxHealthLabel.Text = user.actor.health.ToString();
@@ -40,11 +59,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
 
         public static void HuntBirdBtn()
         {
-            user.actor.hunger = user.actor.hunger - 5;
-            user.actor.thirst = user.actor.thirst - 10;
-            user.actor.sleep = user.actor.sleep - 2;
-            user.actor.stamina = user.actor.stamina - 30;
-            user.world.dateTime = user.world.dateTime.AddHours(1);
+            Activities.HuntAction("Ловкость", "Голубь", 0, 3, 2);
 
             //Нормализация состояний персонажа при выходе за допустимые рамки (далее нужно будет вынести в отдельный скрипт)
             if (user.actor.hunger < 0)
@@ -66,10 +81,6 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
                 user.actor.sleep = 100;
 
             InitializeForm();
-
-            TakeItem.Take("Голубь", "Food");
-
-            user.actionWindow.fxResultOfAction.Text = "Получено: " + GetInfoInventory.GetName(user.actor.inventory[user.actor.inventory.Count - 1]);
         }
     }
 }

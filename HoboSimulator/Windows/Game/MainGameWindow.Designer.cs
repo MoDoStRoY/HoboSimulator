@@ -41,6 +41,8 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.label6 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.fxCurrentTimeLabel = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.fxThirstLabel = new System.Windows.Forms.Label();
             this.fxThirstPB = new System.Windows.Forms.ProgressBar();
@@ -48,7 +50,7 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.fxHungerLabel = new System.Windows.Forms.Label();
             this.fxHungerPB = new System.Windows.Forms.ProgressBar();
             this.label15 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.fxLocationLabel = new System.Windows.Forms.Label();
             this.fxSkillPointsLabel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.fxSkillsDGV = new System.Windows.Forms.DataGridView();
@@ -65,8 +67,6 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.label2 = new System.Windows.Forms.Label();
             this.fxHealthPB = new System.Windows.Forms.ProgressBar();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.fxCurrentTimeLabel = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -187,7 +187,7 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.tabPage1.Controls.Add(this.fxHungerLabel);
             this.tabPage1.Controls.Add(this.fxHungerPB);
             this.tabPage1.Controls.Add(this.label15);
-            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.fxLocationLabel);
             this.tabPage1.Controls.Add(this.fxSkillPointsLabel);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.fxSkillsDGV);
@@ -215,6 +215,24 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // fxCurrentTimeLabel
+            // 
+            this.fxCurrentTimeLabel.AutoSize = true;
+            this.fxCurrentTimeLabel.Location = new System.Drawing.Point(351, 185);
+            this.fxCurrentTimeLabel.Name = "fxCurrentTimeLabel";
+            this.fxCurrentTimeLabel.Size = new System.Drawing.Size(78, 20);
+            this.fxCurrentTimeLabel.TabIndex = 65;
+            this.fxCurrentTimeLabel.Text = "%Время%";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(188, 185);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(122, 20);
+            this.label8.TabIndex = 64;
+            this.label8.Text = "Текущее время: ";
             // 
             // button4
             // 
@@ -276,14 +294,14 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.label15.TabIndex = 35;
             this.label15.Text = "Сытость:";
             // 
-            // label13
+            // fxLocationLabel
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(351, 205);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(154, 20);
-            this.label13.TabIndex = 34;
-            this.label13.Text = "%местоположение%";
+            this.fxLocationLabel.AutoSize = true;
+            this.fxLocationLabel.Location = new System.Drawing.Point(351, 205);
+            this.fxLocationLabel.Name = "fxLocationLabel";
+            this.fxLocationLabel.Size = new System.Drawing.Size(154, 20);
+            this.fxLocationLabel.TabIndex = 34;
+            this.fxLocationLabel.Text = "%местоположение%";
             // 
             // fxSkillPointsLabel
             // 
@@ -430,24 +448,6 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // fxCurrentTimeLabel
-            // 
-            this.fxCurrentTimeLabel.AutoSize = true;
-            this.fxCurrentTimeLabel.Location = new System.Drawing.Point(351, 185);
-            this.fxCurrentTimeLabel.Name = "fxCurrentTimeLabel";
-            this.fxCurrentTimeLabel.Size = new System.Drawing.Size(78, 20);
-            this.fxCurrentTimeLabel.TabIndex = 65;
-            this.fxCurrentTimeLabel.Text = "%Время%";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(188, 185);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(122, 20);
-            this.label8.TabIndex = 64;
-            this.label8.Text = "Текущее время: ";
-            // 
             // MainGameWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -497,7 +497,7 @@ namespace HoboSimulator.Windows.Game.MainGame
         public System.Windows.Forms.Label fxHungerLabel;
         public System.Windows.Forms.ProgressBar fxHungerPB;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label13;
+        public System.Windows.Forms.Label fxLocationLabel;
         public System.Windows.Forms.Label fxSkillPointsLabel;
         private System.Windows.Forms.Label label11;
         public System.Windows.Forms.DataGridView fxSkillsDGV;

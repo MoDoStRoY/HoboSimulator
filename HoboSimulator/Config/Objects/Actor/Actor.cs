@@ -1,4 +1,5 @@
-﻿using HoboSimulator.Config.Objects.World.Maps;
+﻿using HoboSimulator.Config.Objects.System;
+using HoboSimulator.Config.Objects.World.Maps;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,6 +9,8 @@ namespace HoboSimulator.Config.Objects.Actor
 {
     class Actor
     {
+        static User user = Program.user;
+
         //**БИОГРАФИЧЕСКИЕ ПАРАМЕТРЫ**//
         public String name;
         public int age;
@@ -27,6 +30,9 @@ namespace HoboSimulator.Config.Objects.Actor
         public List<Parameter> skills = new List<Parameter>()
         {
             new Parameter("Сила", 0),
+            new Parameter("Ловкость", 0),
+            new Parameter("Выносливость", 0),
+            new Parameter("Ремесло", 0),
             new Parameter("Харизма", 0),
             new Parameter("Удача", 0)
         };
@@ -38,6 +44,8 @@ namespace HoboSimulator.Config.Objects.Actor
         public int numberOfChosenItem; // Индекс выбранного предмета в инвентаре
 
         //**МЕСТОПОЛОЖЕНИЕ**//
+        public ILocation location;
+        public IZone zone;
 
         public Actor(String name, int age, String biography, int health, int thirst, int hunger, int stamina, int sleep, int skillPoints, List<object> inventory)
         {
@@ -51,6 +59,8 @@ namespace HoboSimulator.Config.Objects.Actor
             this.sleep = sleep;
             this.skillPoints = skillPoints;
             this.inventory = inventory;
+            this.location = user.world.locationList[0];
+            this.zone = user.world.locationList[0].GetListOfZones()[0];
         }
     }
 }

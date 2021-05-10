@@ -4,9 +4,10 @@ using System.Text;
 
 namespace HoboSimulator.Config.Objects.World.Maps
 {
-    interface ILocation
+    interface IZone
     {
         public String GetName();
-        public List<IZone> GetListOfZones();
+        public String GetDescription();
+        public String GetActionTPName();
     }
 }
