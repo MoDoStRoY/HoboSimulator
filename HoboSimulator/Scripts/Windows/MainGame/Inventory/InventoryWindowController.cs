@@ -1,4 +1,5 @@
 ﻿using HoboSimulator.Config.Objects.Actor;
+using HoboSimulator.Config.Objects.Misc.Items;
 using HoboSimulator.Config.Objects.System;
 using HoboSimulator.Scripts.Inventory;
 using System.Collections.Generic;
@@ -23,7 +24,6 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Inventory
             user.inventoryWindow.fxStaminaLabel.Text = user.actor.stamina.ToString();
             user.inventoryWindow.fxSleepPB.Value = user.actor.sleep;
             user.inventoryWindow.fxSleepLabel.Text = user.actor.sleep.ToString();
-
             user.inventoryWindow.fxInventoryDGV.Rows.Clear();
             user.inventoryWindow.fxNameOfItemLabel.Text = "";
             user.inventoryWindow.fxDescriptionOfItemText.Text = "";
@@ -37,7 +37,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Inventory
                 {
                     user.inventoryWindow.fxInventoryDGV.Rows.Add();
                     
-                    user.inventoryWindow.fxInventoryDGV.Rows[i].Cells[1].Value = GetInfoInventory.GetName(user.actor.inventory[i]);
+                    user.inventoryWindow.fxInventoryDGV.Rows[i].Cells[1].Value = user.actor.inventory[i].GetName();
                 }
             }
         }
@@ -58,13 +58,13 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Inventory
         {
             if (e.RowIndex != -1)
             {
-                object item = user.actor.inventory[e.RowIndex];
+                IItem item = user.actor.inventory[e.RowIndex];
                 user.actor.chosenItem = item;
                 user.actor.numberOfChosenItem = e.RowIndex;
 
-                user.inventoryWindow.fxNameOfItemLabel.Text = GetInfoInventory.GetName(item);
-                user.inventoryWindow.fxDescriptionOfItemText.Text = GetInfoInventory.GetDescription(item);
-                user.inventoryWindow.fxTtxText.Text = GetInfoInventory.GetParamsString(item);
+                user.inventoryWindow.fxNameOfItemLabel.Text = item.GetName();
+                user.inventoryWindow.fxDescriptionOfItemText.Text = item.GetDescription();
+                user.inventoryWindow.fxTtxText.Text = item.GetParamsString();
                 user.inventoryWindow.fxUseBtn.Visible = true;
                 user.inventoryWindow.fxDropBtn.Visible = true;
             }
@@ -78,9 +78,9 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Inventory
 
         public static void UseBtn()
         {
-            List<Parameter> parameters = GetInfoInventory.GetParamsList(user.actor.chosenItem);
+            List<Parameter> parameters = user.actor.chosenItem.GetParamsList();
 
-            if (GetInfoInventory.GetType(user.actor.chosenItem).Equals("Food"))
+            if (user.actor.chosenItem.GetType().Equals("Food"))
             {
                 UseItem.UseFood(parameters);
 

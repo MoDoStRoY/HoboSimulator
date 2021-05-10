@@ -37,5 +37,10 @@ namespace HoboSimulator.Windows.Game.Action
         {
             ActionWindowController.HuntBirdBtn();
         }
+
+        private void LootTrashCanBigBtn(object sender, EventArgs e)
+        {
+            ActionWindowController.LootTrashCanBigBtn();
+        }
     }
 }

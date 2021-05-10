@@ -16,7 +16,16 @@ namespace HoboSimulator.Scripts
             if (type.Equals("Food"))
             {
                 if (name.Equals("Голубь"))
-                    user.actor.inventory.Add(ItemContructor.getDove());
+                    user.actor.inventory.Add(ItemContructor.GetDove());
+                if (name.Equals("Объедки"))
+                    user.actor.inventory.Add(ItemContructor.GetScraps());
+                if (name.Equals("Початая бутылка воды (0,5л)"))
+                    user.actor.inventory.Add(ItemContructor.GetSmallWaterBottle());
+            }
+            else if (type.Equals("Equipment"))
+            {
+                if (name.Equals("Пластиковая бутылка 0,5л"))
+                    user.actor.inventory.Add(ItemContructor.GetSmallPlasticBottle());
             }
         }
     }

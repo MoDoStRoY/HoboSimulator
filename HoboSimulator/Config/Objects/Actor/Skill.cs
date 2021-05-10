@@ -4,12 +4,12 @@ using System.Text;
 
 namespace HoboSimulator.Config.Objects.Actor
 {
-    class Parameter
+    class Skill
     {
         public String name;
-        public double value;
+        public int value;
 
-        public Parameter(String name, double value)
+        public Skill(String name, int value)
         {
             this.name = name;
             this.value = value;

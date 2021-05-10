@@ -1,4 +1,5 @@
 ﻿using HoboSimulator.Config.Objects.Actor;
+using HoboSimulator.Config.Objects.Misc.Items;
 using HoboSimulator.Config.Objects.System;
 using HoboSimulator.Config.Objects.World;
 using System;
@@ -37,7 +38,7 @@ namespace HoboSimulator.Scripts.Windows.CreateActor
                 100, // Выносливость
                 100, // Сон
                 10, // Скиллпоинты
-                new List<object>()
+                new List<IItem>()
                 );
 
                 user.createActorWindow.Hide();

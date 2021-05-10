@@ -314,6 +314,7 @@ namespace HoboSimulator.Windows.Game.Action
             this.fxLootTrashCanBigBtn.TabIndex = 8;
             this.fxLootTrashCanBigBtn.Text = "Мусорные баки";
             this.fxLootTrashCanBigBtn.UseVisualStyleBackColor = true;
+            this.fxLootTrashCanBigBtn.Click += new System.EventHandler(this.LootTrashCanBigBtn);
             // 
             // label8
             // 

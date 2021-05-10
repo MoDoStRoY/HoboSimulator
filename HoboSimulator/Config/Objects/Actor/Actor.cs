@@ -1,4 +1,5 @@
-﻿using HoboSimulator.Config.Objects.System;
+﻿using HoboSimulator.Config.Objects.Misc.Items;
+using HoboSimulator.Config.Objects.System;
 using HoboSimulator.Config.Objects.World.Maps;
 using System;
 using System.Collections;
@@ -27,27 +28,27 @@ namespace HoboSimulator.Config.Objects.Actor
         //**НАВЫКИ**//
 
         public int skillPoints;
-        public List<Parameter> skills = new List<Parameter>()
+        public List<Skill> skills = new List<Skill>()
         {
-            new Parameter("Сила", 0),
-            new Parameter("Ловкость", 0),
-            new Parameter("Выносливость", 0),
-            new Parameter("Ремесло", 0),
-            new Parameter("Харизма", 0),
-            new Parameter("Удача", 0)
+            new Skill("Сила", 0),
+            new Skill("Ловкость", 0),
+            new Skill("Выносливость", 0),
+            new Skill("Ремесло", 0),
+            new Skill("Харизма", 0),
+            new Skill("Удача", 0)
         };
 
         //**ИНВЕНТАРЬ**//
 
-        public List<object> inventory; // Инвентарь
-        public object chosenItem; // Выбранный предмет в инвентаре
+        public List<IItem> inventory; // Инвентарь
+        public IItem chosenItem; // Выбранный предмет в инвентаре
         public int numberOfChosenItem; // Индекс выбранного предмета в инвентаре
 
         //**МЕСТОПОЛОЖЕНИЕ**//
         public ILocation location;
         public IZone zone;
 
-        public Actor(String name, int age, String biography, int health, int thirst, int hunger, int stamina, int sleep, int skillPoints, List<object> inventory)
+        public Actor(String name, int age, String biography, int health, int thirst, int hunger, int stamina, int sleep, int skillPoints, List<IItem> inventory)
         {
             this.name = name;
             this.age = age;

@@ -82,5 +82,31 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
 
             InitializeForm();
         }
+
+        public static void LootTrashCanBigBtn()
+        {
+            Activities.LootAction();
+
+            //Нормализация состояний персонажа при выходе за допустимые рамки (далее нужно будет вынести в отдельный скрипт)
+            if (user.actor.hunger < 0)
+                user.actor.hunger = 0;
+            if (user.actor.thirst < 0)
+                user.actor.thirst = 0;
+            if (user.actor.stamina < 0)
+                user.actor.stamina = 0;
+            if (user.actor.sleep < 0)
+                user.actor.sleep = 0;
+
+            if (user.actor.hunger > 100)
+                user.actor.hunger = 100;
+            if (user.actor.thirst > 100)
+                user.actor.thirst = 100;
+            if (user.actor.stamina > 100)
+                user.actor.stamina = 100;
+            if (user.actor.sleep > 100)
+                user.actor.sleep = 100;
+
+            InitializeForm();
+        }
     }
 }
