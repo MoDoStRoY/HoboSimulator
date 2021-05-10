@@ -1,5 +1,6 @@
 ﻿using HoboSimulator.Config.Objects.Actor;
 using HoboSimulator.Config.Objects.System;
+using HoboSimulator.Scripts.Inventory;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -12,6 +13,9 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Inventory
         public static void InitializeForm()
         {
             user.inventoryWindow.fxInventoryDGV.Rows.Clear();
+            user.inventoryWindow.fxNameOfItemLabel.Text = "";
+            user.inventoryWindow.fxDescriptionOfItemText.Text = "";
+            user.inventoryWindow.fxTtxText.Text = "";
 
             if (user.actor.inventory.Count > 0)
             {
@@ -38,7 +42,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Inventory
 
         public static void ChosenItemDGV(DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != null)
+            if (e.RowIndex != -1)
             {
                 object item = user.actor.inventory[e.RowIndex];
                 user.actor.chosenItem = item;
@@ -48,6 +52,12 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Inventory
                 user.inventoryWindow.fxDescriptionOfItemText.Text = GetInfoInventory.GetDescription(item);
                 user.inventoryWindow.fxTtxText.Text = GetInfoInventory.GetParamsString(item);
             }
+            else
+            {
+                user.inventoryWindow.fxNameOfItemLabel.Text = "";
+                user.inventoryWindow.fxDescriptionOfItemText.Text = "";
+                user.inventoryWindow.fxTtxText.Text = "";
+            }
         }
 
         public static void UseBtn()
@@ -56,12 +66,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Inventory
 
             if (GetInfoInventory.GetType(user.actor.chosenItem).Equals("Food"))
             {
-                user.actor.hunger += parameters[0].value;
-                user.actor.thirst += parameters[1].value;
-                user.actor.stamina += parameters[2].value;
-                user.actor.sleep += parameters[3].value;
-
-                user.actor.inventory.RemoveAt(user.actor.numberOfChosenItem);
+                UseItem.UseFood(parameters);
 
                 InitializeForm();
             }
@@ -69,7 +74,9 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Inventory
 
         public static void DropBtn()
         {
+            user.actor.inventory.RemoveAt(user.actor.numberOfChosenItem);
 
+            InitializeForm();
         }
     }
 }
