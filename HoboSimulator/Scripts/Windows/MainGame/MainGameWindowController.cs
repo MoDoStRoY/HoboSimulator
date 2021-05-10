@@ -12,6 +12,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame
 
         public static void InitializeForm()
         {
+            user.mainGameWindow.fxCurrentTimeLabel.Text = user.world.dateTime.ToString();
             user.mainGameWindow.fxNameOfActor.Text = user.actor.name;
             user.mainGameWindow.fxAgeOfActor.Text = user.actor.age.ToString();
             user.mainGameWindow.fxBiography.Text = user.actor.biography;

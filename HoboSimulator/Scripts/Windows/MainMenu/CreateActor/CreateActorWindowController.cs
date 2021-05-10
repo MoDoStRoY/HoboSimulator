@@ -1,5 +1,6 @@
 ﻿using HoboSimulator.Config.Objects.Actor;
 using HoboSimulator.Config.Objects.System;
+using HoboSimulator.Config.Objects.World;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,7 +22,10 @@ namespace HoboSimulator.Scripts.Windows.CreateActor
 
         public static void EndCreateBtn()
         {
-            user.actor = new Actor(user.createActorWindow.fxName.Text, //Имя 
+            try 
+            {
+                //Инициализация ГГ
+                user.actor = new Actor(user.createActorWindow.fxName.Text, //Имя 
                 Convert.ToInt32(user.createActorWindow.fxAge.Text), // Возраст 
                 user.createActorWindow.fxBiography.Text,  // Биография
                 100, // Здоровье
@@ -32,8 +36,14 @@ namespace HoboSimulator.Scripts.Windows.CreateActor
                 10, // Скиллпоинты
                 new List<object>()
                 );
-            user.createActorWindow.Hide();
-            user.mainGameWindow.ShowWindow();
+
+                //Инициализация объекта игрового мира
+                user.world = new World(new DateTime(2016, 6, 10, 11, 20, 0));
+
+                user.createActorWindow.Hide();
+                user.mainGameWindow.ShowWindow();
+            }
+            catch (Exception e) {}
         }
 
         public static void HoboPresetChosenLB()

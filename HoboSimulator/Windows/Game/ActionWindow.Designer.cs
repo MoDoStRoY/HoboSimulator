@@ -395,6 +395,6 @@ namespace HoboSimulator.Windows.Game.Action
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.RichTextBox fxResultOfAction;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label fxCurrentTimeLabel;
+        public System.Windows.Forms.Label fxCurrentTimeLabel;
     }
 }

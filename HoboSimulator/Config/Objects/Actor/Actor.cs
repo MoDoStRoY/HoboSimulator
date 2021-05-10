@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HoboSimulator.Config.Objects.World.Maps;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -35,6 +36,8 @@ namespace HoboSimulator.Config.Objects.Actor
         public List<object> inventory; // Инвентарь
         public object chosenItem; // Выбранный предмет в инвентаре
         public int numberOfChosenItem; // Индекс выбранного предмета в инвентаре
+
+        //**МЕСТОПОЛОЖЕНИЕ**//
 
         public Actor(String name, int age, String biography, int health, int thirst, int hunger, int stamina, int sleep, int skillPoints, List<object> inventory)
         {

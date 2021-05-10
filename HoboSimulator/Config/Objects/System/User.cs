@@ -25,5 +25,6 @@ namespace HoboSimulator.Config.Objects.System
         //**Игровые переменные**//
 
         public Actor.Actor actor;
+        public World.World world;
     }
 }

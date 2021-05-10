@@ -41,6 +41,7 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.label6 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
             this.fxThirstLabel = new System.Windows.Forms.Label();
             this.fxThirstPB = new System.Windows.Forms.ProgressBar();
             this.label7 = new System.Windows.Forms.Label();
@@ -64,7 +65,8 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.label2 = new System.Windows.Forms.Label();
             this.fxHealthPB = new System.Windows.Forms.ProgressBar();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
+            this.fxCurrentTimeLabel = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -176,6 +178,8 @@ namespace HoboSimulator.Windows.Game.MainGame
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.fxCurrentTimeLabel);
+            this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.fxThirstLabel);
             this.tabPage1.Controls.Add(this.fxThirstPB);
@@ -211,6 +215,16 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(6, 390);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(260, 29);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "Инвентарь";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.InventoryBtn);
             // 
             // fxThirstLabel
             // 
@@ -416,15 +430,23 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // fxCurrentTimeLabel
             // 
-            this.button4.Location = new System.Drawing.Point(6, 390);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(260, 29);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Инвентарь";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.InventoryBtn);
+            this.fxCurrentTimeLabel.AutoSize = true;
+            this.fxCurrentTimeLabel.Location = new System.Drawing.Point(351, 185);
+            this.fxCurrentTimeLabel.Name = "fxCurrentTimeLabel";
+            this.fxCurrentTimeLabel.Size = new System.Drawing.Size(78, 20);
+            this.fxCurrentTimeLabel.TabIndex = 65;
+            this.fxCurrentTimeLabel.Text = "%Время%";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(188, 185);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(122, 20);
+            this.label8.TabIndex = 64;
+            this.label8.Text = "Текущее время: ";
             // 
             // MainGameWindow
             // 
@@ -485,5 +507,7 @@ namespace HoboSimulator.Windows.Game.MainGame
         public System.Windows.Forms.ProgressBar fxThirstPB;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button4;
+        public System.Windows.Forms.Label fxCurrentTimeLabel;
+        private System.Windows.Forms.Label label8;
     }
 }

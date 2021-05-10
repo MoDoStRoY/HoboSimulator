@@ -11,6 +11,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
 
         public static void InitializeForm()
         {
+            user.actionWindow.fxCurrentTimeLabel.Text = user.world.dateTime.ToString();
             user.actionWindow.fxHealthPB.Value = user.actor.health;
             user.actionWindow.fxHealthLabel.Text = user.actor.health.ToString();
             user.actionWindow.fxThirstPB.Value = user.actor.thirst;
@@ -43,12 +44,32 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
             user.actor.thirst = user.actor.thirst - 10;
             user.actor.sleep = user.actor.sleep - 2;
             user.actor.stamina = user.actor.stamina - 30;
+            user.world.dateTime = user.world.dateTime.AddHours(1);
+
+            //Нормализация состояний персонажа при выходе за допустимые рамки (далее нужно будет вынести в отдельный скрипт)
+            if (user.actor.hunger < 0)
+                user.actor.hunger = 0;
+            if (user.actor.thirst < 0)
+                user.actor.thirst = 0;
+            if (user.actor.stamina < 0)
+                user.actor.stamina = 0;
+            if (user.actor.sleep < 0)
+                user.actor.sleep = 0;
+
+            if (user.actor.hunger > 100)
+                user.actor.hunger = 100;
+            if (user.actor.thirst > 100)
+                user.actor.thirst = 100;
+            if (user.actor.stamina > 100)
+                user.actor.stamina = 100;
+            if (user.actor.sleep > 100)
+                user.actor.sleep = 100;
 
             InitializeForm();
 
             TakeItem.Take("Голубь", "Food");
 
-            user.actionWindow.fxResultOfAction.Text = "Получено: " + GetInfoInventory.GetName(user.actor.inventory[user.actor.inventory.Count-1]);
+            user.actionWindow.fxResultOfAction.Text = "Получено: " + GetInfoInventory.GetName(user.actor.inventory[user.actor.inventory.Count - 1]);
         }
     }
 }

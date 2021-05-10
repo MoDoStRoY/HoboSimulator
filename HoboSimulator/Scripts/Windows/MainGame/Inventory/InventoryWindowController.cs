@@ -12,10 +12,24 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Inventory
 
         public static void InitializeForm()
         {
+            user.inventoryWindow.fxCurrentTimeLabel.Text = user.world.dateTime.ToString();
+            user.inventoryWindow.fxHealthPB.Value = user.actor.health;
+            user.inventoryWindow.fxHealthLabel.Text = user.actor.health.ToString();
+            user.inventoryWindow.fxThirstPB.Value = user.actor.thirst;
+            user.inventoryWindow.fxThirstLabel.Text = user.actor.thirst.ToString();
+            user.inventoryWindow.fxHungerPB.Value = user.actor.hunger;
+            user.inventoryWindow.fxHungerLabel.Text = user.actor.hunger.ToString();
+            user.inventoryWindow.fxStaminaPB.Value = user.actor.stamina;
+            user.inventoryWindow.fxStaminaLabel.Text = user.actor.stamina.ToString();
+            user.inventoryWindow.fxSleepPB.Value = user.actor.sleep;
+            user.inventoryWindow.fxSleepLabel.Text = user.actor.sleep.ToString();
+
             user.inventoryWindow.fxInventoryDGV.Rows.Clear();
             user.inventoryWindow.fxNameOfItemLabel.Text = "";
             user.inventoryWindow.fxDescriptionOfItemText.Text = "";
             user.inventoryWindow.fxTtxText.Text = "";
+            user.inventoryWindow.fxUseBtn.Visible = false;
+            user.inventoryWindow.fxDropBtn.Visible = false;
 
             if (user.actor.inventory.Count > 0)
             {
@@ -51,6 +65,8 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Inventory
                 user.inventoryWindow.fxNameOfItemLabel.Text = GetInfoInventory.GetName(item);
                 user.inventoryWindow.fxDescriptionOfItemText.Text = GetInfoInventory.GetDescription(item);
                 user.inventoryWindow.fxTtxText.Text = GetInfoInventory.GetParamsString(item);
+                user.inventoryWindow.fxUseBtn.Visible = true;
+                user.inventoryWindow.fxDropBtn.Visible = true;
             }
             else
             {

@@ -44,7 +44,7 @@ namespace HoboSimulator.Windows.Game.MainGame
 
         private void MenuBtn(object sender, EventArgs e)
         {
-
+            MainGameWindowController.MenuBtn();
         }
 
         private void InventoryBtn(object sender, EventArgs e)
