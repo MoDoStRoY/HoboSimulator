@@ -10,7 +10,7 @@ namespace HoboSimulator.Scripts.Actions
     {
         static User user = Program.user;
 
-        public static void HuntAction(String priorety, String target, int powerCondition, int agilityCondition, int staminaCondition)
+        public static void HuntAction(String priorety, int ID, int powerCondition, int agilityCondition, int staminaCondition)
         {
             Random randomiser = new Random();
 
@@ -22,7 +22,7 @@ namespace HoboSimulator.Scripts.Actions
             {
                 if (randomiser.Next(10) > 5 - agilityResult - (staminaResult/2))
                 {
-                    TakeItem.Take(target, "Food");
+                    TakeItem.Take(ID);
 
                     user.actionWindow.fxResultOfAction.Text += "Дата и время: " + user.world.dateTime.ToString() + "\n" +
                         "Охота успешна! Добыто: " +
@@ -42,7 +42,7 @@ namespace HoboSimulator.Scripts.Actions
             {
                 if (randomiser.Next(10) > 5 - agilityResult - (staminaResult / 2))
                 {
-                    TakeItem.Take(target, "Food");
+                    TakeItem.Take(ID);
                 }
                 else
                 {
@@ -58,10 +58,7 @@ namespace HoboSimulator.Scripts.Actions
 
             if (randomiser.Next(10) > 5 - user.actor.skills[5].value/4)
             {
-                int indexOfResult = randomiser.Next(1, 4);
-                String[] buffer = ItemContructor.listOfItems[indexOfResult].Split("|");
-
-                TakeItem.Take(buffer[0], buffer[1]);
+                TakeItem.Take(randomiser.Next(1, 4));
 
                 user.actionWindow.fxResultOfAction.Text += "Дата и время: " + user.world.dateTime.ToString() + "\n" +
                     "Поиски увенчались успехом! Найдено: " +

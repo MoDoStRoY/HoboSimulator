@@ -14,6 +14,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame
         {
             user.mainGameWindow.fxCurrentTimeLabel.Text = user.world.dateTime.ToString();
             user.mainGameWindow.fxLocationLabel.Text = user.actor.location.GetName() + ", " + user.actor.zone.GetName();
+            user.mainGameWindow.fxMoneyLabel.Text = user.actor.money + " руб.";
 
             user.mainGameWindow.fxNameOfActor.Text = user.actor.name;
             user.mainGameWindow.fxAgeOfActor.Text = user.actor.age.ToString();

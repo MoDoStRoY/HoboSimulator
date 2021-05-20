@@ -59,7 +59,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
 
         public static void HuntBirdBtn()
         {
-            Activities.HuntAction("Ловкость", "Голубь", 0, 3, 2);
+            Activities.HuntAction("Ловкость", 0, 0, 3, 2);
 
             //Нормализация состояний персонажа при выходе за допустимые рамки (далее нужно будет вынести в отдельный скрипт)
             if (user.actor.hunger < 0)

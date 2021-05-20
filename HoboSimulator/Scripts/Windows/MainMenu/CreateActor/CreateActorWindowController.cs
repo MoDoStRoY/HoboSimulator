@@ -38,7 +38,9 @@ namespace HoboSimulator.Scripts.Windows.CreateActor
                 100, // Выносливость
                 100, // Сон
                 10, // Скиллпоинты
-                new List<IItem>()
+                new List<IItem>(), // Инвентарь
+                20, // Максимальный носимый вес
+                250 // Деньги
                 );
 
                 user.createActorWindow.Hide();

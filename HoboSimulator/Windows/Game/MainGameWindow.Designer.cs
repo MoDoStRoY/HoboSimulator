@@ -67,6 +67,8 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.label2 = new System.Windows.Forms.Label();
             this.fxHealthPB = new System.Windows.Forms.ProgressBar();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.fxMoneyLabel = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -178,6 +180,8 @@ namespace HoboSimulator.Windows.Game.MainGame
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.fxMoneyLabel);
+            this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.fxCurrentTimeLabel);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.button4);
@@ -236,9 +240,9 @@ namespace HoboSimulator.Windows.Game.MainGame
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(6, 390);
+            this.button4.Location = new System.Drawing.Point(6, 424);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(260, 29);
+            this.button4.Size = new System.Drawing.Size(539, 29);
             this.button4.TabIndex = 11;
             this.button4.Text = "Инвентарь";
             this.button4.UseVisualStyleBackColor = true;
@@ -357,7 +361,7 @@ namespace HoboSimulator.Windows.Game.MainGame
             // 
             // fxBiography
             // 
-            this.fxBiography.Location = new System.Drawing.Point(4, 241);
+            this.fxBiography.Location = new System.Drawing.Point(6, 275);
             this.fxBiography.Name = "fxBiography";
             this.fxBiography.Size = new System.Drawing.Size(541, 143);
             this.fxBiography.TabIndex = 19;
@@ -366,7 +370,7 @@ namespace HoboSimulator.Windows.Game.MainGame
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 217);
+            this.label10.Location = new System.Drawing.Point(6, 252);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(89, 20);
             this.label10.TabIndex = 18;
@@ -448,6 +452,24 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // fxMoneyLabel
+            // 
+            this.fxMoneyLabel.AutoSize = true;
+            this.fxMoneyLabel.Location = new System.Drawing.Point(351, 225);
+            this.fxMoneyLabel.Name = "fxMoneyLabel";
+            this.fxMoneyLabel.Size = new System.Drawing.Size(83, 20);
+            this.fxMoneyLabel.TabIndex = 93;
+            this.fxMoneyLabel.Text = "%Деньги%";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(188, 227);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(62, 20);
+            this.label13.TabIndex = 92;
+            this.label13.Text = "Деньги:";
+            // 
             // MainGameWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -509,5 +531,7 @@ namespace HoboSimulator.Windows.Game.MainGame
         private System.Windows.Forms.Button button4;
         public System.Windows.Forms.Label fxCurrentTimeLabel;
         private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.Label fxMoneyLabel;
+        private System.Windows.Forms.Label label13;
     }
 }

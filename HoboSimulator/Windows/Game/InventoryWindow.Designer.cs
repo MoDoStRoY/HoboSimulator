@@ -60,6 +60,12 @@ namespace HoboSimulator.Windows.Game
             this.label6 = new System.Windows.Forms.Label();
             this.fxCurrentTimeLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.fxWeightLabel = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.fxMaxWeightLabel = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.fxMoneyLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fxInventoryDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -82,7 +88,7 @@ namespace HoboSimulator.Windows.Game
             this.fxInventoryDGV.RowHeadersVisible = false;
             this.fxInventoryDGV.RowHeadersWidth = 51;
             this.fxInventoryDGV.RowTemplate.Height = 29;
-            this.fxInventoryDGV.Size = new System.Drawing.Size(560, 753);
+            this.fxInventoryDGV.Size = new System.Drawing.Size(560, 729);
             this.fxInventoryDGV.TabIndex = 0;
             this.fxInventoryDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ChosenItemDGV);
             // 
@@ -150,7 +156,7 @@ namespace HoboSimulator.Windows.Game
             // 
             this.fxDescriptionOfItemText.Location = new System.Drawing.Point(377, 123);
             this.fxDescriptionOfItemText.Name = "fxDescriptionOfItemText";
-            this.fxDescriptionOfItemText.Size = new System.Drawing.Size(262, 120);
+            this.fxDescriptionOfItemText.Size = new System.Drawing.Size(345, 220);
             this.fxDescriptionOfItemText.TabIndex = 63;
             this.fxDescriptionOfItemText.Text = "";
             // 
@@ -166,7 +172,7 @@ namespace HoboSimulator.Windows.Game
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(377, 246);
+            this.label4.Location = new System.Drawing.Point(377, 353);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 20);
             this.label4.TabIndex = 66;
@@ -174,17 +180,17 @@ namespace HoboSimulator.Windows.Game
             // 
             // fxTtxText
             // 
-            this.fxTtxText.Location = new System.Drawing.Point(377, 269);
+            this.fxTtxText.Location = new System.Drawing.Point(377, 376);
             this.fxTtxText.Name = "fxTtxText";
-            this.fxTtxText.Size = new System.Drawing.Size(262, 222);
+            this.fxTtxText.Size = new System.Drawing.Size(345, 222);
             this.fxTtxText.TabIndex = 65;
             this.fxTtxText.Text = "";
             // 
             // fxUseBtn
             // 
-            this.fxUseBtn.Location = new System.Drawing.Point(377, 498);
+            this.fxUseBtn.Location = new System.Drawing.Point(377, 604);
             this.fxUseBtn.Name = "fxUseBtn";
-            this.fxUseBtn.Size = new System.Drawing.Size(262, 29);
+            this.fxUseBtn.Size = new System.Drawing.Size(345, 29);
             this.fxUseBtn.TabIndex = 67;
             this.fxUseBtn.Text = "Использовать";
             this.fxUseBtn.UseVisualStyleBackColor = true;
@@ -192,9 +198,9 @@ namespace HoboSimulator.Windows.Game
             // 
             // fxDropBtn
             // 
-            this.fxDropBtn.Location = new System.Drawing.Point(377, 533);
+            this.fxDropBtn.Location = new System.Drawing.Point(377, 639);
             this.fxDropBtn.Name = "fxDropBtn";
-            this.fxDropBtn.Size = new System.Drawing.Size(262, 29);
+            this.fxDropBtn.Size = new System.Drawing.Size(345, 29);
             this.fxDropBtn.TabIndex = 68;
             this.fxDropBtn.Text = "Выбросить";
             this.fxDropBtn.UseVisualStyleBackColor = true;
@@ -328,7 +334,7 @@ namespace HoboSimulator.Windows.Game
             // fxCurrentTimeLabel
             // 
             this.fxCurrentTimeLabel.AutoSize = true;
-            this.fxCurrentTimeLabel.Location = new System.Drawing.Point(176, 626);
+            this.fxCurrentTimeLabel.Location = new System.Drawing.Point(176, 608);
             this.fxCurrentTimeLabel.Name = "fxCurrentTimeLabel";
             this.fxCurrentTimeLabel.Size = new System.Drawing.Size(78, 20);
             this.fxCurrentTimeLabel.TabIndex = 85;
@@ -337,17 +343,77 @@ namespace HoboSimulator.Windows.Game
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 626);
+            this.label8.Location = new System.Drawing.Point(13, 608);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(122, 20);
             this.label8.TabIndex = 84;
             this.label8.Text = "Текущее время: ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(728, 749);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(36, 20);
+            this.label9.TabIndex = 86;
+            this.label9.Text = "Вес:";
+            // 
+            // fxWeightLabel
+            // 
+            this.fxWeightLabel.AutoSize = true;
+            this.fxWeightLabel.Location = new System.Drawing.Point(770, 749);
+            this.fxWeightLabel.Name = "fxWeightLabel";
+            this.fxWeightLabel.Size = new System.Drawing.Size(57, 20);
+            this.fxWeightLabel.TabIndex = 87;
+            this.fxWeightLabel.Text = "%Вес%";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(882, 749);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(147, 20);
+            this.label11.TabIndex = 88;
+            this.label11.Text = "Максимальный вес:";
+            // 
+            // fxMaxWeightLabel
+            // 
+            this.fxMaxWeightLabel.AutoSize = true;
+            this.fxMaxWeightLabel.Location = new System.Drawing.Point(1035, 749);
+            this.fxMaxWeightLabel.Name = "fxMaxWeightLabel";
+            this.fxMaxWeightLabel.Size = new System.Drawing.Size(57, 20);
+            this.fxMaxWeightLabel.TabIndex = 89;
+            this.fxMaxWeightLabel.Text = "%Вес%";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(13, 628);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(62, 20);
+            this.label13.TabIndex = 90;
+            this.label13.Text = "Деньги:";
+            // 
+            // fxMoneyLabel
+            // 
+            this.fxMoneyLabel.AutoSize = true;
+            this.fxMoneyLabel.Location = new System.Drawing.Point(176, 626);
+            this.fxMoneyLabel.Name = "fxMoneyLabel";
+            this.fxMoneyLabel.Size = new System.Drawing.Size(83, 20);
+            this.fxMoneyLabel.TabIndex = 91;
+            this.fxMoneyLabel.Text = "%Деньги%";
             // 
             // InventoryWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 778);
+            this.Controls.Add(this.fxMoneyLabel);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.fxMaxWeightLabel);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.fxWeightLabel);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.fxCurrentTimeLabel);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.fxThirstLabel);
@@ -419,5 +485,11 @@ namespace HoboSimulator.Windows.Game
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.Label fxCurrentTimeLabel;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Label fxWeightLabel;
+        private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.Label fxMaxWeightLabel;
+        private System.Windows.Forms.Label label13;
+        public System.Windows.Forms.Label fxMoneyLabel;
     }
 }

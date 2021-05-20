@@ -14,6 +14,14 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Inventory
         public static void InitializeForm()
         {
             user.inventoryWindow.fxCurrentTimeLabel.Text = user.world.dateTime.ToString();
+
+            double weight = 0;
+            for (int i = 0; i < user.actor.inventory.Count; i++)
+                weight += user.actor.inventory[i].GetWeight();
+            user.inventoryWindow.fxWeightLabel.Text = weight + " кг";
+            user.inventoryWindow.fxMaxWeightLabel.Text = user.actor.maxWeight + " кг";
+            user.inventoryWindow.fxMoneyLabel.Text = user.actor.money + " руб.";
+
             user.inventoryWindow.fxHealthPB.Value = user.actor.health;
             user.inventoryWindow.fxHealthLabel.Text = user.actor.health.ToString();
             user.inventoryWindow.fxThirstPB.Value = user.actor.thirst;
