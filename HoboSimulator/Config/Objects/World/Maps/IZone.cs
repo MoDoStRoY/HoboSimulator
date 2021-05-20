@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HoboSimulator.Config.Objects.Misc.Items;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
@@ -12,5 +13,6 @@ namespace HoboSimulator.Config.Objects.World.Maps
         public String GetActionTPName();
         public int GetID();
         public Image GetImage();
+        public List<IItem> GetStoreAssortment();
     }
 }

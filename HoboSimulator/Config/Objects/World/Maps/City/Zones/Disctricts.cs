@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HoboSimulator.Config.Objects.Misc.Items;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
@@ -13,29 +14,11 @@ namespace HoboSimulator.Config.Objects.World.Maps.City.Zones
         int ID = 0;
         Image image = Properties.Resources.TestLocationPic;
 
-        public String GetName()
-        {
-            return name;
-        }
-
-        public String GetDescription()
-        {
-            return description;
-        }
-
-        public String GetActionTPName()
-        {
-            return actionTPName;
-        }
-
-        public int GetID()
-        {
-            return ID;
-        }
-
-        public Image GetImage()
-        {
-            return image;
-        }
+        public String GetName() { return name; }
+        public String GetDescription() { return description; }
+        public String GetActionTPName() { return actionTPName; }
+        public int GetID() { return ID; }
+        public Image GetImage() { return image; }
+        public List<IItem> GetStoreAssortment() { return null; } // Не используется
     }
 }

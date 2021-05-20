@@ -13,7 +13,8 @@ namespace HoboSimulator.Config.Objects.Misc.Items.Junk
         int ID = 3;
         List<Parameter> parameters = new List<Parameter>
         {
-            new Parameter("Вес", 0.03)
+            new Parameter("Вес", 0.03),
+            new Parameter("Цена", 5)
         };
 
         public String GetType()

@@ -97,6 +97,22 @@ namespace HoboSimulator.Windows.Game.Action
             this.fxHuntBirdTT = new System.Windows.Forms.ToolTip(this.components);
             this.fxHuntDogTT = new System.Windows.Forms.ToolTip(this.components);
             this.fxHuntCatTT = new System.Windows.Forms.ToolTip(this.components);
+            this.TradeTP = new System.Windows.Forms.TabPage();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.NameOfPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CostOfPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WeightOfPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fxMainTP.SuspendLayout();
             this.ActionTP.SuspendLayout();
             this.fxActionsTP.SuspendLayout();
@@ -106,6 +122,9 @@ namespace HoboSimulator.Windows.Game.Action
             this.DialogTP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fxDialogDGW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fxNPCAvatarPB)).BeginInit();
+            this.TradeTP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // fxThirstLabel
@@ -248,6 +267,7 @@ namespace HoboSimulator.Windows.Game.Action
             this.fxMainTP.Controls.Add(this.ActionTP);
             this.fxMainTP.Controls.Add(this.DialogTP);
             this.fxMainTP.Controls.Add(this.FightTP);
+            this.fxMainTP.Controls.Add(this.TradeTP);
             this.fxMainTP.ItemSize = new System.Drawing.Size(20, 10);
             this.fxMainTP.Location = new System.Drawing.Point(375, 13);
             this.fxMainTP.Name = "fxMainTP";
@@ -572,10 +592,10 @@ namespace HoboSimulator.Windows.Game.Action
             this.DialogTP.Controls.Add(this.label12);
             this.DialogTP.Controls.Add(this.label11);
             this.DialogTP.Controls.Add(this.fxNPCAvatarPB);
-            this.DialogTP.Location = new System.Drawing.Point(4, 5);
+            this.DialogTP.Location = new System.Drawing.Point(4, 14);
             this.DialogTP.Name = "DialogTP";
             this.DialogTP.Padding = new System.Windows.Forms.Padding(3);
-            this.DialogTP.Size = new System.Drawing.Size(905, 743);
+            this.DialogTP.Size = new System.Drawing.Size(905, 734);
             this.DialogTP.TabIndex = 1;
             this.DialogTP.Text = "DialogTP";
             this.DialogTP.UseVisualStyleBackColor = true;
@@ -690,10 +710,10 @@ namespace HoboSimulator.Windows.Game.Action
             // 
             // FightTP
             // 
-            this.FightTP.Location = new System.Drawing.Point(4, 5);
+            this.FightTP.Location = new System.Drawing.Point(4, 14);
             this.FightTP.Name = "FightTP";
             this.FightTP.Padding = new System.Windows.Forms.Padding(3);
-            this.FightTP.Size = new System.Drawing.Size(905, 743);
+            this.FightTP.Size = new System.Drawing.Size(905, 734);
             this.FightTP.TabIndex = 2;
             this.FightTP.Text = "FightTP";
             this.FightTP.UseVisualStyleBackColor = true;
@@ -746,6 +766,170 @@ namespace HoboSimulator.Windows.Game.Action
             // 
             this.fxHuntCatTT.ToolTipTitle = "Охота на котов";
             // 
+            // TradeTP
+            // 
+            this.TradeTP.Controls.Add(this.dataGridView1);
+            this.TradeTP.Controls.Add(this.label24);
+            this.TradeTP.Controls.Add(this.label23);
+            this.TradeTP.Controls.Add(this.dataGridView2);
+            this.TradeTP.Controls.Add(this.button11);
+            this.TradeTP.Controls.Add(this.label22);
+            this.TradeTP.Controls.Add(this.label21);
+            this.TradeTP.Controls.Add(this.label20);
+            this.TradeTP.Controls.Add(this.label19);
+            this.TradeTP.Location = new System.Drawing.Point(4, 14);
+            this.TradeTP.Name = "TradeTP";
+            this.TradeTP.Padding = new System.Windows.Forms.Padding(3);
+            this.TradeTP.Size = new System.Drawing.Size(905, 734);
+            this.TradeTP.TabIndex = 3;
+            this.TradeTP.Text = "TradeTP";
+            this.TradeTP.UseVisualStyleBackColor = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(4, 4);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(136, 20);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Общая стоимость:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(146, 4);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(157, 20);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "%Общая стоимость%";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(4, 28);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(89, 20);
+            this.label21.TabIndex = 3;
+            this.label21.Text = "Общий вес:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(146, 28);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(110, 20);
+            this.label22.TabIndex = 4;
+            this.label22.Text = "%Общий вес%";
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(4, 51);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(227, 29);
+            this.button11.TabIndex = 5;
+            this.button11.Text = "На кассу";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NameOfPosition,
+            this.CostOfPosition,
+            this.WeightOfPosition});
+            this.dataGridView2.Location = new System.Drawing.Point(4, 124);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 29;
+            this.dataGridView2.Size = new System.Drawing.Size(441, 607);
+            this.dataGridView2.TabIndex = 6;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(4, 93);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(103, 20);
+            this.label23.TabIndex = 7;
+            this.label23.Text = "Ассортимент:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(461, 93);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(165, 20);
+            this.label24.TabIndex = 8;
+            this.label24.Text = "Выбрано для покупки:";
+            // 
+            // NameOfPosition
+            // 
+            this.NameOfPosition.HeaderText = "Название";
+            this.NameOfPosition.MinimumWidth = 6;
+            this.NameOfPosition.Name = "NameOfPosition";
+            this.NameOfPosition.ReadOnly = true;
+            // 
+            // CostOfPosition
+            // 
+            this.CostOfPosition.HeaderText = "Цена";
+            this.CostOfPosition.MinimumWidth = 6;
+            this.CostOfPosition.Name = "CostOfPosition";
+            this.CostOfPosition.ReadOnly = true;
+            // 
+            // WeightOfPosition
+            // 
+            this.WeightOfPosition.HeaderText = "Вес";
+            this.WeightOfPosition.MinimumWidth = 6;
+            this.WeightOfPosition.Name = "WeightOfPosition";
+            this.WeightOfPosition.ReadOnly = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.dataGridView1.Location = new System.Drawing.Point(461, 124);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.Size = new System.Drawing.Size(441, 607);
+            this.dataGridView1.TabIndex = 9;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Название";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Цена";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Вес";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
             // ActionWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -788,6 +972,10 @@ namespace HoboSimulator.Windows.Game.Action
             this.DialogTP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fxDialogDGW)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fxNPCAvatarPB)).EndInit();
+            this.TradeTP.ResumeLayout(false);
+            this.TradeTP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -862,5 +1050,21 @@ namespace HoboSimulator.Windows.Game.Action
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox fxNPCAvatarPB;
+        private System.Windows.Forms.TabPage TradeTP;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameOfPosition;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CostOfPosition;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WeightOfPosition;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
     }
 }

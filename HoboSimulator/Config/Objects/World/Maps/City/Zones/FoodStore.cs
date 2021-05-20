@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HoboSimulator.Config.Objects.Misc.Items;
+using HoboSimulator.Config.Objects.Misc.Items.Food;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
@@ -13,29 +15,26 @@ namespace HoboSimulator.Config.Objects.World.Maps.City.Zones
         int ID = 1;
         Image image = Properties.Resources.City_FoodStore;
 
-        public String GetName()
+        List<IItem> storeAssortment = new List<IItem>
         {
-            return name;
-        }
+            new Dove(),
+            new Dove(),
+            new Dove(),
+            new Dove(),
+            new OpenedWaterBottleSmall(),
+            new OpenedWaterBottleSmall(),
+            new OpenedWaterBottleSmall(),
+            new Scraps(),
+            new Scraps(),
+            new Scraps()
+        };
+        List<IItem> chosenGoods = new List<IItem>();
 
-        public String GetDescription()
-        {
-            return description;
-        }
-
-        public String GetActionTPName()
-        {
-            return actionTPName;
-        }
-
-        public int GetID()
-        {
-            return ID;
-        }
-
-        public Image GetImage()
-        {
-            return image;
-        }
+        public String GetName(){return name;}
+        public String GetDescription(){return description;}
+        public String GetActionTPName(){return actionTPName;}
+        public int GetID(){return ID;}
+        public Image GetImage(){return image;}
+        public List<IItem> GetStoreAssortment(){return storeAssortment;}
     }
 }

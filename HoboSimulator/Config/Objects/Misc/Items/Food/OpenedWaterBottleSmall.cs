@@ -18,7 +18,8 @@ namespace HoboSimulator.Config.Objects.Misc.Items.Food
             new Parameter("Сытность", 2),
             new Parameter("Восстановление стамины", 10),
             new Parameter("Восстановление отдыха", 0),
-            new Parameter("Вес", 0.2)
+            new Parameter("Вес", 0.2),
+            new Parameter("Цена", 20)
         };
 
         public String GetType()

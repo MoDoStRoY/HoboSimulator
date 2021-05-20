@@ -14,7 +14,7 @@ namespace HoboSimulator.Config.Objects.System
     {
         //**ОБЩИЕ ПЕРЕМЕННЫЕ**//
 
-        public String version = "0.0.8";
+        public String version = "0.0.9 SnapShot #2";
         public MainMenu mainMenu = new MainMenu();
         public SettingsWindow settingsWindow = new SettingsWindow();
         public CreateActorWindow createActorWindow = new CreateActorWindow();
