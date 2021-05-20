@@ -14,13 +14,14 @@ namespace HoboSimulator.Config.Objects.System
     {
         //**ОБЩИЕ ПЕРЕМЕННЫЕ**//
 
-        public String version = "0.0.4";
+        public String version = "0.0.8";
         public MainMenu mainMenu = new MainMenu();
         public SettingsWindow settingsWindow = new SettingsWindow();
         public CreateActorWindow createActorWindow = new CreateActorWindow();
         public MainGameWindow mainGameWindow = new MainGameWindow();
         public ActionWindow actionWindow = new ActionWindow();
         public InventoryWindow inventoryWindow = new InventoryWindow();
+        public MoveWindow moveWindow = new MoveWindow();
 
         //**Игровые переменные**//
 

@@ -33,6 +33,8 @@ namespace HoboSimulator.Windows.Game.Action
 
         //**КНОПКИ ДЕЙСТВИЙ В ЛОКАЦИИ**//
 
+        //**СПАЛЬНЫЙ РАЙОН**//
+
         private void HuntBirdBtn(object sender, EventArgs e)
         {
             ActionWindowController.HuntBirdBtn();
@@ -41,6 +43,13 @@ namespace HoboSimulator.Windows.Game.Action
         private void LootTrashCanBigBtn(object sender, EventArgs e)
         {
             ActionWindowController.LootTrashCanBigBtn();
+        }
+
+        //**ПЯТЁРОЧКА**//
+
+        private void TestBtn(object sender, EventArgs e)
+        {
+
         }
     }
 }

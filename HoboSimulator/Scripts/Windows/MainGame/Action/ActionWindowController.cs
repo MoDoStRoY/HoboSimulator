@@ -15,6 +15,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
             user.actionWindow.fxNameOfZoneLabel.Text = user.actor.zone.GetName();
             user.actionWindow.fxDescriptionOfZoneText.Text = user.actor.zone.GetDescription();
             user.actionWindow.fxActionsTP.SelectedTab = user.actionWindow.fxActionsTP.TabPages[user.actor.zone.GetActionTPName()];
+            user.actionWindow.pictureBox1.Image = user.actor.zone.GetImage();
 
             user.actionWindow.fxHuntBirdTT.SetToolTip(user.actionWindow.fxHuntBirdBtn, 
                 "Рекомендуемые навыки:\n" +
@@ -59,7 +60,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
 
         public static void HuntBirdBtn()
         {
-            Activities.HuntAction("Ловкость", 0, 0, 3, 2);
+            HuntActivity.HuntAction("Ловкость", 0, 0, 3, 2);
 
             //Нормализация состояний персонажа при выходе за допустимые рамки (далее нужно будет вынести в отдельный скрипт)
             if (user.actor.hunger < 0)
@@ -85,7 +86,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
 
         public static void LootTrashCanBigBtn()
         {
-            Activities.LootAction();
+            LootActivity.LootAction();
 
             //Нормализация состояний персонажа при выходе за допустимые рамки (далее нужно будет вынести в отдельный скрипт)
             if (user.actor.hunger < 0)

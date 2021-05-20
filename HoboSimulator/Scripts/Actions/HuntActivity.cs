@@ -1,12 +1,11 @@
 ﻿using HoboSimulator.Config.Objects.System;
-using HoboSimulator.Scripts.Inventory;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace HoboSimulator.Scripts.Actions
 {
-    class Activities
+    class HuntActivity
     {
         static User user = Program.user;
 
@@ -20,7 +19,7 @@ namespace HoboSimulator.Scripts.Actions
 
             if (priorety.Equals("Ловкость"))
             {
-                if (randomiser.Next(10) > 5 - agilityResult - (staminaResult/2))
+                if (randomiser.Next(10) > 5 - agilityResult - (staminaResult / 2))
                 {
                     TakeItem.Take(ID);
 
@@ -28,15 +27,15 @@ namespace HoboSimulator.Scripts.Actions
                         "Охота успешна! Добыто: " +
                         user.actor.inventory[user.actor.inventory.Count - 1].GetName() + "\n\n";
                 }
-                else 
+                else
                 {
                     user.actionWindow.fxResultOfAction.Text += "Дата и время: " + user.world.dateTime.ToString() + "\n" +
                         "Охота не удалась - ничего не добыто.\n\n";
                 }
-                user.actor.hunger -= 10 - (agilityResult + staminaResult)/2;
-                user.actor.thirst -= 20 - (agilityResult + staminaResult)/2;
+                user.actor.hunger -= 10 - (agilityResult + staminaResult) / 2;
+                user.actor.thirst -= 20 - (agilityResult + staminaResult) / 2;
                 user.actor.sleep -= 3;
-                user.actor.stamina -= 20 - (agilityResult + staminaResult)/2;
+                user.actor.stamina -= 20 - (agilityResult + staminaResult) / 2;
             }
             else if (priorety.Equals("Сила"))
             {
@@ -49,31 +48,6 @@ namespace HoboSimulator.Scripts.Actions
 
                 }
             }
-            user.world.dateTime = user.world.dateTime.AddMinutes(30);
-        }
-
-        public static void LootAction()
-        {
-            Random randomiser = new Random();
-
-            if (randomiser.Next(10) > 5 - user.actor.skills[5].value/4)
-            {
-                TakeItem.Take(randomiser.Next(1, 4));
-
-                user.actionWindow.fxResultOfAction.Text += "Дата и время: " + user.world.dateTime.ToString() + "\n" +
-                    "Поиски увенчались успехом! Найдено: " +
-                    user.actor.inventory[user.actor.inventory.Count - 1].GetName() + "\n\n";
-            }
-            else
-            {
-                user.actionWindow.fxResultOfAction.Text += "Дата и время: " + user.world.dateTime.ToString() + "\n" +
-                    "Тут ничего не удалось найти ничего полезного.\n\n";
-            }
-            user.actor.hunger -= 6;
-            user.actor.thirst -= 5;
-            user.actor.sleep -= 3;
-            user.actor.stamina -= 5;
-
             user.world.dateTime = user.world.dateTime.AddMinutes(30);
         }
     }

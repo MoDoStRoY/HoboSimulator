@@ -7,15 +7,22 @@ namespace HoboSimulator.Config.Objects.World.Maps.City
 {
     class City : ILocation
     {
-        public String name = "Город";
-        public List<IZone> listOfZones = new List<IZone>
+        String name = "Город";
+        int ID = 0;
+        List<IZone> listOfZones = new List<IZone>
         {
-            new Disctricts()
+            new Disctricts(),
+            new FoodStore()
         };
 
         public String GetName()
         {
             return name;
+        }
+
+        public int GetID()
+        {
+            return ID;
         }
 
         public List<IZone> GetListOfZones()

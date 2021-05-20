@@ -7,6 +7,7 @@ namespace HoboSimulator.Config.Objects.World.Maps
     interface ILocation
     {
         public String GetName();
+        public int GetID();
         public List<IZone> GetListOfZones();
     }
 }

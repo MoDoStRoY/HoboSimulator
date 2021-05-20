@@ -54,7 +54,8 @@ namespace HoboSimulator.Scripts.Windows.MainGame
 
         public static void MovingBtn()
         {
-
+            user.mainGameWindow.Hide();
+            user.moveWindow.ShowWindow();
         }
 
         public static void SkillUpCell(DataGridViewCellEventArgs e)

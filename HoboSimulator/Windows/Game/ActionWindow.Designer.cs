@@ -60,7 +60,7 @@ namespace HoboSimulator.Windows.Game.Action
             this.fxHuntCatBtn = new System.Windows.Forms.Button();
             this.fxHuntBirdBtn = new System.Windows.Forms.Button();
             this.fxHuntDogBtn = new System.Windows.Forms.Button();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.City_FoodStoreTP = new System.Windows.Forms.TabPage();
             this.fxDescriptionOfZoneText = new System.Windows.Forms.RichTextBox();
             this.fxNameOfZoneLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -73,10 +73,13 @@ namespace HoboSimulator.Windows.Game.Action
             this.fxHuntBirdTT = new System.Windows.Forms.ToolTip(this.components);
             this.fxHuntDogTT = new System.Windows.Forms.ToolTip(this.components);
             this.fxHuntCatTT = new System.Windows.Forms.ToolTip(this.components);
+            this.label10 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.fxMainTP.SuspendLayout();
             this.ActionTP.SuspendLayout();
             this.fxActionsTP.SuspendLayout();
             this.City_DistrictsTP.SuspendLayout();
+            this.City_FoodStoreTP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -243,7 +246,7 @@ namespace HoboSimulator.Windows.Game.Action
             // fxActionsTP
             // 
             this.fxActionsTP.Controls.Add(this.City_DistrictsTP);
-            this.fxActionsTP.Controls.Add(this.tabPage4);
+            this.fxActionsTP.Controls.Add(this.City_FoodStoreTP);
             this.fxActionsTP.Location = new System.Drawing.Point(4, 402);
             this.fxActionsTP.Name = "fxActionsTP";
             this.fxActionsTP.SelectedIndex = 0;
@@ -362,15 +365,17 @@ namespace HoboSimulator.Windows.Game.Action
             this.fxHuntDogBtn.Text = "На собаку";
             this.fxHuntDogBtn.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // City_FoodStoreTP
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(890, 281);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.City_FoodStoreTP.Controls.Add(this.button2);
+            this.City_FoodStoreTP.Controls.Add(this.label10);
+            this.City_FoodStoreTP.Location = new System.Drawing.Point(4, 29);
+            this.City_FoodStoreTP.Name = "City_FoodStoreTP";
+            this.City_FoodStoreTP.Padding = new System.Windows.Forms.Padding(3);
+            this.City_FoodStoreTP.Size = new System.Drawing.Size(890, 281);
+            this.City_FoodStoreTP.TabIndex = 1;
+            this.City_FoodStoreTP.Text = "City_FoodStoreTP";
+            this.City_FoodStoreTP.UseVisualStyleBackColor = true;
             // 
             // fxDescriptionOfZoneText
             // 
@@ -393,7 +398,6 @@ namespace HoboSimulator.Windows.Game.Action
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::HoboSimulator.Properties.Resources.TestLocationPic;
             this.pictureBox1.Location = new System.Drawing.Point(4, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(898, 246);
@@ -468,6 +472,25 @@ namespace HoboSimulator.Windows.Game.Action
             // 
             this.fxHuntCatTT.ToolTipTitle = "Охота на котов";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(4, 4);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(167, 20);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Тестовый функционал:";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(4, 28);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(227, 29);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Спиздить голубя";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.TestBtn);
+            // 
             // ActionWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -503,6 +526,8 @@ namespace HoboSimulator.Windows.Game.Action
             this.fxActionsTP.ResumeLayout(false);
             this.City_DistrictsTP.ResumeLayout(false);
             this.City_DistrictsTP.PerformLayout();
+            this.City_FoodStoreTP.ResumeLayout(false);
+            this.City_FoodStoreTP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -529,7 +554,7 @@ namespace HoboSimulator.Windows.Game.Action
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.TabControl fxMainTP;
         public System.Windows.Forms.TabPage ActionTP;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.TabPage DialogTP;
         public System.Windows.Forms.Button fxHuntCatBtn;
         public System.Windows.Forms.Button fxHuntDogBtn;
@@ -542,7 +567,7 @@ namespace HoboSimulator.Windows.Game.Action
         public System.Windows.Forms.Label fxCurrentTimeLabel;
         public System.Windows.Forms.TabControl fxActionsTP;
         public System.Windows.Forms.TabPage City_DistrictsTP;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage City_FoodStoreTP;
         public System.Windows.Forms.TabPage FightTP;
         private System.Windows.Forms.Button fxLookAroundBtn;
         private System.Windows.Forms.Label label9;
@@ -554,5 +579,7 @@ namespace HoboSimulator.Windows.Game.Action
         public System.Windows.Forms.ToolTip fxHuntBirdTT;
         public System.Windows.Forms.ToolTip fxHuntDogTT;
         public System.Windows.Forms.ToolTip fxHuntCatTT;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label10;
     }
 }
