@@ -61,10 +61,34 @@ namespace HoboSimulator.Windows.Game.Action
             this.fxHuntBirdBtn = new System.Windows.Forms.Button();
             this.fxHuntDogBtn = new System.Windows.Forms.Button();
             this.City_FoodStoreTP = new System.Windows.Forms.TabPage();
+            this.button10 = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.fxDescriptionOfZoneText = new System.Windows.Forms.RichTextBox();
             this.fxNameOfZoneLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.DialogTP = new System.Windows.Forms.TabPage();
+            this.fxDialogDGW = new System.Windows.Forms.DataGridView();
+            this.DialogueVariant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fxNPCRelationLabel = new System.Windows.Forms.Label();
+            this.fxNPCGroupLabel = new System.Windows.Forms.Label();
+            this.fxNPCAgeLabel = new System.Windows.Forms.Label();
+            this.fxNPCNameLabel = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.fxNPCAvatarPB = new System.Windows.Forms.PictureBox();
             this.FightTP = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.fxResultOfAction = new System.Windows.Forms.RichTextBox();
@@ -73,14 +97,15 @@ namespace HoboSimulator.Windows.Game.Action
             this.fxHuntBirdTT = new System.Windows.Forms.ToolTip(this.components);
             this.fxHuntDogTT = new System.Windows.Forms.ToolTip(this.components);
             this.fxHuntCatTT = new System.Windows.Forms.ToolTip(this.components);
-            this.label10 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.fxMainTP.SuspendLayout();
             this.ActionTP.SuspendLayout();
             this.fxActionsTP.SuspendLayout();
             this.City_DistrictsTP.SuspendLayout();
             this.City_FoodStoreTP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.DialogTP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fxDialogDGW)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fxNPCAvatarPB)).BeginInit();
             this.SuspendLayout();
             // 
             // fxThirstLabel
@@ -223,6 +248,7 @@ namespace HoboSimulator.Windows.Game.Action
             this.fxMainTP.Controls.Add(this.ActionTP);
             this.fxMainTP.Controls.Add(this.DialogTP);
             this.fxMainTP.Controls.Add(this.FightTP);
+            this.fxMainTP.ItemSize = new System.Drawing.Size(20, 10);
             this.fxMainTP.Location = new System.Drawing.Point(375, 13);
             this.fxMainTP.Name = "fxMainTP";
             this.fxMainTP.SelectedIndex = 0;
@@ -235,10 +261,10 @@ namespace HoboSimulator.Windows.Game.Action
             this.ActionTP.Controls.Add(this.fxDescriptionOfZoneText);
             this.ActionTP.Controls.Add(this.fxNameOfZoneLabel);
             this.ActionTP.Controls.Add(this.pictureBox1);
-            this.ActionTP.Location = new System.Drawing.Point(4, 29);
+            this.ActionTP.Location = new System.Drawing.Point(4, 14);
             this.ActionTP.Name = "ActionTP";
             this.ActionTP.Padding = new System.Windows.Forms.Padding(3);
-            this.ActionTP.Size = new System.Drawing.Size(905, 719);
+            this.ActionTP.Size = new System.Drawing.Size(905, 734);
             this.ActionTP.TabIndex = 0;
             this.ActionTP.Text = "ActionTP";
             this.ActionTP.UseVisualStyleBackColor = true;
@@ -247,6 +273,7 @@ namespace HoboSimulator.Windows.Game.Action
             // 
             this.fxActionsTP.Controls.Add(this.City_DistrictsTP);
             this.fxActionsTP.Controls.Add(this.City_FoodStoreTP);
+            this.fxActionsTP.ItemSize = new System.Drawing.Size(20, 10);
             this.fxActionsTP.Location = new System.Drawing.Point(4, 402);
             this.fxActionsTP.Name = "fxActionsTP";
             this.fxActionsTP.SelectedIndex = 0;
@@ -265,10 +292,10 @@ namespace HoboSimulator.Windows.Game.Action
             this.City_DistrictsTP.Controls.Add(this.fxHuntCatBtn);
             this.City_DistrictsTP.Controls.Add(this.fxHuntBirdBtn);
             this.City_DistrictsTP.Controls.Add(this.fxHuntDogBtn);
-            this.City_DistrictsTP.Location = new System.Drawing.Point(4, 29);
+            this.City_DistrictsTP.Location = new System.Drawing.Point(4, 14);
             this.City_DistrictsTP.Name = "City_DistrictsTP";
             this.City_DistrictsTP.Padding = new System.Windows.Forms.Padding(3);
-            this.City_DistrictsTP.Size = new System.Drawing.Size(890, 281);
+            this.City_DistrictsTP.Size = new System.Drawing.Size(890, 296);
             this.City_DistrictsTP.TabIndex = 0;
             this.City_DistrictsTP.Text = "City_DistrictsTP";
             this.City_DistrictsTP.UseVisualStyleBackColor = true;
@@ -367,15 +394,144 @@ namespace HoboSimulator.Windows.Game.Action
             // 
             // City_FoodStoreTP
             // 
+            this.City_FoodStoreTP.Controls.Add(this.button10);
+            this.City_FoodStoreTP.Controls.Add(this.label18);
+            this.City_FoodStoreTP.Controls.Add(this.button9);
+            this.City_FoodStoreTP.Controls.Add(this.button8);
+            this.City_FoodStoreTP.Controls.Add(this.button7);
+            this.City_FoodStoreTP.Controls.Add(this.button6);
+            this.City_FoodStoreTP.Controls.Add(this.label17);
+            this.City_FoodStoreTP.Controls.Add(this.button5);
+            this.City_FoodStoreTP.Controls.Add(this.label16);
+            this.City_FoodStoreTP.Controls.Add(this.button4);
+            this.City_FoodStoreTP.Controls.Add(this.button3);
             this.City_FoodStoreTP.Controls.Add(this.button2);
             this.City_FoodStoreTP.Controls.Add(this.label10);
-            this.City_FoodStoreTP.Location = new System.Drawing.Point(4, 29);
+            this.City_FoodStoreTP.Location = new System.Drawing.Point(4, 14);
             this.City_FoodStoreTP.Name = "City_FoodStoreTP";
             this.City_FoodStoreTP.Padding = new System.Windows.Forms.Padding(3);
-            this.City_FoodStoreTP.Size = new System.Drawing.Size(890, 281);
+            this.City_FoodStoreTP.Size = new System.Drawing.Size(890, 296);
             this.City_FoodStoreTP.TabIndex = 1;
             this.City_FoodStoreTP.Text = "City_FoodStoreTP";
             this.City_FoodStoreTP.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(4, 213);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(227, 29);
+            this.button10.TabIndex = 12;
+            this.button10.Text = "Покупки";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(4, 189);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(77, 20);
+            this.label18.TabIndex = 11;
+            this.label18.Text = "Торговля:";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(237, 133);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(227, 29);
+            this.button9.TabIndex = 10;
+            this.button9.Text = "Помочиться посреди зала";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(237, 98);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(227, 29);
+            this.button8.TabIndex = 9;
+            this.button8.Text = "Наложить кучу посреди зала";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(237, 63);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(227, 29);
+            this.button7.TabIndex = 8;
+            this.button7.Text = "Проповедь о конце света";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(237, 28);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(227, 29);
+            this.button6.TabIndex = 7;
+            this.button6.Text = "Просить милостыню";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(237, 4);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(98, 20);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "Социальное:";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(4, 153);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(227, 29);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "Товары в зале";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(4, 95);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(86, 20);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Воровство:";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(4, 118);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(227, 29);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Ячейки для хранения вещей";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(4, 63);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(227, 29);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Ячейки для хранения вещей";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(4, 28);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(227, 29);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Мусорные урны";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.TestBtn);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(4, 4);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(57, 20);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Лутать:";
             // 
             // fxDescriptionOfZoneText
             // 
@@ -406,20 +562,138 @@ namespace HoboSimulator.Windows.Game.Action
             // 
             // DialogTP
             // 
-            this.DialogTP.Location = new System.Drawing.Point(4, 29);
+            this.DialogTP.Controls.Add(this.fxDialogDGW);
+            this.DialogTP.Controls.Add(this.fxNPCRelationLabel);
+            this.DialogTP.Controls.Add(this.fxNPCGroupLabel);
+            this.DialogTP.Controls.Add(this.fxNPCAgeLabel);
+            this.DialogTP.Controls.Add(this.fxNPCNameLabel);
+            this.DialogTP.Controls.Add(this.label14);
+            this.DialogTP.Controls.Add(this.label13);
+            this.DialogTP.Controls.Add(this.label12);
+            this.DialogTP.Controls.Add(this.label11);
+            this.DialogTP.Controls.Add(this.fxNPCAvatarPB);
+            this.DialogTP.Location = new System.Drawing.Point(4, 5);
             this.DialogTP.Name = "DialogTP";
             this.DialogTP.Padding = new System.Windows.Forms.Padding(3);
-            this.DialogTP.Size = new System.Drawing.Size(905, 719);
+            this.DialogTP.Size = new System.Drawing.Size(905, 743);
             this.DialogTP.TabIndex = 1;
             this.DialogTP.Text = "DialogTP";
             this.DialogTP.UseVisualStyleBackColor = true;
             // 
+            // fxDialogDGW
+            // 
+            this.fxDialogDGW.AllowUserToAddRows = false;
+            this.fxDialogDGW.AllowUserToDeleteRows = false;
+            this.fxDialogDGW.AllowUserToResizeColumns = false;
+            this.fxDialogDGW.AllowUserToResizeRows = false;
+            this.fxDialogDGW.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.fxDialogDGW.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.fxDialogDGW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.fxDialogDGW.ColumnHeadersVisible = false;
+            this.fxDialogDGW.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DialogueVariant});
+            this.fxDialogDGW.Location = new System.Drawing.Point(4, 221);
+            this.fxDialogDGW.MultiSelect = false;
+            this.fxDialogDGW.Name = "fxDialogDGW";
+            this.fxDialogDGW.ReadOnly = true;
+            this.fxDialogDGW.RowHeadersWidth = 51;
+            this.fxDialogDGW.RowTemplate.Height = 29;
+            this.fxDialogDGW.Size = new System.Drawing.Size(898, 495);
+            this.fxDialogDGW.TabIndex = 9;
+            // 
+            // DialogueVariant
+            // 
+            this.DialogueVariant.HeaderText = "DialogueVariant";
+            this.DialogueVariant.MinimumWidth = 6;
+            this.DialogueVariant.Name = "DialogueVariant";
+            this.DialogueVariant.ReadOnly = true;
+            // 
+            // fxNPCRelationLabel
+            // 
+            this.fxNPCRelationLabel.AutoSize = true;
+            this.fxNPCRelationLabel.Location = new System.Drawing.Point(331, 72);
+            this.fxNPCRelationLabel.Name = "fxNPCRelationLabel";
+            this.fxNPCRelationLabel.Size = new System.Drawing.Size(114, 20);
+            this.fxNPCRelationLabel.TabIndex = 8;
+            this.fxNPCRelationLabel.Text = "%Отношение%";
+            // 
+            // fxNPCGroupLabel
+            // 
+            this.fxNPCGroupLabel.AutoSize = true;
+            this.fxNPCGroupLabel.Location = new System.Drawing.Point(331, 52);
+            this.fxNPCGroupLabel.Name = "fxNPCGroupLabel";
+            this.fxNPCGroupLabel.Size = new System.Drawing.Size(124, 20);
+            this.fxNPCGroupLabel.TabIndex = 7;
+            this.fxNPCGroupLabel.Text = "%Группировка%";
+            // 
+            // fxNPCAgeLabel
+            // 
+            this.fxNPCAgeLabel.AutoSize = true;
+            this.fxNPCAgeLabel.Location = new System.Drawing.Point(331, 28);
+            this.fxNPCAgeLabel.Name = "fxNPCAgeLabel";
+            this.fxNPCAgeLabel.Size = new System.Drawing.Size(88, 20);
+            this.fxNPCAgeLabel.TabIndex = 6;
+            this.fxNPCAgeLabel.Text = "%Возраст%";
+            // 
+            // fxNPCNameLabel
+            // 
+            this.fxNPCNameLabel.AutoSize = true;
+            this.fxNPCNameLabel.Location = new System.Drawing.Point(331, 4);
+            this.fxNPCNameLabel.Name = "fxNPCNameLabel";
+            this.fxNPCNameLabel.Size = new System.Drawing.Size(63, 20);
+            this.fxNPCNameLabel.TabIndex = 5;
+            this.fxNPCNameLabel.Text = "%Имя%";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(221, 72);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(93, 20);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Отношение:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(221, 52);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(103, 20);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Группировка:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(221, 28);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(67, 20);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Возраст:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(221, 4);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(42, 20);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Имя:";
+            // 
+            // fxNPCAvatarPB
+            // 
+            this.fxNPCAvatarPB.Location = new System.Drawing.Point(4, 4);
+            this.fxNPCAvatarPB.Name = "fxNPCAvatarPB";
+            this.fxNPCAvatarPB.Size = new System.Drawing.Size(210, 210);
+            this.fxNPCAvatarPB.TabIndex = 0;
+            this.fxNPCAvatarPB.TabStop = false;
+            // 
             // FightTP
             // 
-            this.FightTP.Location = new System.Drawing.Point(4, 29);
+            this.FightTP.Location = new System.Drawing.Point(4, 5);
             this.FightTP.Name = "FightTP";
             this.FightTP.Padding = new System.Windows.Forms.Padding(3);
-            this.FightTP.Size = new System.Drawing.Size(905, 719);
+            this.FightTP.Size = new System.Drawing.Size(905, 743);
             this.FightTP.TabIndex = 2;
             this.FightTP.Text = "FightTP";
             this.FightTP.UseVisualStyleBackColor = true;
@@ -472,25 +746,6 @@ namespace HoboSimulator.Windows.Game.Action
             // 
             this.fxHuntCatTT.ToolTipTitle = "Охота на котов";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(4, 4);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(167, 20);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Тестовый функционал:";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(4, 28);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(227, 29);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Спиздить голубя";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.TestBtn);
-            // 
             // ActionWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -529,6 +784,10 @@ namespace HoboSimulator.Windows.Game.Action
             this.City_FoodStoreTP.ResumeLayout(false);
             this.City_FoodStoreTP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.DialogTP.ResumeLayout(false);
+            this.DialogTP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fxDialogDGW)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fxNPCAvatarPB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -581,5 +840,27 @@ namespace HoboSimulator.Windows.Game.Action
         public System.Windows.Forms.ToolTip fxHuntCatTT;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView fxDialogDGW;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DialogueVariant;
+        private System.Windows.Forms.Label fxNPCRelationLabel;
+        private System.Windows.Forms.Label fxNPCGroupLabel;
+        private System.Windows.Forms.Label fxNPCAgeLabel;
+        private System.Windows.Forms.Label fxNPCNameLabel;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox fxNPCAvatarPB;
     }
 }
