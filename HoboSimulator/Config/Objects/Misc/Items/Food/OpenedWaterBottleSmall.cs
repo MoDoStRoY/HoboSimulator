@@ -57,6 +57,11 @@ namespace HoboSimulator.Config.Objects.Misc.Items.Food
             return parameters[5].value;
         }
 
+        public double GetCost()
+        {
+            return parameters[6].value;
+        }
+
         public List<Parameter> GetParamsList()
         {
             return parameters;

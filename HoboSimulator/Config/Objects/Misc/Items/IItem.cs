@@ -13,6 +13,7 @@ namespace HoboSimulator.Config.Objects.Misc.Items
         public String GetParamsString();
         public int GetID();
         public double GetWeight();
+        public double GetCost();
         public List<Parameter> GetParamsList();
     }
 }

@@ -14,7 +14,7 @@ namespace HoboSimulator.Config.Objects.System
     {
         //**ОБЩИЕ ПЕРЕМЕННЫЕ**//
 
-        public String version = "0.0.9 SnapShot #2";
+        public String version = "0.0.9";
         public MainMenu mainMenu = new MainMenu();
         public SettingsWindow settingsWindow = new SettingsWindow();
         public CreateActorWindow createActorWindow = new CreateActorWindow();
@@ -22,6 +22,7 @@ namespace HoboSimulator.Config.Objects.System
         public ActionWindow actionWindow = new ActionWindow();
         public InventoryWindow inventoryWindow = new InventoryWindow();
         public MoveWindow moveWindow = new MoveWindow();
+        public TradeWindow tradeWindow = new TradeWindow();
 
         //**Игровые переменные**//
 

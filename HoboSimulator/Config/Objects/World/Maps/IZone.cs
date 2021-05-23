@@ -14,5 +14,10 @@ namespace HoboSimulator.Config.Objects.World.Maps
         public int GetID();
         public Image GetImage();
         public List<IItem> GetStoreAssortment();
+        public List<IItem> GetChosenGoods();
+        public void SetStoreAssortment(List<IItem> storeAssortment);
+        public void SetChosenGoods(List<IItem> chosenGoods);
+        public void AddChosenGoods(int index);
+        public void DeleteChosenGoods(int index);
     }
 }

@@ -47,9 +47,9 @@ namespace HoboSimulator.Windows.Game.Action
 
         //**ПЯТЁРОЧКА**//
 
-        private void TestBtn(object sender, EventArgs e)
+        private void TradeBtn(object sender, EventArgs e)
         {
-
+            ActionWindowController.TradeBtn();
         }
     }
 }

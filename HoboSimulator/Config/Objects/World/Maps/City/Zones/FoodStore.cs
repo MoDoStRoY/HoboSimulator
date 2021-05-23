@@ -36,5 +36,10 @@ namespace HoboSimulator.Config.Objects.World.Maps.City.Zones
         public int GetID(){return ID;}
         public Image GetImage(){return image;}
         public List<IItem> GetStoreAssortment(){return storeAssortment;}
+        public List<IItem> GetChosenGoods() { return chosenGoods; }
+        public void SetStoreAssortment(List<IItem> storeAssortment) { this.storeAssortment = storeAssortment; }
+        public void SetChosenGoods(List<IItem> chosenGoods) { this.chosenGoods = chosenGoods; }
+        public void AddChosenGoods(int index) { chosenGoods.Add(storeAssortment[index]); storeAssortment.RemoveAt(index); }
+        public void DeleteChosenGoods(int index) { storeAssortment.Add(chosenGoods[index]);  chosenGoods.RemoveAt(index); }
     }
 }

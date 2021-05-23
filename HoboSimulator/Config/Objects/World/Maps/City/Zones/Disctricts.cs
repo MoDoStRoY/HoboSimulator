@@ -20,5 +20,10 @@ namespace HoboSimulator.Config.Objects.World.Maps.City.Zones
         public int GetID() { return ID; }
         public Image GetImage() { return image; }
         public List<IItem> GetStoreAssortment() { return null; } // Не используется
+        public List<IItem> GetChosenGoods() { return null; } // Не используется
+        public void SetStoreAssortment(List<IItem> storeAssortment) { } // Не используется
+        public void SetChosenGoods(List<IItem> chosenGoods) { } // Не используется
+        public void AddChosenGoods(int index) { } // Не используется
+        public void DeleteChosenGoods(int index) { } // Не используется
     }
 }

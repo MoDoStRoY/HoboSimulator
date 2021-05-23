@@ -17,15 +17,20 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
             user.actionWindow.fxActionsTP.SelectedTab = user.actionWindow.fxActionsTP.TabPages[user.actor.zone.GetActionTPName()];
             user.actionWindow.pictureBox1.Image = user.actor.zone.GetImage();
 
-            user.actionWindow.fxHuntBirdTT.SetToolTip(user.actionWindow.fxHuntBirdBtn, 
+            UpdateActionVariables();
+        }
+
+        public static void UpdateActionVariables()
+        {
+            user.actionWindow.fxHuntBirdTT.SetToolTip(user.actionWindow.fxHuntBirdBtn,
                 "Рекомендуемые навыки:\n" +
                 "Ловкость: 3\n" +
                 "Выносливость: 2");
-            user.actionWindow.fxHuntDogTT.SetToolTip(user.actionWindow.fxHuntDogBtn, 
+            user.actionWindow.fxHuntDogTT.SetToolTip(user.actionWindow.fxHuntDogBtn,
                 "Рекомендуемые навыки:\n" +
                 "Ловкость: 3\n" +
                 "Сила: 4");
-            user.actionWindow.fxHuntCatTT.SetToolTip(user.actionWindow.fxHuntCatBtn, 
+            user.actionWindow.fxHuntCatTT.SetToolTip(user.actionWindow.fxHuntCatBtn,
                 "Рекомендуемые навыки:\n" +
                 "Ловкость: 5\n" +
                 "Выносливость: 4\n" +
@@ -58,6 +63,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
 
         //**КНОПКИ ДЕЙСТВИЙ В ЛОКАЦИИ**//
 
+        //**СПАЛЬНЫЙ РАЙОН**//
         public static void HuntBirdBtn()
         {
             HuntActivity.HuntAction("Ловкость", 0, 0, 3, 2);
@@ -81,7 +87,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
             if (user.actor.sleep > 100)
                 user.actor.sleep = 100;
 
-            InitializeForm();
+            UpdateActionVariables();
         }
 
         public static void LootTrashCanBigBtn()
@@ -107,7 +113,15 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
             if (user.actor.sleep > 100)
                 user.actor.sleep = 100;
 
-            InitializeForm();
+            UpdateActionVariables();
+        }
+
+        //**ПЯТЁРОЧКА**//
+
+        public static void TradeBtn()
+        {
+            user.actionWindow.Hide();
+            user.tradeWindow.ShowWindow();
         }
     }
 }

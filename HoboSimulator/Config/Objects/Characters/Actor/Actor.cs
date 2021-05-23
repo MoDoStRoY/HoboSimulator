@@ -44,7 +44,7 @@ namespace HoboSimulator.Config.Objects.Actor
         public IItem chosenItem; // Выбранный предмет в инвентаре (системное)
         public int numberOfChosenItem; // Индекс выбранного предмета в инвентаре (системное)
         public double maxWeight; // Максимальный носимый вес
-        public int money; // Деньги
+        public double money; // Деньги
 
         //**МЕСТОПОЛОЖЕНИЕ**//
         public ILocation location; // Локация

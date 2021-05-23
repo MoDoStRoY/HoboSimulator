@@ -52,6 +52,11 @@ namespace HoboSimulator.Config.Objects.Misc.Items.Junk
             return parameters[0].value;
         }
 
+        public double GetCost()
+        {
+            return parameters[1].value;
+        }
+
         public List<Parameter> GetParamsList()
         {
             return parameters;
