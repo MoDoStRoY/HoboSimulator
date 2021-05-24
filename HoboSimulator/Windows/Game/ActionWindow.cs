@@ -51,5 +51,10 @@ namespace HoboSimulator.Windows.Game.Action
         {
             ActionWindowController.TradeBtn();
         }
+
+        private void TestDialogBtn(object sender, EventArgs e)
+        {
+            ActionWindowController.TestDialogBtn();
+        }
     }
 }

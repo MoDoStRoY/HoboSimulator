@@ -1,4 +1,5 @@
-﻿using HoboSimulator.Config.Objects.Misc.Items;
+﻿using HoboSimulator.Config.Objects.Characters.NPC;
+using HoboSimulator.Config.Objects.Misc.Items;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -19,5 +20,6 @@ namespace HoboSimulator.Config.Objects.World.Maps
         public void SetChosenGoods(List<IItem> chosenGoods);
         public void AddChosenGoods(int index);
         public void DeleteChosenGoods(int index);
+        public List<INPC> GetNPCList();
     }
 }

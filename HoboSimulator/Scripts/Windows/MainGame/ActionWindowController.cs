@@ -68,50 +68,12 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
         {
             HuntActivity.HuntAction("Ловкость", 0, 0, 3, 2);
 
-            //Нормализация состояний персонажа при выходе за допустимые рамки (далее нужно будет вынести в отдельный скрипт)
-            if (user.actor.hunger < 0)
-                user.actor.hunger = 0;
-            if (user.actor.thirst < 0)
-                user.actor.thirst = 0;
-            if (user.actor.stamina < 0)
-                user.actor.stamina = 0;
-            if (user.actor.sleep < 0)
-                user.actor.sleep = 0;
-
-            if (user.actor.hunger > 100)
-                user.actor.hunger = 100;
-            if (user.actor.thirst > 100)
-                user.actor.thirst = 100;
-            if (user.actor.stamina > 100)
-                user.actor.stamina = 100;
-            if (user.actor.sleep > 100)
-                user.actor.sleep = 100;
-
             UpdateActionVariables();
         }
 
         public static void LootTrashCanBigBtn()
         {
             LootActivity.LootAction();
-
-            //Нормализация состояний персонажа при выходе за допустимые рамки (далее нужно будет вынести в отдельный скрипт)
-            if (user.actor.hunger < 0)
-                user.actor.hunger = 0;
-            if (user.actor.thirst < 0)
-                user.actor.thirst = 0;
-            if (user.actor.stamina < 0)
-                user.actor.stamina = 0;
-            if (user.actor.sleep < 0)
-                user.actor.sleep = 0;
-
-            if (user.actor.hunger > 100)
-                user.actor.hunger = 100;
-            if (user.actor.thirst > 100)
-                user.actor.thirst = 100;
-            if (user.actor.stamina > 100)
-                user.actor.stamina = 100;
-            if (user.actor.sleep > 100)
-                user.actor.sleep = 100;
 
             UpdateActionVariables();
         }
@@ -122,6 +84,12 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
         {
             user.actionWindow.Hide();
             user.tradeWindow.ShowWindow();
+        }
+
+        public static void TestDialogBtn()
+        {
+            user.actionWindow.Hide();
+            user.dialogWindow.ShowWindow(user.actor.zone.GetNPCList()[0]);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using HoboSimulator.Config.Objects.System;
+using HoboSimulator.Scripts.World;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -48,7 +49,7 @@ namespace HoboSimulator.Scripts.Actions
 
                 }
             }
-            user.world.dateTime = user.world.dateTime.AddMinutes(30);
+            TimeFlow.AddMinutes(30);
         }
     }
 }

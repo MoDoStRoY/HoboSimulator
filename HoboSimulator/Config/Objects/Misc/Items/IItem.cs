@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HoboSimulator.Config.Objects.Misc.Items
 {
-    interface IItem
+    public interface IItem
     {
         public String GetType();
         public String GetName();

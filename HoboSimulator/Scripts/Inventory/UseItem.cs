@@ -1,6 +1,7 @@
 ﻿using HoboSimulator.Config.Objects.Actor;
 using HoboSimulator.Config.Objects.Misc;
 using HoboSimulator.Config.Objects.System;
+using HoboSimulator.Scripts.World;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,24 +22,7 @@ namespace HoboSimulator.Scripts.Inventory
 
             user.actor.inventory.RemoveAt(user.actor.numberOfChosenItem);
 
-            //Нормализация состояний персонажа при выходе за допустимые рамки (далее нужно будет вынести в отдельный скрипт)
-            if (user.actor.hunger < 0)
-                user.actor.hunger = 0;
-            if (user.actor.thirst < 0)
-                user.actor.thirst = 0;
-            if (user.actor.stamina < 0)
-                user.actor.stamina = 0;
-            if (user.actor.sleep < 0)
-                user.actor.sleep = 0;
-
-            if (user.actor.hunger > 100)
-                user.actor.hunger = 100;
-            if (user.actor.thirst > 100)
-                user.actor.thirst = 100;
-            if (user.actor.stamina > 100)
-                user.actor.stamina = 100;
-            if (user.actor.sleep > 100)
-                user.actor.sleep = 100;
+            TimeFlow.AddNull();
         }
     }
 }

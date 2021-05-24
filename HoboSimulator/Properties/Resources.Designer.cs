@@ -63,6 +63,16 @@ namespace HoboSimulator.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap City_Districts {
+            get {
+                object obj = ResourceManager.GetObject("City_Districts", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap City_FoodStore {
             get {
                 object obj = ResourceManager.GetObject("City_FoodStore", resourceCulture);
@@ -73,9 +83,9 @@ namespace HoboSimulator.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap HoboIcon1 {
+        public static System.Drawing.Bitmap Galya_Icon {
             get {
-                object obj = ResourceManager.GetObject("HoboIcon1", resourceCulture);
+                object obj = ResourceManager.GetObject("Galya_Icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +93,9 @@ namespace HoboSimulator.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap TestLocationPic {
+        public static System.Drawing.Bitmap HoboIcon1 {
             get {
-                object obj = ResourceManager.GetObject("TestLocationPic", resourceCulture);
+                object obj = ResourceManager.GetObject("HoboIcon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

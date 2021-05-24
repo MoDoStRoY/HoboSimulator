@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HoboSimulator.Config.Objects.Actor
 {
-    class Parameter
+    public class Parameter
     {
         public String name;
         public double value;

@@ -5,13 +5,13 @@ using System.Text;
 
 namespace HoboSimulator.Config.Objects.Misc.Items.Food
 {
-    class Dove: IItem
+    public class Dove : IItem
     {
         String name = "Голубь";
         String description = "Тушка мёртвого голубя, пока свежая.\nСырая, не выпотрошенная и не ощипанная - лучше приготовить перед употреблением.";
         String type = "Food";
         int ID = 0;
-        List<Parameter> parameters = new List<Parameter>
+        public List<Parameter> parameters = new List<Parameter>
         {
             new Parameter("Восстановление здоровья", 0),
             new Parameter("Утоление жажды", 5),

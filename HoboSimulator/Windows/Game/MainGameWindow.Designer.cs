@@ -37,19 +37,10 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.fxNameOfActor = new System.Windows.Forms.Label();
             this.fxAgeOfActor = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.fxCurrentTimeLabel = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.fxThirstLabel = new System.Windows.Forms.Label();
-            this.fxThirstPB = new System.Windows.Forms.ProgressBar();
-            this.label7 = new System.Windows.Forms.Label();
-            this.fxHungerLabel = new System.Windows.Forms.Label();
-            this.fxHungerPB = new System.Windows.Forms.ProgressBar();
-            this.label15 = new System.Windows.Forms.Label();
             this.fxLocationLabel = new System.Windows.Forms.Label();
             this.fxSkillPointsLabel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -58,17 +49,26 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fxBiography = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.fxMoneyLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.fxCurrentTimeLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.fxThirstLabel = new System.Windows.Forms.Label();
+            this.fxThirstPB = new System.Windows.Forms.ProgressBar();
+            this.label7 = new System.Windows.Forms.Label();
+            this.fxHungerLabel = new System.Windows.Forms.Label();
+            this.fxHungerPB = new System.Windows.Forms.ProgressBar();
+            this.label15 = new System.Windows.Forms.Label();
             this.fxSleepLabel = new System.Windows.Forms.Label();
             this.fxStaminaLabel = new System.Windows.Forms.Label();
             this.fxHealthLabel = new System.Windows.Forms.Label();
             this.fxSleepPB = new System.Windows.Forms.ProgressBar();
             this.fxStaminaPB = new System.Windows.Forms.ProgressBar();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.fxHealthPB = new System.Windows.Forms.ProgressBar();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.fxMoneyLabel = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -117,7 +117,7 @@ namespace HoboSimulator.Windows.Game.MainGame
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(188, 7);
+            this.label1.Location = new System.Drawing.Point(187, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 20);
             this.label1.TabIndex = 4;
@@ -126,7 +126,7 @@ namespace HoboSimulator.Windows.Game.MainGame
             // fxNameOfActor
             // 
             this.fxNameOfActor.AutoSize = true;
-            this.fxNameOfActor.Location = new System.Drawing.Point(236, 7);
+            this.fxNameOfActor.Location = new System.Drawing.Point(342, 7);
             this.fxNameOfActor.Name = "fxNameOfActor";
             this.fxNameOfActor.Size = new System.Drawing.Size(63, 20);
             this.fxNameOfActor.TabIndex = 5;
@@ -135,34 +135,25 @@ namespace HoboSimulator.Windows.Game.MainGame
             // fxAgeOfActor
             // 
             this.fxAgeOfActor.AutoSize = true;
-            this.fxAgeOfActor.Location = new System.Drawing.Point(261, 27);
+            this.fxAgeOfActor.Location = new System.Drawing.Point(342, 33);
             this.fxAgeOfActor.Name = "fxAgeOfActor";
-            this.fxAgeOfActor.Size = new System.Drawing.Size(63, 20);
+            this.fxAgeOfActor.Size = new System.Drawing.Size(88, 20);
             this.fxAgeOfActor.TabIndex = 7;
-            this.fxAgeOfActor.Text = "%Имя%";
+            this.fxAgeOfActor.Text = "%Возраст%";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(188, 27);
+            this.label4.Location = new System.Drawing.Point(187, 33);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Возраст:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(187, 61);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(156, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Состояние здоровья:";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(188, 205);
+            this.label6.Location = new System.Drawing.Point(187, 251);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(135, 20);
             this.label6.TabIndex = 9;
@@ -181,31 +172,31 @@ namespace HoboSimulator.Windows.Game.MainGame
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.fxMoneyLabel);
-            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.fxCurrentTimeLabel);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.button4);
+            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.fxThirstLabel);
             this.tabPage1.Controls.Add(this.fxThirstPB);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.fxHungerLabel);
             this.tabPage1.Controls.Add(this.fxHungerPB);
             this.tabPage1.Controls.Add(this.label15);
+            this.tabPage1.Controls.Add(this.fxSleepLabel);
+            this.tabPage1.Controls.Add(this.fxStaminaLabel);
+            this.tabPage1.Controls.Add(this.fxHealthLabel);
+            this.tabPage1.Controls.Add(this.fxSleepPB);
+            this.tabPage1.Controls.Add(this.fxStaminaPB);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.fxHealthPB);
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.fxLocationLabel);
             this.tabPage1.Controls.Add(this.fxSkillPointsLabel);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.fxSkillsDGV);
             this.tabPage1.Controls.Add(this.fxBiography);
             this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.fxSleepLabel);
-            this.tabPage1.Controls.Add(this.fxStaminaLabel);
-            this.tabPage1.Controls.Add(this.fxHealthLabel);
-            this.tabPage1.Controls.Add(this.fxSleepPB);
-            this.tabPage1.Controls.Add(this.fxStaminaPB);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.fxHealthPB);
-            this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.label1);
@@ -220,24 +211,6 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // fxCurrentTimeLabel
-            // 
-            this.fxCurrentTimeLabel.AutoSize = true;
-            this.fxCurrentTimeLabel.Location = new System.Drawing.Point(351, 185);
-            this.fxCurrentTimeLabel.Name = "fxCurrentTimeLabel";
-            this.fxCurrentTimeLabel.Size = new System.Drawing.Size(78, 20);
-            this.fxCurrentTimeLabel.TabIndex = 65;
-            this.fxCurrentTimeLabel.Text = "%Время%";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(188, 185);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(122, 20);
-            this.label8.TabIndex = 64;
-            this.label8.Text = "Текущее время: ";
-            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(6, 424);
@@ -248,60 +221,10 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.InventoryBtn);
             // 
-            // fxThirstLabel
-            // 
-            this.fxThirstLabel.AutoSize = true;
-            this.fxThirstLabel.Location = new System.Drawing.Point(524, 87);
-            this.fxThirstLabel.Name = "fxThirstLabel";
-            this.fxThirstLabel.Size = new System.Drawing.Size(21, 20);
-            this.fxThirstLabel.TabIndex = 42;
-            this.fxThirstLabel.Text = "%";
-            // 
-            // fxThirstPB
-            // 
-            this.fxThirstPB.Location = new System.Drawing.Point(351, 87);
-            this.fxThirstPB.Name = "fxThirstPB";
-            this.fxThirstPB.Size = new System.Drawing.Size(167, 20);
-            this.fxThirstPB.TabIndex = 41;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(188, 87);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 20);
-            this.label7.TabIndex = 40;
-            this.label7.Text = "Питьё:";
-            // 
-            // fxHungerLabel
-            // 
-            this.fxHungerLabel.AutoSize = true;
-            this.fxHungerLabel.Location = new System.Drawing.Point(524, 110);
-            this.fxHungerLabel.Name = "fxHungerLabel";
-            this.fxHungerLabel.Size = new System.Drawing.Size(21, 20);
-            this.fxHungerLabel.TabIndex = 37;
-            this.fxHungerLabel.Text = "%";
-            // 
-            // fxHungerPB
-            // 
-            this.fxHungerPB.Location = new System.Drawing.Point(351, 111);
-            this.fxHungerPB.Name = "fxHungerPB";
-            this.fxHungerPB.Size = new System.Drawing.Size(167, 19);
-            this.fxHungerPB.TabIndex = 36;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(188, 110);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(68, 20);
-            this.label15.TabIndex = 35;
-            this.label15.Text = "Сытость:";
-            // 
             // fxLocationLabel
             // 
             this.fxLocationLabel.AutoSize = true;
-            this.fxLocationLabel.Location = new System.Drawing.Point(351, 205);
+            this.fxLocationLabel.Location = new System.Drawing.Point(342, 252);
             this.fxLocationLabel.Name = "fxLocationLabel";
             this.fxLocationLabel.Size = new System.Drawing.Size(154, 20);
             this.fxLocationLabel.TabIndex = 34;
@@ -361,7 +284,7 @@ namespace HoboSimulator.Windows.Game.MainGame
             // 
             // fxBiography
             // 
-            this.fxBiography.Location = new System.Drawing.Point(6, 275);
+            this.fxBiography.Location = new System.Drawing.Point(6, 274);
             this.fxBiography.Name = "fxBiography";
             this.fxBiography.Size = new System.Drawing.Size(541, 143);
             this.fxBiography.TabIndex = 19;
@@ -376,72 +299,6 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.label10.TabIndex = 18;
             this.label10.Text = "Биография:";
             // 
-            // fxSleepLabel
-            // 
-            this.fxSleepLabel.AutoSize = true;
-            this.fxSleepLabel.Location = new System.Drawing.Point(524, 161);
-            this.fxSleepLabel.Name = "fxSleepLabel";
-            this.fxSleepLabel.Size = new System.Drawing.Size(21, 20);
-            this.fxSleepLabel.TabIndex = 17;
-            this.fxSleepLabel.Text = "%";
-            // 
-            // fxStaminaLabel
-            // 
-            this.fxStaminaLabel.AutoSize = true;
-            this.fxStaminaLabel.Location = new System.Drawing.Point(524, 135);
-            this.fxStaminaLabel.Name = "fxStaminaLabel";
-            this.fxStaminaLabel.Size = new System.Drawing.Size(21, 20);
-            this.fxStaminaLabel.TabIndex = 16;
-            this.fxStaminaLabel.Text = "%";
-            // 
-            // fxHealthLabel
-            // 
-            this.fxHealthLabel.AutoSize = true;
-            this.fxHealthLabel.Location = new System.Drawing.Point(524, 61);
-            this.fxHealthLabel.Name = "fxHealthLabel";
-            this.fxHealthLabel.Size = new System.Drawing.Size(21, 20);
-            this.fxHealthLabel.TabIndex = 15;
-            this.fxHealthLabel.Text = "%";
-            // 
-            // fxSleepPB
-            // 
-            this.fxSleepPB.Location = new System.Drawing.Point(351, 161);
-            this.fxSleepPB.Name = "fxSleepPB";
-            this.fxSleepPB.Size = new System.Drawing.Size(167, 19);
-            this.fxSleepPB.TabIndex = 14;
-            // 
-            // fxStaminaPB
-            // 
-            this.fxStaminaPB.Location = new System.Drawing.Point(351, 136);
-            this.fxStaminaPB.Name = "fxStaminaPB";
-            this.fxStaminaPB.Size = new System.Drawing.Size(167, 19);
-            this.fxStaminaPB.TabIndex = 13;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(188, 135);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 20);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Выносливость:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(188, 161);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 20);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Потребность во сне:";
-            // 
-            // fxHealthPB
-            // 
-            this.fxHealthPB.Location = new System.Drawing.Point(351, 62);
-            this.fxHealthPB.Name = "fxHealthPB";
-            this.fxHealthPB.Size = new System.Drawing.Size(167, 19);
-            this.fxHealthPB.TabIndex = 10;
-            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
@@ -455,20 +312,163 @@ namespace HoboSimulator.Windows.Game.MainGame
             // fxMoneyLabel
             // 
             this.fxMoneyLabel.AutoSize = true;
-            this.fxMoneyLabel.Location = new System.Drawing.Point(351, 225);
+            this.fxMoneyLabel.Location = new System.Drawing.Point(342, 87);
             this.fxMoneyLabel.Name = "fxMoneyLabel";
             this.fxMoneyLabel.Size = new System.Drawing.Size(83, 20);
-            this.fxMoneyLabel.TabIndex = 93;
+            this.fxMoneyLabel.TabIndex = 133;
             this.fxMoneyLabel.Text = "%Деньги%";
             // 
-            // label13
+            // label2
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(188, 227);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(62, 20);
-            this.label13.TabIndex = 92;
-            this.label13.Text = "Деньги:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(187, 87);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 20);
+            this.label2.TabIndex = 132;
+            this.label2.Text = "Деньги:";
+            // 
+            // fxCurrentTimeLabel
+            // 
+            this.fxCurrentTimeLabel.AutoSize = true;
+            this.fxCurrentTimeLabel.Location = new System.Drawing.Point(342, 62);
+            this.fxCurrentTimeLabel.Name = "fxCurrentTimeLabel";
+            this.fxCurrentTimeLabel.Size = new System.Drawing.Size(78, 20);
+            this.fxCurrentTimeLabel.TabIndex = 131;
+            this.fxCurrentTimeLabel.Text = "%Время%";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(187, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 20);
+            this.label3.TabIndex = 130;
+            this.label3.Text = "Текущее время: ";
+            // 
+            // fxThirstLabel
+            // 
+            this.fxThirstLabel.AutoSize = true;
+            this.fxThirstLabel.Location = new System.Drawing.Point(515, 142);
+            this.fxThirstLabel.Name = "fxThirstLabel";
+            this.fxThirstLabel.Size = new System.Drawing.Size(21, 20);
+            this.fxThirstLabel.TabIndex = 129;
+            this.fxThirstLabel.Text = "%";
+            // 
+            // fxThirstPB
+            // 
+            this.fxThirstPB.Location = new System.Drawing.Point(342, 142);
+            this.fxThirstPB.Name = "fxThirstPB";
+            this.fxThirstPB.Size = new System.Drawing.Size(167, 20);
+            this.fxThirstPB.TabIndex = 128;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(187, 142);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(54, 20);
+            this.label7.TabIndex = 127;
+            this.label7.Text = "Питьё:";
+            // 
+            // fxHungerLabel
+            // 
+            this.fxHungerLabel.AutoSize = true;
+            this.fxHungerLabel.Location = new System.Drawing.Point(515, 167);
+            this.fxHungerLabel.Name = "fxHungerLabel";
+            this.fxHungerLabel.Size = new System.Drawing.Size(21, 20);
+            this.fxHungerLabel.TabIndex = 126;
+            this.fxHungerLabel.Text = "%";
+            // 
+            // fxHungerPB
+            // 
+            this.fxHungerPB.Location = new System.Drawing.Point(342, 168);
+            this.fxHungerPB.Name = "fxHungerPB";
+            this.fxHungerPB.Size = new System.Drawing.Size(167, 19);
+            this.fxHungerPB.TabIndex = 125;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(187, 167);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(68, 20);
+            this.label15.TabIndex = 124;
+            this.label15.Text = "Сытость:";
+            // 
+            // fxSleepLabel
+            // 
+            this.fxSleepLabel.AutoSize = true;
+            this.fxSleepLabel.Location = new System.Drawing.Point(515, 217);
+            this.fxSleepLabel.Name = "fxSleepLabel";
+            this.fxSleepLabel.Size = new System.Drawing.Size(21, 20);
+            this.fxSleepLabel.TabIndex = 123;
+            this.fxSleepLabel.Text = "%";
+            // 
+            // fxStaminaLabel
+            // 
+            this.fxStaminaLabel.AutoSize = true;
+            this.fxStaminaLabel.Location = new System.Drawing.Point(515, 192);
+            this.fxStaminaLabel.Name = "fxStaminaLabel";
+            this.fxStaminaLabel.Size = new System.Drawing.Size(21, 20);
+            this.fxStaminaLabel.TabIndex = 122;
+            this.fxStaminaLabel.Text = "%";
+            // 
+            // fxHealthLabel
+            // 
+            this.fxHealthLabel.AutoSize = true;
+            this.fxHealthLabel.Location = new System.Drawing.Point(515, 116);
+            this.fxHealthLabel.Name = "fxHealthLabel";
+            this.fxHealthLabel.Size = new System.Drawing.Size(21, 20);
+            this.fxHealthLabel.TabIndex = 121;
+            this.fxHealthLabel.Text = "%";
+            // 
+            // fxSleepPB
+            // 
+            this.fxSleepPB.Location = new System.Drawing.Point(342, 218);
+            this.fxSleepPB.Name = "fxSleepPB";
+            this.fxSleepPB.Size = new System.Drawing.Size(167, 19);
+            this.fxSleepPB.TabIndex = 120;
+            // 
+            // fxStaminaPB
+            // 
+            this.fxStaminaPB.Location = new System.Drawing.Point(342, 193);
+            this.fxStaminaPB.Name = "fxStaminaPB";
+            this.fxStaminaPB.Size = new System.Drawing.Size(167, 19);
+            this.fxStaminaPB.TabIndex = 119;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(187, 193);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(112, 20);
+            this.label5.TabIndex = 118;
+            this.label5.Text = "Выносливость:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(187, 218);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(152, 20);
+            this.label8.TabIndex = 117;
+            this.label8.Text = "Потребность во сне:";
+            // 
+            // fxHealthPB
+            // 
+            this.fxHealthPB.Location = new System.Drawing.Point(342, 117);
+            this.fxHealthPB.Name = "fxHealthPB";
+            this.fxHealthPB.Size = new System.Drawing.Size(167, 19);
+            this.fxHealthPB.TabIndex = 116;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(187, 116);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(156, 20);
+            this.label9.TabIndex = 115;
+            this.label9.Text = "Состояние здоровья:";
             // 
             // MainGameWindow
             // 
@@ -501,37 +501,37 @@ namespace HoboSimulator.Windows.Game.MainGame
         public System.Windows.Forms.Label fxNameOfActor;
         public System.Windows.Forms.Label fxAgeOfActor;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         public System.Windows.Forms.RichTextBox fxBiography;
         private System.Windows.Forms.Label label10;
-        public System.Windows.Forms.Label fxSleepLabel;
-        public System.Windows.Forms.Label fxStaminaLabel;
-        public System.Windows.Forms.Label fxHealthLabel;
-        public System.Windows.Forms.ProgressBar fxSleepPB;
-        public System.Windows.Forms.ProgressBar fxStaminaPB;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.ProgressBar fxHealthPB;
         private System.Windows.Forms.TabPage tabPage2;
-        public System.Windows.Forms.Label fxHungerLabel;
-        public System.Windows.Forms.ProgressBar fxHungerPB;
-        private System.Windows.Forms.Label label15;
         public System.Windows.Forms.Label fxLocationLabel;
         public System.Windows.Forms.Label fxSkillPointsLabel;
         private System.Windows.Forms.Label label11;
         public System.Windows.Forms.DataGridView fxSkillsDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.Button button4;
+        public System.Windows.Forms.Label fxMoneyLabel;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label fxCurrentTimeLabel;
+        private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label fxThirstLabel;
         public System.Windows.Forms.ProgressBar fxThirstPB;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button4;
-        public System.Windows.Forms.Label fxCurrentTimeLabel;
+        public System.Windows.Forms.Label fxHungerLabel;
+        public System.Windows.Forms.ProgressBar fxHungerPB;
+        private System.Windows.Forms.Label label15;
+        public System.Windows.Forms.Label fxSleepLabel;
+        public System.Windows.Forms.Label fxStaminaLabel;
+        public System.Windows.Forms.Label fxHealthLabel;
+        public System.Windows.Forms.ProgressBar fxSleepPB;
+        public System.Windows.Forms.ProgressBar fxStaminaPB;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
-        public System.Windows.Forms.Label fxMoneyLabel;
-        private System.Windows.Forms.Label label13;
+        public System.Windows.Forms.ProgressBar fxHealthPB;
+        private System.Windows.Forms.Label label9;
     }
 }

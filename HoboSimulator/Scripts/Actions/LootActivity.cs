@@ -1,4 +1,5 @@
 ﻿using HoboSimulator.Config.Objects.System;
+using HoboSimulator.Scripts.World;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -30,7 +31,7 @@ namespace HoboSimulator.Scripts.Actions
             user.actor.sleep -= 3;
             user.actor.stamina -= 5;
 
-            user.world.dateTime = user.world.dateTime.AddMinutes(30);
+            TimeFlow.AddMinutes(30);
         }
     }
 }

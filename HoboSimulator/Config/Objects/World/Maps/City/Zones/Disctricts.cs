@@ -1,4 +1,5 @@
-﻿using HoboSimulator.Config.Objects.Misc.Items;
+﻿using HoboSimulator.Config.Objects.Characters.NPC;
+using HoboSimulator.Config.Objects.Misc.Items;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -12,7 +13,12 @@ namespace HoboSimulator.Config.Objects.World.Maps.City.Zones
         String description = "Спальный район, вид которого знаком, пожалуй, любому жителю пост-советсткого пространства. Старые хрущёвки, разбитые дороги, уставшие от жизни люди. Пребывая в этом месте будет почти невозможно заметить наступление апокалипсиса или почувствовать хоть какую-то разницу.";
         String actionTPName = "City_DistrictsTP";
         int ID = 0;
-        Image image = Properties.Resources.TestLocationPic;
+        Image image = Properties.Resources.City_Districts;
+
+        List<INPC> NPCList = new List<INPC>
+        {
+            
+        };
 
         public String GetName() { return name; }
         public String GetDescription() { return description; }
@@ -25,5 +31,6 @@ namespace HoboSimulator.Config.Objects.World.Maps.City.Zones
         public void SetChosenGoods(List<IItem> chosenGoods) { } // Не используется
         public void AddChosenGoods(int index) { } // Не используется
         public void DeleteChosenGoods(int index) { } // Не используется
+        public List<INPC> GetNPCList() { return NPCList; }
     }
 }

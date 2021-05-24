@@ -5,13 +5,13 @@ using System.Text;
 
 namespace HoboSimulator.Config.Objects.Misc.Items.Junk
 {
-    class SmallPlasticBottle: IItem
+    public class SmallPlasticBottle: IItem
     {
         String name = "Пластиковая бутылка (0,5л)";
         String description = "Обыкновенная пластиковая бутылка объёмом 0,5л.\nГрязноватая, немного помята и уже нельзя точно определить, что она содержала в себе изначально, но её до сих пор можно использовать по назначению.";
         String type = "Junk";
         int ID = 3;
-        List<Parameter> parameters = new List<Parameter>
+        public List<Parameter> parameters = new List<Parameter>
         {
             new Parameter("Вес", 0.03),
             new Parameter("Цена", 5)

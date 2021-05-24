@@ -5,13 +5,13 @@ using System.Text;
 
 namespace HoboSimulator.Config.Objects.Misc.Items.Food
 {
-    class OpenedWaterBottleSmall : IItem
+    public class OpenedWaterBottleSmall : IItem
     {
         String name = "Початая бутылка воды (0,5л)";
         String description = "Небольшая початая 0,5л бутылка минералки из пластика. Снаружи грязная и потрёпаная, однако вода внутри вроде чистая, хоть и пахнет уже не очень хорошо.";
         String type = "Food";
         int ID = 2;
-        List<Parameter> parameters = new List<Parameter>
+        public List<Parameter> parameters = new List<Parameter>
         {
             new Parameter("Восстановление здоровья", 0),
             new Parameter("Утоление жажды", 20),

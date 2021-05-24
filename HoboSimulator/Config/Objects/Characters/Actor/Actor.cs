@@ -4,6 +4,7 @@ using HoboSimulator.Config.Objects.World.Maps;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 
 namespace HoboSimulator.Config.Objects.Actor
@@ -16,6 +17,8 @@ namespace HoboSimulator.Config.Objects.Actor
         public String name; // Имя
         public int age; // Возраст 
         public String biography; // Биография
+        public Image icon;
+        public String group = "Игрок";
 
         //**СОСТОЯНИЕ ПЕРСОНАЖА**//
 
@@ -50,11 +53,12 @@ namespace HoboSimulator.Config.Objects.Actor
         public ILocation location; // Локация
         public IZone zone; // Зона локации
 
-        public Actor(String name, int age, String biography, int health, int thirst, int hunger, int stamina, int sleep, int skillPoints, List<IItem> inventory, double maxWeight, int money)
+        public Actor(String name, int age, String biography, Image icon, int health, int thirst, int hunger, int stamina, int sleep, int skillPoints, List<IItem> inventory, double maxWeight, int money)
         {
             this.name = name;
             this.age = age;
             this.biography = biography;
+            this.icon = icon;
             this.health = health;
             this.thirst = thirst;
             this.hunger = hunger;

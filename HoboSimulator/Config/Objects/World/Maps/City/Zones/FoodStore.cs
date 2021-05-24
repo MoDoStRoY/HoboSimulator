@@ -1,4 +1,7 @@
-﻿using HoboSimulator.Config.Objects.Misc.Items;
+﻿using HoboSimulator.Config.Assortments.Store;
+using HoboSimulator.Config.Objects.Characters.NPC;
+using HoboSimulator.Config.Objects.Characters.NPC.Traders;
+using HoboSimulator.Config.Objects.Misc.Items;
 using HoboSimulator.Config.Objects.Misc.Items.Food;
 using System;
 using System.Collections.Generic;
@@ -15,20 +18,13 @@ namespace HoboSimulator.Config.Objects.World.Maps.City.Zones
         int ID = 1;
         Image image = Properties.Resources.City_FoodStore;
 
-        List<IItem> storeAssortment = new List<IItem>
-        {
-            new Dove(),
-            new Dove(),
-            new Dove(),
-            new Dove(),
-            new OpenedWaterBottleSmall(),
-            new OpenedWaterBottleSmall(),
-            new OpenedWaterBottleSmall(),
-            new Scraps(),
-            new Scraps(),
-            new Scraps()
-        };
+        List<IItem> storeAssortment = City_FoodStore.assortment;
         List<IItem> chosenGoods = new List<IItem>();
+
+        List<INPC> NPCList = new List<INPC>
+        {
+            new Galya()
+        };
 
         public String GetName(){return name;}
         public String GetDescription(){return description;}
@@ -41,5 +37,6 @@ namespace HoboSimulator.Config.Objects.World.Maps.City.Zones
         public void SetChosenGoods(List<IItem> chosenGoods) { this.chosenGoods = chosenGoods; }
         public void AddChosenGoods(int index) { chosenGoods.Add(storeAssortment[index]); storeAssortment.RemoveAt(index); }
         public void DeleteChosenGoods(int index) { storeAssortment.Add(chosenGoods[index]);  chosenGoods.RemoveAt(index); }
+        public List<INPC> GetNPCList() { return NPCList; }
     }
 }

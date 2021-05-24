@@ -4,9 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HoboSimulator.Config.Assorstsments
+namespace HoboSimulator.Config.Assortments.Store
 {
-    class TradeGalya
+    class City_FoodStore
     {
         public static List<IItem> assortment = new List<IItem>
         {
