@@ -11,17 +11,19 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
     {
         static User user = Program.user;
 
-        public static void InitializeForm()
+        //**БЛОК ОБНОВЛЕНИЯ ФОРМЫ**//
+
+        public static void InitializeForm() // Обновление основных параметров и попутно вызов обновления изменяемых
         {
             user.actionWindow.fxNameOfZoneLabel.Text = user.actor.zone.GetName();
             user.actionWindow.fxDescriptionOfZoneText.Text = user.actor.zone.GetDescription();
             user.actionWindow.fxActionsTP.SelectedTab = user.actionWindow.fxActionsTP.TabPages[user.actor.zone.GetActionTPName()];
-            user.actionWindow.pictureBox1.Image = user.actor.zone.GetImage();
+            user.actionWindow.fxZoneIconPB.Image = user.actor.zone.GetImage();
 
             UpdateActionVariables();
         }
 
-        public static void UpdateActionVariables()
+        public static void UpdateActionVariables() // Обновление изменяемых переменных
         {
             user.actionWindow.fxHuntBirdTT.SetToolTip(user.actionWindow.fxHuntBirdBtn,
                 "Рекомендуемые навыки:\n" +
@@ -37,66 +39,71 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
                 "Выносливость: 4\n" +
                 "Сила: 2");
 
-            user.actionWindow.fxCurrentTimeLabel.Text = user.world.dateTime.ToString();
-            user.actionWindow.fxMoneyLabel.Text = user.actor.money.ToString();
-            user.actionWindow.fxHealthPB.Value = user.actor.health;
-            user.actionWindow.fxHealthLabel.Text = user.actor.health.ToString();
-            user.actionWindow.fxThirstPB.Value = user.actor.thirst;
-            user.actionWindow.fxThirstLabel.Text = user.actor.thirst.ToString();
-            user.actionWindow.fxHungerPB.Value = user.actor.hunger;
-            user.actionWindow.fxHungerLabel.Text = user.actor.hunger.ToString();
-            user.actionWindow.fxStaminaPB.Value = user.actor.stamina;
-            user.actionWindow.fxStaminaLabel.Text = user.actor.stamina.ToString();
-            user.actionWindow.fxSleepPB.Value = user.actor.sleep;
-            user.actionWindow.fxSleepLabel.Text = user.actor.sleep.ToString();
+            InitializeParamsBlock.InitializeParamsBlockAction();
         }
 
-        public static void ShowWindow()
+        //**//
+
+        //**ОСНОВЫЕ МЕТОДЫ**//
+
+        public static void ShowWindow() // Метод переключения на эту форму
         {
             user.actionWindow.Show();
             InitializeForm();
         }
 
-        public static void BackBtn()
+        public static void BackBtn() // Кнопка "Назад"
         {
             user.actionWindow.Hide();
             user.mainGameWindow.ShowWindow();
         }
 
+        public static void ClosedForm() // Закрытие формы
+        {
+            Application.Exit();
+        }
+
+        //**//
+
+        //**ИНТЕРАКТИВНЫЕ ЭЛЕМЕНТЫ ФОРМЫ**//
+
         //**КНОПКИ ДЕЙСТВИЙ В ЛОКАЦИИ**//
 
         //**СПАЛЬНЫЙ РАЙОН**//
-        public static void HuntBirdBtn()
+        public static void HuntBirdBtn() //Охота на голубей
         {
             HuntActivity.HuntAction("Ловкость", 0, 0, 3, 2);
 
             UpdateActionVariables();
         }
 
-        public static void LootTrashCanBigBtn()
+        public static void LootTrashCanBigBtn() // Лутание мусорных баков
         {
             LootActivity.LootAction();
 
             UpdateActionVariables();
         }
 
+        //**//
+
         //**ПЯТЁРОЧКА**//
 
-        public static void TradeBtn()
+        public static void TradeBtn() // Торговля
         {
             user.actionWindow.Hide();
             user.tradeWindow.ShowWindow();
         }
 
-        public static void TestDialogBtn()
+        public static void TestDialogBtn() // Тестовый диалог (нужно удалить)
         {
             user.actionWindow.Hide();
             user.dialogWindow.ShowWindow(user.actor.zone.GetNPCList()[0]);
         }
 
-        public static void ClosedForm()
-        {
-            Application.Exit();
-        }
+        //**//
+        
+        //**//
+
+        //**//
     }
 }

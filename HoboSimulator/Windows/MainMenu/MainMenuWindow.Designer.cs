@@ -1,7 +1,7 @@
 ﻿
 namespace HoboSimulator
 {
-    partial class MainMenu
+    partial class MainMenuWindow
     {
         /// <summary>
         ///  Required designer variable.

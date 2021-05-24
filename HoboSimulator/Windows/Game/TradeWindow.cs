@@ -11,49 +11,65 @@ namespace HoboSimulator.Windows.Game
             InitializeComponent();
         }
 
+        //**БЛОК ОБНОВЛЕНИЯ ФОРМЫ**///
+
         private void InitializeForm(object sender, EventArgs e)
         {
             TradeWindowController.InitializeForm();
         }
 
-        public void ShowWindow()
+        //**//
+
+        //**ОСНОВНЫЕ МЕТОДЫ**//
+
+        public void ShowWindow() // Метод показа формы
         {
             TradeWindowController.ShowWindow();
         }
 
-        private void BackBtn(object sender, EventArgs e)
+        private void BackBtn(object sender, EventArgs e) // Кнопка "Назад"
         {
             TradeWindowController.BackBtn();
         }
 
-        private void ChoseGoodDGV(object sender, DataGridViewCellEventArgs e)
+        private void ClosedForm(object sender, FormClosedEventArgs e) // Закрытие формы
         {
-            TradeWindowController.ChoseGoodDGV(e);
+            TradeWindowController.ClosedForm();
         }
 
-        private void DeleteGoodDGV(object sender, DataGridViewCellEventArgs e)
-        {
-            TradeWindowController.DeleteGoodDGV(e);
-        }
+        //**//
 
-        private void InfoGoodAssortmentDGV(object sender, DataGridViewCellEventArgs e)
-        {
-            TradeWindowController.InfoGoodAssortmentDGV(e);
-        }
+        //**ИНТЕРАКТИВНЫЕ ЭЛЕМЕНТЫ ФОРМЫ**//
 
-        private void InfoGoodChosenDGV(object sender, DataGridViewCellEventArgs e)
-        {
-            TradeWindowController.InfoGoodChosenDGV(e);
-        }
-
-        private void BuyBtn(object sender, EventArgs e)
+        private void BuyBtn(object sender, EventArgs e) // Кнопка покупки
         {
             TradeWindowController.BuyBtn();
         }
 
-        private void ClosedForm(object sender, FormClosedEventArgs e)
+        //**//
+
+        //**ЛОГИЧЕСКИЕ МЕТОДЫ ФОРМЫ**//
+
+        private void ChoseGoodDGV(object sender, DataGridViewCellEventArgs e) // Добавление товара в корзину
         {
-            TradeWindowController.ClosedForm();
+            TradeWindowController.ChoseGoodDGV(e);
         }
+
+        private void DeleteGoodDGV(object sender, DataGridViewCellEventArgs e) // Удаление товара из корзины
+        {
+            TradeWindowController.DeleteGoodDGV(e);
+        }
+
+        private void InfoGoodAssortmentDGV(object sender, DataGridViewCellEventArgs e) // Подгрузка данных о товаре из ассортимента
+        {
+            TradeWindowController.InfoGoodAssortmentDGV(e);
+        }
+
+        private void InfoGoodChosenDGV(object sender, DataGridViewCellEventArgs e) // Подгрузка данных о товаре из корзины
+        {
+            TradeWindowController.InfoGoodChosenDGV(e);
+        }
+
+        //**//
     }
 }

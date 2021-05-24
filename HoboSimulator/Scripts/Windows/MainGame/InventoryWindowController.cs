@@ -12,28 +12,16 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Inventory
     {
         static User user = Program.user;
 
+        //**БЛОК ОБНОВЛЕНИЯ ФОРМЫ**//
+
         public static void InitializeForm()
         {
-            user.inventoryWindow.fxCurrentTimeLabel.Text = user.world.dateTime.ToString();
-
             double weight = 0;
             for (int i = 0; i < user.actor.inventory.Count; i++)
                 weight += user.actor.inventory[i].GetWeight(); 
 
             user.inventoryWindow.fxWeightLabel.Text = weight + " кг";
             user.inventoryWindow.fxMaxWeightLabel.Text = user.actor.maxWeight + " кг";
-            user.inventoryWindow.fxMoneyLabel.Text = user.actor.money + " руб.";
-
-            user.inventoryWindow.fxHealthPB.Value = user.actor.health;
-            user.inventoryWindow.fxHealthLabel.Text = user.actor.health.ToString();
-            user.inventoryWindow.fxThirstPB.Value = user.actor.thirst;
-            user.inventoryWindow.fxThirstLabel.Text = user.actor.thirst.ToString();
-            user.inventoryWindow.fxHungerPB.Value = user.actor.hunger;
-            user.inventoryWindow.fxHungerLabel.Text = user.actor.hunger.ToString();
-            user.inventoryWindow.fxStaminaPB.Value = user.actor.stamina;
-            user.inventoryWindow.fxStaminaLabel.Text = user.actor.stamina.ToString();
-            user.inventoryWindow.fxSleepPB.Value = user.actor.sleep;
-            user.inventoryWindow.fxSleepLabel.Text = user.actor.sleep.ToString();
             user.inventoryWindow.fxInventoryDGV.Rows.Clear();
             user.inventoryWindow.fxNameOfItemLabel.Text = "";
             user.inventoryWindow.fxDescriptionOfItemText.Text = "";
@@ -50,21 +38,59 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Inventory
                     user.inventoryWindow.fxInventoryDGV.Rows[i].Cells[1].Value = user.actor.inventory[i].GetName();
                 }
             }
+
+            InitializeParamsBlock.InitializeParamsBlockInventory();
         }
 
-        public static void ShowWindow()
+        //**//
+
+        //**ОСНОВНЫЕ МЕТОДЫ**//
+
+        public static void ShowWindow() // Метод показа формы
         {
             user.inventoryWindow.Show();
             InitializeForm();
         }
 
-        public static void BackBtn()
+        public static void BackBtn() // Кнопка "Назад"
         {
             user.inventoryWindow.Hide();
             user.mainGameWindow.ShowWindow();
         }
 
-        public static void ChosenItemDGV(DataGridViewCellEventArgs e)
+        public static void ClosedForm() // Закрытие формы
+        {
+            Application.Exit();
+        }
+
+        //**//
+
+        //**ИНТЕРАКТИВНЫЕ ЭЛЕМЕНТЫ ФОРМЫ**//
+
+        public static void UseBtn() // Кнопка "Использовать"
+        {
+            List<Parameter> parameters = user.actor.chosenItem.GetParamsList();
+
+            if (user.actor.chosenItem.GetType().Equals("Food"))
+            {
+                UseItem.UseFood(parameters);
+
+                InitializeForm();
+            }
+        }
+
+        public static void DropBtn() // Кнопка "Выбросить"
+        {
+            user.actor.inventory.RemoveAt(user.actor.numberOfChosenItem);
+
+            InitializeForm();
+        }
+
+        //**//
+
+        //**ЛОГИЧЕСКИЕ МЕТОДЫ ФОРМЫ**//
+
+        public static void ChosenItemDGV(DataGridViewCellEventArgs e) //Выбор предмета
         {
             if (e.RowIndex != -1)
             {
@@ -89,28 +115,6 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Inventory
             }
         }
 
-        public static void UseBtn()
-        {
-            List<Parameter> parameters = user.actor.chosenItem.GetParamsList();
-
-            if (user.actor.chosenItem.GetType().Equals("Food"))
-            {
-                UseItem.UseFood(parameters);
-
-                InitializeForm();
-            }
-        }
-
-        public static void DropBtn()
-        {
-            user.actor.inventory.RemoveAt(user.actor.numberOfChosenItem);
-
-            InitializeForm();
-        }
-
-        public static void ClosedForm()
-        {
-            Application.Exit();
-        }
+        //**//
     }
 }

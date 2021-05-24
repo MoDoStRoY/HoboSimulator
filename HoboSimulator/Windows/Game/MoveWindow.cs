@@ -11,29 +11,43 @@ namespace HoboSimulator.Windows.Game
             InitializeComponent();
         }
 
-        public void ShowWindow()
+        //**БЛОК ОБНОВЛЕНИЯ ФОРМЫ**//
+
+        // Пока не используется
+
+        //**//
+
+        //**ОСНОВНЫЕ МЕТОДЫ**//
+
+        public void ShowWindow() // Метод показа формы
         {
             MoveWindowController.ShowWindow();
         }
 
-        private void ToFoodStoreBtn(object sender, EventArgs e)
-        {
-            MoveWindowController.ToFoodStoreBtn();
-        }
-
-        private void ToDistrictsBtn(object sender, EventArgs e)
-        {
-            MoveWindowController.ToDistrictsBtn();
-        }
-
-        private void BackBtn(object sender, EventArgs e)
+        private void BackBtn(object sender, EventArgs e) // Кнопка "Назад"
         {
             MoveWindowController.BackBtn();
         }
 
-        private void ClosedForm(object sender, FormClosedEventArgs e)
+        private void ClosedForm(object sender, FormClosedEventArgs e) // Закрытие формы
         {
             MoveWindowController.ClosedForm();
         }
+
+        //**//
+
+        //**ИНТЕРАКТИВНЫЕ ЭЛЕМЕНТЫ ФОРМЫ**//
+
+        private void ToFoodStoreBtn(object sender, EventArgs e) // Кнопка перемещения персонажа в зону "Пятёрочка"
+        {
+            MoveWindowController.ToFoodStoreBtn();
+        }
+
+        private void ToDistrictsBtn(object sender, EventArgs e) // Кнопка перемещения персонажа в зону "Спальный район"
+        {
+            MoveWindowController.ToDistrictsBtn();
+        }
+
+        //**//
     }
 }

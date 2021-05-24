@@ -14,6 +14,8 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Trade
         static double summaryCost = 0;
         static double summaryWeight = 0;
 
+        //**БЛОК ОБНОВЛЕНИЯ ФОРМЫ**//
+
         public static void InitializeForm()
         {
             UpdateTradeVariables();
@@ -24,7 +26,6 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Trade
         {
             user.tradeWindow.fxAssortmentDGV.Rows.Clear();
             user.tradeWindow.fxChosenGoodsDGV.Rows.Clear();
-            user.tradeWindow.fxMoneyLabel.Text = user.actor.money.ToString();
 
             summaryCost = 0;
             summaryWeight = 0;
@@ -60,32 +61,52 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Trade
 
         public static void UpdateActionVariables()
         {
-            user.tradeWindow.fxCurrentTimeLabel.Text = user.world.dateTime.ToString();
-            user.tradeWindow.fxHealthPB.Value = user.actor.health;
-            user.tradeWindow.fxHealthLabel.Text = user.actor.health.ToString();
-            user.tradeWindow.fxThirstPB.Value = user.actor.thirst;
-            user.tradeWindow.fxThirstLabel.Text = user.actor.thirst.ToString();
-            user.tradeWindow.fxHungerPB.Value = user.actor.hunger;
-            user.tradeWindow.fxHungerLabel.Text = user.actor.hunger.ToString();
-            user.tradeWindow.fxStaminaPB.Value = user.actor.stamina;
-            user.tradeWindow.fxStaminaLabel.Text = user.actor.stamina.ToString();
-            user.tradeWindow.fxSleepPB.Value = user.actor.sleep;
-            user.tradeWindow.fxSleepLabel.Text = user.actor.sleep.ToString();
+            InitializeParamsBlock.InitializeParamsBlockTrade();
         }
 
-        public static void ShowWindow()
+        //**//
+
+        //**ОСНОВНЫЕ МЕТОДЫ**//
+
+        public static void ShowWindow() // Метод показа формы
         {
             user.tradeWindow.Show();
             InitializeForm();
         }
 
-        public static void BackBtn()
+        public static void BackBtn() // Кнопка "Назад"
         {
             user.tradeWindow.Hide();
             user.actionWindow.ShowWindow();
         }
 
-        public static void ChoseGoodDGV(DataGridViewCellEventArgs e)
+        public static void ClosedForm() // Закрытие формы
+        {
+            Application.Exit();
+        }
+
+        //**//
+
+        //**ИНТЕРАКТИВНЫЕ ЭЛЕМЕНТЫ ФОРМЫ**//
+
+        public static void BuyBtn() // Кнопка покупки
+        {
+            if (user.actor.money >= summaryCost)
+            {
+                user.actor.inventory.AddRange(user.actor.zone.GetChosenGoods());
+                user.actor.money -= summaryCost;
+
+                user.actor.zone.SetChosenGoods(new List<IItem>());
+
+                UpdateTradeVariables();
+            }
+        }
+
+        //**//
+
+        //**ЛОГИЧЕСКИЕ МЕТОДЫ ФОРМЫ**//
+
+        public static void ChoseGoodDGV(DataGridViewCellEventArgs e) // Добавление товара в корзину
         {
             if (e.RowIndex != -1)
             {
@@ -94,7 +115,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Trade
             }
         }
 
-        public static void DeleteGoodDGV(DataGridViewCellEventArgs e)
+        public static void DeleteGoodDGV(DataGridViewCellEventArgs e) // Удаление товара из корзины
         {
             if (e.RowIndex != -1)
             {
@@ -103,7 +124,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Trade
             }
         }
 
-        public static void InfoGoodAssortmentDGV(DataGridViewCellEventArgs e)
+        public static void InfoGoodAssortmentDGV(DataGridViewCellEventArgs e) // Подгрузка данных о товаре из ассортимента
         {
             if (e.RowIndex != -1)
             {
@@ -123,7 +144,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Trade
             }
         }
 
-        public static void InfoGoodChosenDGV(DataGridViewCellEventArgs e)
+        public static void InfoGoodChosenDGV(DataGridViewCellEventArgs e) // Подгрузка данных о товаре из корзины
         {
             if (e.RowIndex != -1)
             {
@@ -143,22 +164,6 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Trade
             }
         }
 
-        public static void BuyBtn()
-        {
-            if (user.actor.money >= summaryCost)
-            {
-                user.actor.inventory.AddRange(user.actor.zone.GetChosenGoods());
-                user.actor.money -= summaryCost;
-
-                user.actor.zone.SetChosenGoods(new List<IItem>());
-
-                UpdateTradeVariables();
-            }
-        }
-
-        public static void ClosedForm()
-        {
-            Application.Exit();
-        }
+        //**//
     }
 }

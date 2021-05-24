@@ -16,50 +16,60 @@ namespace HoboSimulator.Windows.Game.Action
             InitializeComponent();
         }
 
+        //**БЛОК ОБНОВЛЕНИЯ ФОРМЫ**//
+
         private void InitializeForm(object sender, EventArgs e)
         {
             ActionWindowController.InitializeForm();
         }
 
-        public void ShowWindow()
+        //**//
+
+        //**ОСНОВНЫЕ МЕТОДЫ ФОРМЫ**//
+
+        public void ShowWindow() // Метод показа окна
         {
             ActionWindowController.ShowWindow();
         }
 
-        private void BackBtn(object sender, EventArgs e)
+        private void BackBtn(object sender, EventArgs e) // Кнопка "Назад"
         {
             ActionWindowController.BackBtn();
         }
+
+        private void ClosedForm(object sender, FormClosedEventArgs e) // Закрытие формы
+        {
+            ActionWindowController.ClosedForm();
+        }
+
+        //**//
 
         //**КНОПКИ ДЕЙСТВИЙ В ЛОКАЦИИ**//
 
         //**СПАЛЬНЫЙ РАЙОН**//
 
-        private void HuntBirdBtn(object sender, EventArgs e)
+        private void HuntBirdBtn(object sender, EventArgs e) // Охота на голубей
         {
             ActionWindowController.HuntBirdBtn();
         }
 
-        private void LootTrashCanBigBtn(object sender, EventArgs e)
+        private void LootTrashCanBigBtn(object sender, EventArgs e) // Лутание мусорных баков
         {
             ActionWindowController.LootTrashCanBigBtn();
         }
 
         //**ПЯТЁРОЧКА**//
 
-        private void TradeBtn(object sender, EventArgs e)
+        private void TradeBtn(object sender, EventArgs e) // Торговля
         {
             ActionWindowController.TradeBtn();
         }
 
-        private void TestDialogBtn(object sender, EventArgs e)
+        private void TestDialogBtn(object sender, EventArgs e) // Тестовый диалог (нужно удалить)
         {
             ActionWindowController.TestDialogBtn();
         }
 
-        private void ClosedForm(object sender, FormClosedEventArgs e)
-        {
-            ActionWindowController.ClosedForm();
-        }
+        //**//
     }
 }

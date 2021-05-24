@@ -12,29 +12,37 @@ namespace HoboSimulator.Windows.Game
             InitializeComponent();
         }
 
+        //**БЛОК ОБНОВЛЕНИЯ ФОРМЫ**//
+        //В данном случае не используется, т.к. форма открывается через ShowWindow, вызывающий инициализацию//
         private void InitializeForm(object sender, EventArgs e)
         {
             DialogWindowController.InitializeForm();
         }
 
-        public void ShowWindow(INPC NPC)
+        //**//
+
+        //**ОСНОВЫЕ МЕТОДЫ**//
+
+        public void ShowWindow(INPC NPC) // Метод показа этой формы
         {
             DialogWindowController.ShowWindow(NPC);
         }
 
-        private void BackBtn(object sender, EventArgs e)
+        private void BackBtn(object sender, EventArgs e) // Кнопка "Назад"
         {
             DialogWindowController.BackBtn();
         }
 
-        private void ChoseDialogVariantDGV(object sender, DataGridViewCellEventArgs e)
-        {
-            DialogWindowController.ChoseDialogVariantDGV(e);
-        }
-
-        private void ClosedForm(object sender, FormClosedEventArgs e)
+        private void ClosedForm(object sender, FormClosedEventArgs e) // Закрытие формы
         {
             DialogWindowController.ClosedForm();
+        }
+
+        //**//
+
+        private void ChoseDialogVariantDGV(object sender, DataGridViewCellEventArgs e) // Выбор варианта фразы в диалоге
+        {
+            DialogWindowController.ChoseDialogVariantDGV(e);
         }
     }
 }

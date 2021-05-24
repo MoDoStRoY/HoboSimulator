@@ -62,7 +62,7 @@ namespace HoboSimulator.Windows.Game.Action
             this.label10 = new System.Windows.Forms.Label();
             this.fxDescriptionOfZoneText = new System.Windows.Forms.RichTextBox();
             this.fxNameOfZoneLabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.fxZoneIconPB = new System.Windows.Forms.PictureBox();
             this.FightTP = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.fxResultOfAction = new System.Windows.Forms.RichTextBox();
@@ -93,7 +93,7 @@ namespace HoboSimulator.Windows.Game.Action
             this.fxActionsTP.SuspendLayout();
             this.City_DistrictsTP.SuspendLayout();
             this.City_FoodStoreTP.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fxZoneIconPB)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -122,7 +122,7 @@ namespace HoboSimulator.Windows.Game.Action
             this.ActionTP.Controls.Add(this.fxActionsTP);
             this.ActionTP.Controls.Add(this.fxDescriptionOfZoneText);
             this.ActionTP.Controls.Add(this.fxNameOfZoneLabel);
-            this.ActionTP.Controls.Add(this.pictureBox1);
+            this.ActionTP.Controls.Add(this.fxZoneIconPB);
             this.ActionTP.Location = new System.Drawing.Point(4, 14);
             this.ActionTP.Name = "ActionTP";
             this.ActionTP.Padding = new System.Windows.Forms.Padding(3);
@@ -425,13 +425,13 @@ namespace HoboSimulator.Windows.Game.Action
             this.fxNameOfZoneLabel.TabIndex = 1;
             this.fxNameOfZoneLabel.Text = "%Название зоны%";
             // 
-            // pictureBox1
+            // fxZoneIconPB
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(898, 246);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.fxZoneIconPB.Location = new System.Drawing.Point(4, 4);
+            this.fxZoneIconPB.Name = "fxZoneIconPB";
+            this.fxZoneIconPB.Size = new System.Drawing.Size(898, 246);
+            this.fxZoneIconPB.TabIndex = 0;
+            this.fxZoneIconPB.TabStop = false;
             // 
             // FightTP
             // 
@@ -674,7 +674,7 @@ namespace HoboSimulator.Windows.Game.Action
             this.City_DistrictsTP.PerformLayout();
             this.City_FoodStoreTP.ResumeLayout(false);
             this.City_FoodStoreTP.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fxZoneIconPB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -684,7 +684,7 @@ namespace HoboSimulator.Windows.Game.Action
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.TabControl fxMainTP;
         public System.Windows.Forms.TabPage ActionTP;
-        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.PictureBox fxZoneIconPB;
         public System.Windows.Forms.Button fxHuntCatBtn;
         public System.Windows.Forms.Button fxHuntDogBtn;
         public System.Windows.Forms.Button fxHuntBirdBtn;

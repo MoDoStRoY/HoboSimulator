@@ -15,6 +15,8 @@ namespace HoboSimulator.Scripts.Windows.MainGame
         static List<Dialog> dialog_tree;
         public static INPC NPC;
 
+        //**БЛОК ОБНОВЛЕНИЯ ФОРМЫ**//
+
         public static void InitializeForm()
         {
             UpdateActionVariables();
@@ -46,21 +48,14 @@ namespace HoboSimulator.Scripts.Windows.MainGame
 
         public static void UpdateActionVariables()
         {
-            user.dialogWindow.fxMoneyLabel.Text = user.actor.money.ToString();
-            user.dialogWindow.fxCurrentTimeLabel.Text = user.world.dateTime.ToString();
-            user.dialogWindow.fxHealthPB.Value = user.actor.health;
-            user.dialogWindow.fxHealthLabel.Text = user.actor.health.ToString();
-            user.dialogWindow.fxThirstPB.Value = user.actor.thirst;
-            user.dialogWindow.fxThirstLabel.Text = user.actor.thirst.ToString();
-            user.dialogWindow.fxHungerPB.Value = user.actor.hunger;
-            user.dialogWindow.fxHungerLabel.Text = user.actor.hunger.ToString();
-            user.dialogWindow.fxStaminaPB.Value = user.actor.stamina;
-            user.dialogWindow.fxStaminaLabel.Text = user.actor.stamina.ToString();
-            user.dialogWindow.fxSleepPB.Value = user.actor.sleep;
-            user.dialogWindow.fxSleepLabel.Text = user.actor.sleep.ToString();
+            InitializeParamsBlock.InitializeParamsBlockDialog();
         }
 
-        public static void ShowWindow(INPC NPCIn)
+        //**//
+
+        //**ОСНОВЫЕ МЕТОДЫ**//
+
+        public static void ShowWindow(INPC NPCIn) // Метод переключения на эту форму
         {
             user.dialogWindow.Show();
             NPC = NPCIn;
@@ -68,13 +63,20 @@ namespace HoboSimulator.Scripts.Windows.MainGame
             UpdateNPC();
         }
 
-        public static void BackBtn()
+        public static void BackBtn() // Кнопка "Назад"
         {
             user.dialogWindow.Hide();
             user.actionWindow.ShowWindow();
         }
 
-        public static void ChoseDialogVariantDGV(DataGridViewCellEventArgs e)
+        public static void ClosedForm() // Закрытие формы
+        {
+            Application.Exit();
+        }
+
+        //**//
+
+        public static void ChoseDialogVariantDGV(DataGridViewCellEventArgs e) // Выбор варианта фразы в диалоге
         {
             if (e.RowIndex != -1)
             {
@@ -101,11 +103,6 @@ namespace HoboSimulator.Scripts.Windows.MainGame
                 }
             }
             user.dialogWindow.fxNPCAnswersText.ScrollToCaret();
-        }
-
-        public static void ClosedForm()
-        {
-            Application.Exit();
         }
     }
 }

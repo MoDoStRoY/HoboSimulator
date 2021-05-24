@@ -19,39 +19,55 @@ namespace HoboSimulator.Windows.Game
             InitializeComponent();
         }
 
+        //**БЛОК ОБНОВЛЕНИЯ ФОРМЫ**//
+
         public void InitializeForm(object sender, EventArgs e)
         {
             InventoryWindowController.InitializeForm();
         }
 
-        public void ShowWindow()
+        //**//
+
+        //**ОСНОВНЫЕ МЕТОДЫ**//
+
+        public void ShowWindow() // Метод показа формы
         {
             InventoryWindowController.ShowWindow();
         }
 
-        private void BackBtn(object sender, EventArgs e)
+        private void BackBtn(object sender, EventArgs e) // Кнопка "Назад"
         {
             InventoryWindowController.BackBtn();
         }
 
-        private void ChosenItemDGV(object sender, DataGridViewCellEventArgs e)
+        private void ClosedForm(object sender, FormClosedEventArgs e) // Закрытие формы
         {
-            InventoryWindowController.ChosenItemDGV(e);
+            InventoryWindowController.ClosedForm();
         }
 
-        private void UseBtn(object sender, EventArgs e)
+        //**//
+
+        //**ИНТЕРАКТИВНЫЕ ЭЛЕМЕНТЫ ФОРМЫ**//
+
+        private void UseBtn(object sender, EventArgs e) // Кнопка "Использовать"
         {
             InventoryWindowController.UseBtn();
         }
 
-        private void DropBtn(object sender, EventArgs e)
+        private void DropBtn(object sender, EventArgs e) // Кнопка "Выбросить"
         {
             InventoryWindowController.DropBtn();
         }
 
-        private void ClosedForm(object sender, FormClosedEventArgs e)
+        //**//
+
+        //**ЛОГИЧЕСКИЕ МЕТОДЫ ФОРМЫ**//
+
+        private void ChosenItemDGV(object sender, DataGridViewCellEventArgs e) // Выбор предмета
         {
-            InventoryWindowController.ClosedForm();
+            InventoryWindowController.ChosenItemDGV(e);
         }
+
+        //**//
     }
 }

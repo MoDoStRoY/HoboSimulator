@@ -7,6 +7,7 @@ using HoboSimulator.Windows.Game.CreateActor;
 using HoboSimulator.Windows.Game.MainGame;
 using HoboSimulator.Windows.Game.Action;
 using HoboSimulator.Windows.Game;
+using System.Windows.Forms;
 
 namespace HoboSimulator.Config.Objects.System
 {
@@ -14,8 +15,8 @@ namespace HoboSimulator.Config.Objects.System
     {
         //**ОБЩИЕ ПЕРЕМЕННЫЕ**//
 
-        public String version = "0.1.1";
-        public MainMenu mainMenu = new MainMenu();
+        public String version = "0.1.2 SnapShot #1";
+        public MainMenuWindow mainMenu = new MainMenuWindow();
         public SettingsWindow settingsWindow = new SettingsWindow();
         public CreateActorWindow createActorWindow = new CreateActorWindow();
         public MainGameWindow mainGameWindow = new MainGameWindow();

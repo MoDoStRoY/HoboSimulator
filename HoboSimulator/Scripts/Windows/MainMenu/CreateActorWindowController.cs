@@ -13,6 +13,8 @@ namespace HoboSimulator.Scripts.Windows.CreateActor
     {
         static User user = Program.user;
 
+        //**БЛОК ОБНОВЛЕНИЯ ФОРМЫ**//
+
         public static void InitializeForm()
         {
             user.createActorWindow.fxListOfPresets.Items.Add("Перхоть");
@@ -20,6 +22,19 @@ namespace HoboSimulator.Scripts.Windows.CreateActor
             user.createActorWindow.fxListOfPresets.Items.Add("Крыса");
             user.createActorWindow.fxListOfPresets.Items.Add("Чурка");
         }
+
+        //**//
+
+        //**ОСНОВНЫЕ МЕТОДЫ**//
+
+        public static void ClosedForm() // Метод закрытия формы
+        {
+            Application.Exit();
+        }
+
+        //**//
+
+        //**ИНТЕРАКТИВНЫЕ ЭЛЕМЕНТЫ ФОРМЫ**//
 
         public static void EndCreateBtn()
         {
@@ -51,14 +66,15 @@ namespace HoboSimulator.Scripts.Windows.CreateActor
             catch (Exception e) {}
         }
 
+        //**//
+
+        //**ЛОГИЧЕСКИЕ МЕТОДЫ ФОРМЫ**//
+
         public static void HoboPresetChosenLB()
         {
 
         }
 
-        public static void ClosedForm()
-        {
-            Application.Exit();
-        }
+        //**//
     }
 }

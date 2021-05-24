@@ -11,32 +11,46 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Move
     {
         static User user = Program.user;
 
-        public static void ShowWindow()
+        //**БЛОК ОБНОВЛЕНИЯ ФОРМЫ**//
+
+        // Пока не используется
+
+        //**//
+
+        //*ОСНОВНЫЕ МЕТОДЫ*//
+
+        public static void ShowWindow() // Метод показа формы
         {
             user.moveWindow.Show();
         }
 
-        public static void ToFoodStoreBtn()
-        {
-            if (user.actor.zone.GetID() != 1)
-                MoveActivity.MoveInLocation(1, 1);
-        }
-
-        public static void ToDistrictsBtn()
-        {
-            if (user.actor.zone.GetID() != 0)
-                MoveActivity.MoveInLocation(1, 0);
-        }
-
-        public static void BackBtn()
+        public static void BackBtn() // Кнопка "Назад"
         {
             user.moveWindow.Hide();
             user.mainGameWindow.ShowWindow();
         }
 
-        public static void ClosedForm()
+        public static void ClosedForm() // Закрытие формы
         {
             Application.Exit();
         }
+
+        //**//
+
+        //**ИНТЕРАКТИВНЫЕ ЭЛЕМЕНТЫ ФОРМЫ**//
+
+        public static void ToFoodStoreBtn() // Кнопка перемещения персонажа в зону "Пятёрочка"
+        {
+            if (user.actor.zone.GetID() != 1)
+                MoveActivity.MoveInLocation(1, 1);
+        }
+
+        public static void ToDistrictsBtn() // Кнопка перемещения персонажа в зону "Спальный район"
+        {
+            if (user.actor.zone.GetID() != 0)
+                MoveActivity.MoveInLocation(1, 0);
+        }
+
+        //**//
     }
 }

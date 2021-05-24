@@ -32,7 +32,7 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.fxActorIconPB = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.fxNameOfActor = new System.Windows.Forms.Label();
             this.fxAgeOfActor = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.fxBiography = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fxActorIconPB)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fxSkillsDGV)).BeginInit();
@@ -105,14 +105,13 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.MenuBtn);
             // 
-            // pictureBox1
+            // fxActorIconPB
             // 
-            this.pictureBox1.Image = global::HoboSimulator.Properties.Resources.HoboIcon1;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(210, 210);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.fxActorIconPB.Location = new System.Drawing.Point(6, 7);
+            this.fxActorIconPB.Name = "fxActorIconPB";
+            this.fxActorIconPB.Size = new System.Drawing.Size(210, 210);
+            this.fxActorIconPB.TabIndex = 3;
+            this.fxActorIconPB.TabStop = false;
             // 
             // label1
             // 
@@ -198,7 +197,7 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.tabPage1.Controls.Add(this.fxBiography);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.pictureBox1);
+            this.tabPage1.Controls.Add(this.fxActorIconPB);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.fxAgeOfActor);
             this.tabPage1.Controls.Add(this.fxNameOfActor);
@@ -486,7 +485,7 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.Text = "HoboSimulator";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClosedForm);
             this.Load += new System.EventHandler(this.InitializeForm);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fxActorIconPB)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -500,7 +499,6 @@ namespace HoboSimulator.Windows.Game.MainGame
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label fxNameOfActor;
         public System.Windows.Forms.Label fxAgeOfActor;
@@ -537,5 +535,6 @@ namespace HoboSimulator.Windows.Game.MainGame
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.ProgressBar fxHealthPB;
         private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.PictureBox fxActorIconPB;
     }
 }

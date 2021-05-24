@@ -10,41 +10,59 @@ namespace HoboSimulator.Scripts.Windows.MainMenu
     {
         static User user = Program.user;
 
+        //**БЛОК ОБНОВЛЕНИЯ ФОРМЫ**//
+
         public static void initializeForm()
         {
             user.mainMenu.fxVersion.Text = Program.user.version;
         }
 
-        public static void ResumeGameBtn()
+        //**//
+
+        //**ОСНОВНЫЕ МЕТОДЫ**//
+
+        public static void ShowWindow() // Метод показа формы
+        {
+            user.mainMenu.Show();
+            initializeForm();
+        }
+
+        public static void CloseGameBtn() // Закрытие формы
+        {
+            Application.Exit();
+        }
+
+        //**//
+
+        //**ИНТЕРАКТИВНЫЕ ЭЛЕМЕНТЫ ФОРМЫ**//
+
+        public static void ResumeGameBtn() // Кнопка продолжения игры
         {
             user.mainMenu.Hide();
             user.mainGameWindow.ShowWindow();
         }
 
-        public static void StartNewGameBtn()
+        public static void StartNewGameBtn() // Кнопка старта новой игры
         {
             user.mainMenu.Hide();
             user.createActorWindow.Show();
         }
 
-        public static void LoadGameBtn()
+        public static void LoadGameBtn() // Кнопка загрузки игры
         {
 
         }
 
-        public static void SaveGameBtn()
+        public static void SaveGameBtn() // Кнопка сохранения игры
         {
 
         }
 
-        public static void SettingsBtn()
+        public static void SettingsBtn() // Кнопка настроек
         {
             user.settingsWindow.Show();
         }
 
-        public static void CloseGameBtn()
-        {
-            Application.Exit();
-        }
+        //**//
     }
 }

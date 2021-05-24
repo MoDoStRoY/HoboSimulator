@@ -10,25 +10,15 @@ namespace HoboSimulator.Scripts.Windows.MainGame
     {
         static User user = Program.user;
 
+        //**БЛОК ОБНОВЛЕНИЯ ФОРМЫ**//
+
         public static void InitializeForm()
         {
-            user.mainGameWindow.fxCurrentTimeLabel.Text = user.world.dateTime.ToString();
+            user.mainGameWindow.fxActorIconPB.Image = user.actor.icon;
             user.mainGameWindow.fxLocationLabel.Text = user.actor.location.GetName() + ", " + user.actor.zone.GetName();
-            user.mainGameWindow.fxMoneyLabel.Text = user.actor.money + " руб.";
-
             user.mainGameWindow.fxNameOfActor.Text = user.actor.name;
             user.mainGameWindow.fxAgeOfActor.Text = user.actor.age.ToString();
             user.mainGameWindow.fxBiography.Text = user.actor.biography;
-            user.mainGameWindow.fxHealthPB.Value = user.actor.health;
-            user.mainGameWindow.fxHealthLabel.Text = user.actor.health.ToString();
-            user.mainGameWindow.fxThirstPB.Value = user.actor.thirst;
-            user.mainGameWindow.fxThirstLabel.Text = user.actor.thirst.ToString();
-            user.mainGameWindow.fxHungerPB.Value = user.actor.hunger;
-            user.mainGameWindow.fxHungerLabel.Text = user.actor.hunger.ToString();
-            user.mainGameWindow.fxStaminaPB.Value = user.actor.stamina;
-            user.mainGameWindow.fxStaminaLabel.Text = user.actor.stamina.ToString();
-            user.mainGameWindow.fxSleepPB.Value = user.actor.sleep;
-            user.mainGameWindow.fxSleepLabel.Text = user.actor.sleep.ToString();
             user.mainGameWindow.fxSkillPointsLabel.Text = user.actor.skillPoints.ToString();
 
             user.mainGameWindow.fxSkillsDGV.Rows.Clear();
@@ -38,25 +28,56 @@ namespace HoboSimulator.Scripts.Windows.MainGame
                 user.mainGameWindow.fxSkillsDGV.Rows[i].Cells[0].Value = user.actor.skills[i].name;
                 user.mainGameWindow.fxSkillsDGV.Rows[i].Cells[1].Value = user.actor.skills[i].value;
             }
+
+            InitializeParamsBlock.InitializeParamsBlockMainGame();
         }
 
-        public static void ShowWindow()
+        //**//
+
+        //**ОСНОВНЫЕ МЕТОДЫ**//
+
+        public static void ShowWindow() // Метод показа формы
         {
             InitializeForm();
             user.mainGameWindow.Show();
         }
 
-        public static void ActionBtn()
+        public static void MenuBtn() // Кнопка "Меню"
+        {
+            user.mainGameWindow.Hide();
+            user.mainMenu.ShowWindow();
+        }
+
+        public static void ClosedForm() // Закрытие формы
+        {
+            Application.Exit();
+        }
+
+        //**//
+
+        //**ИНТЕРАКТИВНЫЕ ЭЛЕМЕНТЫ ФОРМЫ**//
+
+        public static void ActionBtn() // Кнопка перехода в форму действий
         {
             user.mainGameWindow.Hide();
             user.actionWindow.ShowWindow();
         }
 
-        public static void MovingBtn()
+        public static void MovingBtn() // Кнопка перехода в форму перемещений
         {
             user.mainGameWindow.Hide();
             user.moveWindow.ShowWindow();
         }
+
+        public static void InventoryBtn() // Кнопка перехода в форму инвентаря
+        {
+            user.mainGameWindow.Hide();
+            user.inventoryWindow.ShowWindow();
+        }
+
+        //**//
+
+        //**ЛОГИЧЕСКИЕ МЕТОДЫ ФОРМЫ**//
 
         public static void SkillUpCell(DataGridViewCellEventArgs e)
         {
@@ -69,21 +90,6 @@ namespace HoboSimulator.Scripts.Windows.MainGame
             }    
         }
 
-        public static void MenuBtn()
-        {
-            user.mainGameWindow.Hide();
-            user.mainMenu.Show();
-        }
-
-        public static void InventoryBtn()
-        {
-            user.mainGameWindow.Hide();
-            user.inventoryWindow.ShowWindow();
-        }
-
-        public static void ClosedForm()
-        {
-            Application.Exit();
-        }
+        //**//
     }
 }
