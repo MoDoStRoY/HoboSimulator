@@ -502,6 +502,7 @@ namespace HoboSimulator.Windows.Game
             this.Controls.Add(this.label19);
             this.Name = "TradeWindow";
             this.Text = "HoboSimulator";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClosedForm);
             this.Load += new System.EventHandler(this.InitializeForm);
             ((System.ComponentModel.ISupportInitialize)(this.fxChosenGoodsDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fxAssortmentDGV)).EndInit();

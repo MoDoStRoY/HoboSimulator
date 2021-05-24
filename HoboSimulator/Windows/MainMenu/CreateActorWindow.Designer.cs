@@ -134,6 +134,7 @@ namespace HoboSimulator.Windows.Game.CreateActor
             this.Controls.Add(this.button1);
             this.Name = "CreateActorWindow";
             this.Text = "HoboSimulator";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClosedForm);
             this.Load += new System.EventHandler(this.InitializeForm);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -51,5 +51,10 @@ namespace HoboSimulator.Windows.Game.MainGame
         {
             MainGameWindowController.InventoryBtn();
         }
+
+        private void ClosedForm(object sender, FormClosedEventArgs e)
+        {
+            MainGameWindowController.ClosedForm();
+        }
     }
 }

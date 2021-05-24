@@ -170,6 +170,7 @@ namespace HoboSimulator.Windows.Game
             this.button1.TabIndex = 59;
             this.button1.Text = "Назад";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.BackBtn);
             // 
             // fxMoneyLabel
             // 
@@ -446,6 +447,7 @@ namespace HoboSimulator.Windows.Game
             this.Controls.Add(this.fxNPCIconPB);
             this.Name = "DialogWindow";
             this.Text = "HoboSimulator";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClosedForm);
             ((System.ComponentModel.ISupportInitialize)(this.fxDialogDGW)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fxNPCIconPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fxActorIconPB)).EndInit();

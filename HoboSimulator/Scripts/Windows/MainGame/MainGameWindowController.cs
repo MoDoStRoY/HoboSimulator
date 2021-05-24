@@ -63,7 +63,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame
             if (user.actor.skillPoints > 0)
             {
                 user.actor.skills[e.RowIndex].value++;
-                user.mainGameWindow.fxSkillsDGV.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = user.actor.skills[e.RowIndex].value.ToString();
+                user.mainGameWindow.fxSkillsDGV.Rows[e.RowIndex].Cells[1].Value = user.actor.skills[e.RowIndex].value.ToString();
                 user.actor.skillPoints--;
                 user.mainGameWindow.fxSkillPointsLabel.Text = user.actor.skillPoints.ToString();
             }    
@@ -79,6 +79,11 @@ namespace HoboSimulator.Scripts.Windows.MainGame
         {
             user.mainGameWindow.Hide();
             user.inventoryWindow.ShowWindow();
+        }
+
+        public static void ClosedForm()
+        {
+            Application.Exit();
         }
     }
 }

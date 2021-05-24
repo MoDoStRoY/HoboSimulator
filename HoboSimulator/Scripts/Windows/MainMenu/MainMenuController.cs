@@ -2,21 +2,29 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 
 namespace HoboSimulator.Scripts.Windows.MainMenu
 {
     class MainMenuController
     {
+        static User user = Program.user;
 
         public static void initializeForm()
         {
-            Program.user.mainMenu.fxVersion.Text = Program.user.version;
+            user.mainMenu.fxVersion.Text = Program.user.version;
+        }
+
+        public static void ResumeGameBtn()
+        {
+            user.mainMenu.Hide();
+            user.mainGameWindow.ShowWindow();
         }
 
         public static void StartNewGameBtn()
         {
-            Program.user.mainMenu.Hide();
-            Program.user.createActorWindow.Show();
+            user.mainMenu.Hide();
+            user.createActorWindow.Show();
         }
 
         public static void LoadGameBtn()
@@ -31,12 +39,12 @@ namespace HoboSimulator.Scripts.Windows.MainMenu
 
         public static void SettingsBtn()
         {
-            Program.user.settingsWindow.Show();
+            user.settingsWindow.Show();
         }
 
         public static void CloseGameBtn()
         {
-            
+            Application.Exit();
         }
     }
 }

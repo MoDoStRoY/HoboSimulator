@@ -52,7 +52,11 @@ namespace HoboSimulator
         private void CloseGameBtn(object sender, EventArgs e)
         {
             MainMenuController.CloseGameBtn();
-            Application.Exit();
+        }
+
+        private void ResumeGameBtn(object sender, EventArgs e)
+        {
+            MainMenuController.ResumeGameBtn();
         }
     }
 }

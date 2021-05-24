@@ -30,5 +30,10 @@ namespace HoboSimulator.Windows.Game
         {
             MoveWindowController.BackBtn();
         }
+
+        private void ClosedForm(object sender, FormClosedEventArgs e)
+        {
+            MoveWindowController.ClosedForm();
+        }
     }
 }

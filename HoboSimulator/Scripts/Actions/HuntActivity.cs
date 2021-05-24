@@ -24,14 +24,14 @@ namespace HoboSimulator.Scripts.Actions
                 {
                     TakeItem.Take(ID);
 
-                    user.actionWindow.fxResultOfAction.Text += "Дата и время: " + user.world.dateTime.ToString() + "\n" +
+                    user.actionWindow.fxResultOfAction.AppendText("Дата и время: " + user.world.dateTime.ToString() + "\n" +
                         "Охота успешна! Добыто: " +
-                        user.actor.inventory[user.actor.inventory.Count - 1].GetName() + "\n\n";
+                        user.actor.inventory[user.actor.inventory.Count - 1].GetName() + "\n\n");
                 }
                 else
                 {
-                    user.actionWindow.fxResultOfAction.Text += "Дата и время: " + user.world.dateTime.ToString() + "\n" +
-                        "Охота не удалась - ничего не добыто.\n\n";
+                    user.actionWindow.fxResultOfAction.AppendText("Дата и время: " + user.world.dateTime.ToString() + "\n" +
+                        "Охота не удалась - ничего не добыто.\n\n");
                 }
                 user.actor.hunger -= 10 - (agilityResult + staminaResult) / 2;
                 user.actor.thirst -= 20 - (agilityResult + staminaResult) / 2;
@@ -49,6 +49,7 @@ namespace HoboSimulator.Scripts.Actions
 
                 }
             }
+            user.actionWindow.fxResultOfAction.ScrollToCaret();
             TimeFlow.AddMinutes(30);
         }
     }

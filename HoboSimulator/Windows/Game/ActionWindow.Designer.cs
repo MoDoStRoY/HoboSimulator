@@ -46,6 +46,7 @@ namespace HoboSimulator.Windows.Game.Action
             this.fxHuntBirdBtn = new System.Windows.Forms.Button();
             this.fxHuntDogBtn = new System.Windows.Forms.Button();
             this.City_FoodStoreTP = new System.Windows.Forms.TabPage();
+            this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
@@ -87,7 +88,6 @@ namespace HoboSimulator.Windows.Game.Action
             this.label5 = new System.Windows.Forms.Label();
             this.fxHealthPB = new System.Windows.Forms.ProgressBar();
             this.label12 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
             this.fxMainTP.SuspendLayout();
             this.ActionTP.SuspendLayout();
             this.fxActionsTP.SuspendLayout();
@@ -277,6 +277,16 @@ namespace HoboSimulator.Windows.Game.Action
             this.City_FoodStoreTP.TabIndex = 1;
             this.City_FoodStoreTP.Text = "City_FoodStoreTP";
             this.City_FoodStoreTP.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(237, 170);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(227, 29);
+            this.button11.TabIndex = 13;
+            this.button11.Text = "Диалог с Галей";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.TestDialogBtn);
             // 
             // button10
             // 
@@ -624,16 +634,6 @@ namespace HoboSimulator.Windows.Game.Action
             this.label12.TabIndex = 115;
             this.label12.Text = "Состояние здоровья:";
             // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(237, 170);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(227, 29);
-            this.button11.TabIndex = 13;
-            this.button11.Text = "Диалог с Галей";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.TestDialogBtn);
-            // 
             // ActionWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -664,6 +664,7 @@ namespace HoboSimulator.Windows.Game.Action
             this.Controls.Add(this.button1);
             this.Name = "ActionWindow";
             this.Text = "HoboSimulator";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClosedForm);
             this.Load += new System.EventHandler(this.InitializeForm);
             this.fxMainTP.ResumeLayout(false);
             this.ActionTP.ResumeLayout(false);

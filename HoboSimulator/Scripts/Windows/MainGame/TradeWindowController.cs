@@ -155,5 +155,10 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Trade
                 UpdateTradeVariables();
             }
         }
+
+        public static void ClosedForm()
+        {
+            Application.Exit();
+        }
     }
 }

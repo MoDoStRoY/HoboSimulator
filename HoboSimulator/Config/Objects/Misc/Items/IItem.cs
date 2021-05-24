@@ -11,6 +11,7 @@ namespace HoboSimulator.Config.Objects.Misc.Items
         public String GetName();
         public String GetDescription();
         public String GetParamsString();
+        public bool GetUsable();
         public int GetID();
         public double GetWeight();
         public double GetCost();

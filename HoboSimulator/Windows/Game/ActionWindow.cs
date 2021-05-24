@@ -56,5 +56,10 @@ namespace HoboSimulator.Windows.Game.Action
         {
             ActionWindowController.TestDialogBtn();
         }
+
+        private void ClosedForm(object sender, FormClosedEventArgs e)
+        {
+            ActionWindowController.ClosedForm();
+        }
     }
 }

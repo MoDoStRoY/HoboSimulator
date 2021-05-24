@@ -2,6 +2,7 @@
 using HoboSimulator.Config.Objects.Misc.Items;
 using HoboSimulator.Config.Objects.System;
 using HoboSimulator.Scripts.Inventory;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -17,7 +18,8 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Inventory
 
             double weight = 0;
             for (int i = 0; i < user.actor.inventory.Count; i++)
-                weight += user.actor.inventory[i].GetWeight();
+                weight += user.actor.inventory[i].GetWeight(); 
+
             user.inventoryWindow.fxWeightLabel.Text = weight + " кг";
             user.inventoryWindow.fxMaxWeightLabel.Text = user.actor.maxWeight + " кг";
             user.inventoryWindow.fxMoneyLabel.Text = user.actor.money + " руб.";
@@ -73,7 +75,10 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Inventory
                 user.inventoryWindow.fxNameOfItemLabel.Text = item.GetName();
                 user.inventoryWindow.fxDescriptionOfItemText.Text = item.GetDescription();
                 user.inventoryWindow.fxTtxText.Text = item.GetParamsString();
-                user.inventoryWindow.fxUseBtn.Visible = true;
+
+                if (item.GetUsable()) user.inventoryWindow.fxUseBtn.Visible = true;
+                else user.inventoryWindow.fxUseBtn.Visible = false;
+
                 user.inventoryWindow.fxDropBtn.Visible = true;
             }
             else
@@ -101,6 +106,11 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Inventory
             user.actor.inventory.RemoveAt(user.actor.numberOfChosenItem);
 
             InitializeForm();
+        }
+
+        public static void ClosedForm()
+        {
+            Application.Exit();
         }
     }
 }

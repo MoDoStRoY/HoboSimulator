@@ -45,6 +45,7 @@ namespace HoboSimulator.Scripts.Windows.CreateActor
                 );
 
                 user.createActorWindow.Hide();
+                user.mainMenu.fxResumeGameBtn.Visible = true;
                 user.mainGameWindow.ShowWindow();
             }
             catch (Exception e) {}
@@ -53,6 +54,11 @@ namespace HoboSimulator.Scripts.Windows.CreateActor
         public static void HoboPresetChosenLB()
         {
 
+        }
+
+        public static void ClosedForm()
+        {
+            Application.Exit();
         }
     }
 }

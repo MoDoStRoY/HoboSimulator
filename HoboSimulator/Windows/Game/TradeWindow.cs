@@ -50,5 +50,10 @@ namespace HoboSimulator.Windows.Game
         {
             TradeWindowController.BuyBtn();
         }
+
+        private void ClosedForm(object sender, FormClosedEventArgs e)
+        {
+            TradeWindowController.ClosedForm();
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace HoboSimulator.Scripts.Actions
             user.actor.sleep -= 3;
             user.actor.stamina -= (distance * 10) - (user.actor.skills[2].value * 2);
 
-            TimeFlow.AddMinutes((distance * 1000) / (user.actor.skills[2].value * 10));
+            TimeFlow.AddMinutes((distance * 1000) / (user.actor.skills[2].value * 10 + 1));
         }
     }
 }

@@ -17,20 +17,21 @@ namespace HoboSimulator.Scripts.Actions
             {
                 TakeItem.Take(randomiser.Next(1, 4));
 
-                user.actionWindow.fxResultOfAction.Text += "Дата и время: " + user.world.dateTime.ToString() + "\n" +
+                user.actionWindow.fxResultOfAction.AppendText("Дата и время: " + user.world.dateTime.ToString() + "\n" +
                     "Поиски увенчались успехом! Найдено: " +
-                    user.actor.inventory[user.actor.inventory.Count - 1].GetName() + "\n\n";
+                    user.actor.inventory[user.actor.inventory.Count - 1].GetName() + "\n\n");
             }
             else
             {
-                user.actionWindow.fxResultOfAction.Text += "Дата и время: " + user.world.dateTime.ToString() + "\n" +
-                    "Тут ничего не удалось найти ничего полезного.\n\n";
+                user.actionWindow.fxResultOfAction.AppendText("Дата и время: " + user.world.dateTime.ToString() + "\n" +
+                    "Тут ничего не удалось найти ничего полезного.\n\n");
             }
             user.actor.hunger -= 6;
             user.actor.thirst -= 5;
             user.actor.sleep -= 3;
             user.actor.stamina -= 5;
 
+            user.actionWindow.fxResultOfAction.ScrollToCaret();
             TimeFlow.AddMinutes(30);
         }
     }

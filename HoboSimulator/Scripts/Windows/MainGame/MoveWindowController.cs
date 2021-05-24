@@ -3,6 +3,7 @@ using HoboSimulator.Scripts.Actions;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 
 namespace HoboSimulator.Scripts.Windows.MainGame.Move
 {
@@ -31,6 +32,11 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Move
         {
             user.moveWindow.Hide();
             user.mainGameWindow.ShowWindow();
+        }
+
+        public static void ClosedForm()
+        {
+            Application.Exit();
         }
     }
 }

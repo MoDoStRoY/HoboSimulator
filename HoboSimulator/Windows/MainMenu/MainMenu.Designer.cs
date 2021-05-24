@@ -36,6 +36,7 @@ namespace HoboSimulator
             this.button5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.fxVersion = new System.Windows.Forms.Label();
+            this.fxResumeGameBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button3
@@ -102,15 +103,27 @@ namespace HoboSimulator
             this.fxVersion.AutoSize = true;
             this.fxVersion.Location = new System.Drawing.Point(148, 677);
             this.fxVersion.Name = "fxVersion";
-            this.fxVersion.Size = new System.Drawing.Size(50, 20);
+            this.fxVersion.Size = new System.Drawing.Size(83, 20);
             this.fxVersion.TabIndex = 8;
-            this.fxVersion.Text = "label2";
+            this.fxVersion.Text = "%Версия%";
+            // 
+            // fxResumeGameBtn
+            // 
+            this.fxResumeGameBtn.Location = new System.Drawing.Point(196, 210);
+            this.fxResumeGameBtn.Name = "fxResumeGameBtn";
+            this.fxResumeGameBtn.Size = new System.Drawing.Size(386, 29);
+            this.fxResumeGameBtn.TabIndex = 9;
+            this.fxResumeGameBtn.Text = "Вернуться к игре";
+            this.fxResumeGameBtn.UseVisualStyleBackColor = true;
+            this.fxResumeGameBtn.Visible = false;
+            this.fxResumeGameBtn.Click += new System.EventHandler(this.ResumeGameBtn);
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 714);
+            this.Controls.Add(this.fxResumeGameBtn);
             this.Controls.Add(this.fxVersion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button5);
@@ -135,6 +148,7 @@ namespace HoboSimulator
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label fxVersion;
+        public System.Windows.Forms.Button fxResumeGameBtn;
     }
 }
 

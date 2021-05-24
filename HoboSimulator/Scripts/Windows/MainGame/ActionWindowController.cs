@@ -3,6 +3,7 @@ using HoboSimulator.Scripts.Actions;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 
 namespace HoboSimulator.Scripts.Windows.MainGame.Action
 {
@@ -37,6 +38,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
                 "Сила: 2");
 
             user.actionWindow.fxCurrentTimeLabel.Text = user.world.dateTime.ToString();
+            user.actionWindow.fxMoneyLabel.Text = user.actor.money.ToString();
             user.actionWindow.fxHealthPB.Value = user.actor.health;
             user.actionWindow.fxHealthLabel.Text = user.actor.health.ToString();
             user.actionWindow.fxThirstPB.Value = user.actor.thirst;
@@ -90,6 +92,11 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
         {
             user.actionWindow.Hide();
             user.dialogWindow.ShowWindow(user.actor.zone.GetNPCList()[0]);
+        }
+
+        public static void ClosedForm()
+        {
+            Application.Exit();
         }
     }
 }

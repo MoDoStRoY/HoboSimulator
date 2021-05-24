@@ -10,6 +10,7 @@ namespace HoboSimulator.Config.Objects.Misc.Items.Food
         String name = "Объедки";
         String description = "Выброшенные кем-то объедки. В целом, есть вроде можно, но пахнет это уже подозрительно.";
         String type = "Food";
+        bool usable = true;
         int ID = 1;
         public List<Parameter> parameters = new List<Parameter>
         {
@@ -22,21 +23,9 @@ namespace HoboSimulator.Config.Objects.Misc.Items.Food
             new Parameter("Цена", 50)
         };
 
-        public String GetType()
-        {
-            return type;
-        }
-
-        public String GetName()
-        {
-            return name;
-        }
-
-        public String GetDescription()
-        {
-            return description;
-        }
-
+        public String GetType() { return type; }
+        public String GetName() { return name; }
+        public String GetDescription() { return description; }
         public String GetParamsString()
         {
             String result = "";
@@ -46,25 +35,10 @@ namespace HoboSimulator.Config.Objects.Misc.Items.Food
 
             return result;
         }
-
-        public int GetID()
-        {
-            return ID;
-        }
-
-        public double GetWeight()
-        {
-            return parameters[5].value;
-        }
-
-        public double GetCost()
-        {
-            return parameters[6].value;
-        }
-
-        public List<Parameter> GetParamsList()
-        {
-            return parameters;
-        }
+        public bool GetUsable() { return usable; }
+        public int GetID() { return ID; }
+        public double GetWeight() { return parameters[0].value; }
+        public double GetCost() { return parameters[6].value; }
+        public List<Parameter> GetParamsList() { return parameters; }
     }
 }

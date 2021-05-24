@@ -30,5 +30,10 @@ namespace HoboSimulator.Windows.Game.CreateActor
         {
 
         }
+
+        private void ClosedForm(object sender, FormClosedEventArgs e)
+        {
+            CreateActorWindowController.ClosedForm();
+        }
     }
 }

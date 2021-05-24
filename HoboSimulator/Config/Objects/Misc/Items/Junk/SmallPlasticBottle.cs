@@ -10,6 +10,7 @@ namespace HoboSimulator.Config.Objects.Misc.Items.Junk
         String name = "Пластиковая бутылка (0,5л)";
         String description = "Обыкновенная пластиковая бутылка объёмом 0,5л.\nГрязноватая, немного помята и уже нельзя точно определить, что она содержала в себе изначально, но её до сих пор можно использовать по назначению.";
         String type = "Junk";
+        bool usable = false;
         int ID = 3;
         public List<Parameter> parameters = new List<Parameter>
         {
@@ -17,21 +18,9 @@ namespace HoboSimulator.Config.Objects.Misc.Items.Junk
             new Parameter("Цена", 5)
         };
 
-        public String GetType()
-        {
-            return type;
-        }
-
-        public String GetName()
-        {
-            return name;
-        }
-
-        public String GetDescription()
-        {
-            return description;
-        }
-
+        public String GetType(){return type;}
+        public String GetName(){return name;}
+        public String GetDescription(){return description;}
         public String GetParamsString()
         {
             String result = "";
@@ -41,25 +30,10 @@ namespace HoboSimulator.Config.Objects.Misc.Items.Junk
 
             return result;
         }
-
-        public int GetID()
-        {
-            return ID;
-        }
-
-        public double GetWeight()
-        {
-            return parameters[0].value;
-        }
-
-        public double GetCost()
-        {
-            return parameters[1].value;
-        }
-
-        public List<Parameter> GetParamsList()
-        {
-            return parameters;
-        }
+        public bool GetUsable(){return usable;}
+        public int GetID(){return ID;}
+        public double GetWeight(){return parameters[0].value;}
+        public double GetCost(){return parameters[1].value;}
+        public List<Parameter> GetParamsList(){return parameters;}
     }
 }

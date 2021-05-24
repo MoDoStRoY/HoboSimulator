@@ -80,18 +80,32 @@ namespace HoboSimulator.Scripts.Windows.MainGame
             {
                 user.dialogWindow.fxDialogDGW.Rows.Clear();
 
-                user.dialogWindow.fxNPCAnswersText.Text += user.actor.name + ":\n" + dialog_tree[e.RowIndex].phrase_actor + "\n\n" +
-                    NPC.GetName() + ":\n" + dialog_tree[e.RowIndex].phrase_NPC + "\n\n";
+                user.dialogWindow.fxNPCAnswersText.AppendText(user.actor.name + ":\n" + dialog_tree[e.RowIndex].phrase_actor + "\n\n" +
+                    NPC.GetName() + ":\n" + dialog_tree[e.RowIndex].phrase_NPC + "\n\n");
 
                 dialog_tree = dialog_tree[e.RowIndex].dialog_tree;
 
-                for (int i = 0; i < dialog_tree.Count; i++)
+                if (dialog_tree != null)
                 {
-                    user.dialogWindow.fxDialogDGW.Rows.Add();
+                    for (int i = 0; i < dialog_tree.Count; i++)
+                    {
+                        user.dialogWindow.fxDialogDGW.Rows.Add();
 
-                    user.dialogWindow.fxDialogDGW.Rows[i].Cells[0].Value = dialog_tree[i].phrase_actor;
+                        user.dialogWindow.fxDialogDGW.Rows[i].Cells[0].Value = dialog_tree[i].phrase_actor;
+                    }
                 }
-            }    
+                else
+                {
+                    dialog_tree = NPC.GetDialogs();
+                    UpdateDialog();
+                }
+            }
+            user.dialogWindow.fxNPCAnswersText.ScrollToCaret();
+        }
+
+        public static void ClosedForm()
+        {
+            Application.Exit();
         }
     }
 }

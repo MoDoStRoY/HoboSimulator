@@ -74,6 +74,7 @@ namespace HoboSimulator.Windows.Game
             this.Controls.Add(this.button1);
             this.Name = "MoveWindow";
             this.Text = "MoveWindow";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClosedForm);
             this.ResumeLayout(false);
 
         }

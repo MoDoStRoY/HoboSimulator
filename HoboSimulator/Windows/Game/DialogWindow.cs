@@ -31,5 +31,10 @@ namespace HoboSimulator.Windows.Game
         {
             DialogWindowController.ChoseDialogVariantDGV(e);
         }
+
+        private void ClosedForm(object sender, FormClosedEventArgs e)
+        {
+            DialogWindowController.ClosedForm();
+        }
     }
 }

@@ -146,7 +146,7 @@ namespace HoboSimulator.Windows.Game
             // fxNameOfItemLabel
             // 
             this.fxNameOfItemLabel.AutoSize = true;
-            this.fxNameOfItemLabel.Location = new System.Drawing.Point(538, 13);
+            this.fxNameOfItemLabel.Location = new System.Drawing.Point(448, 33);
             this.fxNameOfItemLabel.Name = "fxNameOfItemLabel";
             this.fxNameOfItemLabel.Size = new System.Drawing.Size(101, 20);
             this.fxNameOfItemLabel.TabIndex = 62;
@@ -444,6 +444,7 @@ namespace HoboSimulator.Windows.Game
             this.Controls.Add(this.fxInventoryDGV);
             this.Name = "InventoryWindow";
             this.Text = "HoboSimulator";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClosedForm);
             this.Load += new System.EventHandler(this.InitializeForm);
             ((System.ComponentModel.ISupportInitialize)(this.fxInventoryDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
