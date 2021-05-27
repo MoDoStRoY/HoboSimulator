@@ -64,7 +64,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame
             UpdateNPC();
         }
 
-        public static void RShowWindow()
+        public static void RShowWindow() // Метод возобновления показа формы
         {
             user.dialogWindow.Show();
             InitializeForm();

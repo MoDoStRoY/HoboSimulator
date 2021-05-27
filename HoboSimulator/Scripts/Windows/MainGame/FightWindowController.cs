@@ -24,6 +24,14 @@ namespace HoboSimulator.Scripts.Windows.MainGame
             user.fightWindow.fxActorNameLabel.Text = user.actor.name;
             user.fightWindow.fxActorGroupLabel.Text = user.actor.group;
 
+            user.mainGameWindow.fxResumeFightBtn.Enabled = true;
+            user.fightWindow.fxAttackBtn.Enabled = true;
+            user.fightWindow.fxDodgeBtn.Enabled = true;
+            user.fightWindow.fxDefenceBtn.Enabled = true;
+            user.fightWindow.fxEscapeBtn.Enabled = true;
+            user.fightWindow.fxLootNPCBtn.Visible = false;
+            user.fightWindow.fxResultOfActionText.Clear();
+
             user.fightWindow.fxActorParamsDGV.Rows.Clear();
             for (int i = 0; i < user.actor.skills.Count; i++)
             {
@@ -42,7 +50,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame
             user.fightWindow.fxNPCHealthPB.Value = NPC.GetHealth();
             user.fightWindow.fxNPCHealthLabel.Text = NPC.GetHealth().ToString();
             user.fightWindow.fxNPCStaminaPB.Value = NPC.GetStamina();
-            user.fightWindow.fxNPCStaminaLabel.Text = NPC.GetHealth().ToString();
+            user.fightWindow.fxNPCStaminaLabel.Text = NPC.GetStamina().ToString();
 
             user.fightWindow.fxNPCParamsDGV.Rows.Clear();
             for (int i = 0; i < NPC.GetSkills().Count; i++)
@@ -73,7 +81,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame
             user.actor.inFight = true;
         }
 
-        public static void RShowWindow()
+        public static void RShowWindow() // Метод возобновления показа формы
         {
             user.fightWindow.Show();
             InitializeForm();
@@ -99,6 +107,12 @@ namespace HoboSimulator.Scripts.Windows.MainGame
             FightMain.Fighting(NPC, "Attack", true);
             UpdateNPC();
             UpdateActionVariables();
+        }
+
+        public static void LootNpcBtn()
+        {
+            user.fightWindow.Hide();
+            user.lootWindow.ShowWindow(NPC.GetInventory());
         }
 
         //**//

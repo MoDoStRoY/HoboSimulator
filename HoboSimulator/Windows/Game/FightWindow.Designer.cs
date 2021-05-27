@@ -69,10 +69,10 @@ namespace HoboSimulator.Windows.Game
             this.fxActorParamsDGV = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.fxAttackBtn = new System.Windows.Forms.Button();
+            this.fxDodgeBtn = new System.Windows.Forms.Button();
+            this.fxDefenceBtn = new System.Windows.Forms.Button();
+            this.fxEscapeBtn = new System.Windows.Forms.Button();
             this.fxResultOfActionText = new System.Windows.Forms.RichTextBox();
             this.fxNPCHealthLabel = new System.Windows.Forms.Label();
             this.fxNPCHealthPB = new System.Windows.Forms.ProgressBar();
@@ -80,6 +80,7 @@ namespace HoboSimulator.Windows.Game
             this.fxNPCStaminaLabel = new System.Windows.Forms.Label();
             this.fxNPCStaminaPB = new System.Windows.Forms.ProgressBar();
             this.label17 = new System.Windows.Forms.Label();
+            this.fxLootNPCBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fxActorIconPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fxNPCIconPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fxNPCParamsDGV)).BeginInit();
@@ -451,42 +452,46 @@ namespace HoboSimulator.Windows.Game
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // button2
+            // fxAttackBtn
             // 
-            this.button2.Location = new System.Drawing.Point(607, 229);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(465, 29);
-            this.button2.TabIndex = 160;
-            this.button2.Text = "Атаковать";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.AttackBtn);
+            this.fxAttackBtn.Enabled = false;
+            this.fxAttackBtn.Location = new System.Drawing.Point(607, 229);
+            this.fxAttackBtn.Name = "fxAttackBtn";
+            this.fxAttackBtn.Size = new System.Drawing.Size(465, 29);
+            this.fxAttackBtn.TabIndex = 160;
+            this.fxAttackBtn.Text = "Атаковать";
+            this.fxAttackBtn.UseVisualStyleBackColor = true;
+            this.fxAttackBtn.Click += new System.EventHandler(this.AttackBtn);
             // 
-            // button3
+            // fxDodgeBtn
             // 
-            this.button3.Location = new System.Drawing.Point(607, 264);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(465, 29);
-            this.button3.TabIndex = 161;
-            this.button3.Text = "Изматывать";
-            this.button3.UseVisualStyleBackColor = true;
+            this.fxDodgeBtn.Enabled = false;
+            this.fxDodgeBtn.Location = new System.Drawing.Point(607, 264);
+            this.fxDodgeBtn.Name = "fxDodgeBtn";
+            this.fxDodgeBtn.Size = new System.Drawing.Size(465, 29);
+            this.fxDodgeBtn.TabIndex = 161;
+            this.fxDodgeBtn.Text = "Изматывать";
+            this.fxDodgeBtn.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // fxDefenceBtn
             // 
-            this.button4.Location = new System.Drawing.Point(608, 299);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(465, 29);
-            this.button4.TabIndex = 162;
-            this.button4.Text = "Защищаться";
-            this.button4.UseVisualStyleBackColor = true;
+            this.fxDefenceBtn.Enabled = false;
+            this.fxDefenceBtn.Location = new System.Drawing.Point(608, 299);
+            this.fxDefenceBtn.Name = "fxDefenceBtn";
+            this.fxDefenceBtn.Size = new System.Drawing.Size(465, 29);
+            this.fxDefenceBtn.TabIndex = 162;
+            this.fxDefenceBtn.Text = "Защищаться";
+            this.fxDefenceBtn.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // fxEscapeBtn
             // 
-            this.button5.Location = new System.Drawing.Point(607, 426);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(465, 29);
-            this.button5.TabIndex = 163;
-            this.button5.Text = "Бежать";
-            this.button5.UseVisualStyleBackColor = true;
+            this.fxEscapeBtn.Enabled = false;
+            this.fxEscapeBtn.Location = new System.Drawing.Point(607, 426);
+            this.fxEscapeBtn.Name = "fxEscapeBtn";
+            this.fxEscapeBtn.Size = new System.Drawing.Size(465, 29);
+            this.fxEscapeBtn.TabIndex = 163;
+            this.fxEscapeBtn.Text = "Бежать";
+            this.fxEscapeBtn.UseVisualStyleBackColor = true;
             // 
             // fxResultOfActionText
             // 
@@ -546,11 +551,23 @@ namespace HoboSimulator.Windows.Game
             this.label17.TabIndex = 168;
             this.label17.Text = "Выносливость:";
             // 
+            // fxLootNPCBtn
+            // 
+            this.fxLootNPCBtn.Location = new System.Drawing.Point(608, 391);
+            this.fxLootNPCBtn.Name = "fxLootNPCBtn";
+            this.fxLootNPCBtn.Size = new System.Drawing.Size(464, 29);
+            this.fxLootNPCBtn.TabIndex = 171;
+            this.fxLootNPCBtn.Text = "Осмотреть имущество противника";
+            this.fxLootNPCBtn.UseVisualStyleBackColor = true;
+            this.fxLootNPCBtn.Visible = false;
+            this.fxLootNPCBtn.Click += new System.EventHandler(this.LootNpcBtn);
+            // 
             // FightWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 778);
+            this.Controls.Add(this.fxLootNPCBtn);
             this.Controls.Add(this.fxNPCStaminaLabel);
             this.Controls.Add(this.fxNPCStaminaPB);
             this.Controls.Add(this.label17);
@@ -558,10 +575,10 @@ namespace HoboSimulator.Windows.Game
             this.Controls.Add(this.fxNPCHealthPB);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.fxResultOfActionText);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.fxEscapeBtn);
+            this.Controls.Add(this.fxDefenceBtn);
+            this.Controls.Add(this.fxDodgeBtn);
+            this.Controls.Add(this.fxAttackBtn);
             this.Controls.Add(this.fxActorParamsDGV);
             this.Controls.Add(this.fxNPCParamsDGV);
             this.Controls.Add(this.fxActorRelationLabel);
@@ -653,10 +670,6 @@ namespace HoboSimulator.Windows.Game
         public System.Windows.Forms.DataGridView fxActorParamsDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         public System.Windows.Forms.RichTextBox fxResultOfActionText;
         public System.Windows.Forms.Label fxNPCHealthLabel;
         public System.Windows.Forms.ProgressBar fxNPCHealthPB;
@@ -664,5 +677,10 @@ namespace HoboSimulator.Windows.Game
         public System.Windows.Forms.Label fxNPCStaminaLabel;
         public System.Windows.Forms.ProgressBar fxNPCStaminaPB;
         private System.Windows.Forms.Label label17;
+        public System.Windows.Forms.Button fxAttackBtn;
+        public System.Windows.Forms.Button fxDodgeBtn;
+        public System.Windows.Forms.Button fxDefenceBtn;
+        public System.Windows.Forms.Button fxEscapeBtn;
+        public System.Windows.Forms.Button fxLootNPCBtn;
     }
 }

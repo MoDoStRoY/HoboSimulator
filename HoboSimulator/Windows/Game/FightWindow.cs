@@ -55,6 +55,11 @@ namespace HoboSimulator.Windows.Game
             FightWindowController.AttackBtn();
         }
 
+        private void LootNpcBtn(object sender, EventArgs e)
+        {
+            FightWindowController.LootNpcBtn();
+        }
+
         //**//
 
         //**ЛОГИЧЕСКИЕ МЕТОДЫ ФОРМЫ**//

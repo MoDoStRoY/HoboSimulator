@@ -24,12 +24,12 @@ namespace HoboSimulator.Config.Objects.Characters.NPC.Traders
         public List<Dialog> dialog_tree = Galya_Dialogs.dialog_tree; // Диалоги
         public List<Skill> skills = new List<Skill> // Скиллы
         {
-            new Skill("Сила", 3),
-            new Skill("Ловкость", 2),
-            new Skill("Выносливость", 3),
+            new Skill("Сила", 1),
+            new Skill("Ловкость", 1),
+            new Skill("Выносливость", 1),
             new Skill("Ремесло", 5),
             new Skill("Харизма", 2),
-            new Skill("Удача", 4)
+            new Skill("Удача", 1)
         };
 
         public String GetName() { return name; }

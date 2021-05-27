@@ -47,31 +47,44 @@ namespace HoboSimulator.Scripts.Fight
                     NPC.EditHealth((actor.skills[0].value * -5));
                     actor.Stamina -= (50 - actor.skills[2].value * 4);
 
-                    user.fightWindow.fxResultOfActionText.AppendText("\n\n" + actor.name + " нанёс удар " + NPC.GetName() + ".\n" + 
-                        NPC.GetName() + " получен урон: " + actor.skills[0].value * 5 + ".");
+                    user.fightWindow.fxResultOfActionText.AppendText(actor.name + " нанёс удар " + NPC.GetName() + ".\n" + 
+                        NPC.GetName() + " получен урон: " + actor.skills[0].value * 5 + ".\n\n");
+
+                    if (NPC.GetHealth() == 0)
+                    {
+                        user.fightWindow.fxResultOfActionText.AppendText(actor.name + " убил " + NPC.GetName());
+                        actor.inFight = false;
+                        user.mainGameWindow.fxResumeFightBtn.Enabled = false;
+
+                        user.fightWindow.fxAttackBtn.Enabled = false;
+                        user.fightWindow.fxDodgeBtn.Enabled = false;
+                        user.fightWindow.fxDefenceBtn.Enabled = false;
+                        user.fightWindow.fxEscapeBtn.Enabled = false;
+                        user.fightWindow.fxLootNPCBtn.Visible = true;
+                    }
                 }
                 else
                 {
                     actor.Health -= NPC.GetSkills()[0].value * 5;
                     NPC.EditStamina(-50 - NPC.GetSkills()[2].value * -4);
 
-                    user.fightWindow.fxResultOfActionText.AppendText("\n\n" + NPC.GetName() + " нанёс удар " + actor.name + ".\n" +
-                        actor.name + " получен урон: " + NPC.GetSkills()[0].value * 5 + ".");
+                    user.fightWindow.fxResultOfActionText.AppendText(NPC.GetName() + " нанёс удар " + actor.name + ".\n" +
+                        actor.name + " получен урон: " + NPC.GetSkills()[0].value * 5 + ".\n\n");
                 }
             }
             else
             {
                 if (actionFromActor)
                 {
-                    user.fightWindow.fxResultOfActionText.AppendText("\n\n" + actor.name + " попытался нанести удар по " + NPC.GetName()
-                    + " но промахнулся.");
+                    user.fightWindow.fxResultOfActionText.AppendText(actor.name + " попытался нанести удар по " + NPC.GetName()
+                    + " но промахнулся.\n\n");
 
                     actor.Stamina -= (50 - actor.skills[2].value * 4);
                 }    
                 else
                 {
-                    user.fightWindow.fxResultOfActionText.AppendText("\n\n" + NPC.GetName() + " попытался нанести удар по " + actor.name
-                    + " но промахнулся.");
+                    user.fightWindow.fxResultOfActionText.AppendText(NPC.GetName() + " попытался нанести удар по " + actor.name
+                    + " но промахнулся.\n\n");
                     NPC.EditStamina(-50 - NPC.GetSkills()[2].value * -4);
                 }    
             }
