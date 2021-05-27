@@ -14,7 +14,7 @@ namespace HoboSimulator.Config.Objects.Misc.Items.Food
         int ID = 0;
         public List<Parameter> parameters = new List<Parameter>
         {
-            new Parameter("Восстановление здоровья", 0),
+            new Parameter("Восстановление здоровья", 5),
             new Parameter("Утоление жажды", 5),
             new Parameter("Сытность", 25),
             new Parameter("Восстановление стамины", 0),

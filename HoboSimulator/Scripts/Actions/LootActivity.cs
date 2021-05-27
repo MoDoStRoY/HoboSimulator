@@ -26,10 +26,10 @@ namespace HoboSimulator.Scripts.Actions
                 user.actionWindow.fxResultOfAction.AppendText("Дата и время: " + user.world.dateTime.ToString() + "\n" +
                     "Тут ничего не удалось найти ничего полезного.\n\n");
             }
-            user.actor.hunger -= 6;
-            user.actor.thirst -= 5;
-            user.actor.sleep -= 3;
-            user.actor.stamina -= 5;
+            user.actor.Hunger -= 6;
+            user.actor.Thirst -= 5;
+            user.actor.Sleep -= 3;
+            user.actor.Stamina -= 5;
 
             user.actionWindow.fxResultOfAction.ScrollToCaret();
             TimeFlow.AddMinutes(30);

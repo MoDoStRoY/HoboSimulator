@@ -62,6 +62,7 @@ namespace HoboSimulator.Scripts.Windows.CreateActor
                 user.createActorWindow.Hide();
                 user.mainMenu.fxResumeGameBtn.Visible = true;
                 user.mainGameWindow.ShowWindow();
+                TakeItem.Take(0);
             }
             catch (Exception e) {}
         }

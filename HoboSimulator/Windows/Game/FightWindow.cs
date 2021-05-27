@@ -50,7 +50,10 @@ namespace HoboSimulator.Windows.Game
 
         //**ИНТЕРАКТИВНЫЕ ЭЛЕМЕНТЫ ФОРМЫ**//
 
-        // Пока не используется
+        private void AttackBtn(object sender, EventArgs e)
+        {
+            FightWindowController.AttackBtn();
+        }
 
         //**//
 

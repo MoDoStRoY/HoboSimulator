@@ -33,10 +33,10 @@ namespace HoboSimulator.Scripts.Actions
                     user.actionWindow.fxResultOfAction.AppendText("Дата и время: " + user.world.dateTime.ToString() + "\n" +
                         "Охота не удалась - ничего не добыто.\n\n");
                 }
-                user.actor.hunger -= 10 - (agilityResult + staminaResult) / 2;
-                user.actor.thirst -= 20 - (agilityResult + staminaResult) / 2;
-                user.actor.sleep -= 3;
-                user.actor.stamina -= 20 - (agilityResult + staminaResult) / 2;
+                user.actor.Hunger -= 10 - (agilityResult + staminaResult) / 2;
+                user.actor.Thirst -= 20 - (agilityResult + staminaResult) / 2;
+                user.actor.Sleep -= 3;
+                user.actor.Stamina -= 20 - (agilityResult + staminaResult) / 2;
             }
             else if (priorety.Equals("Сила"))
             {

@@ -3,6 +3,7 @@ using HoboSimulator.Config.Dialogs;
 using HoboSimulator.Config.Dialogs.City.FoodStore;
 using HoboSimulator.Config.Objects.Actor;
 using HoboSimulator.Config.Objects.Misc.Items;
+using HoboSimulator.Scripts.World;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -14,21 +15,29 @@ namespace HoboSimulator.Config.Objects.Characters.NPC.Traders
     {
         public String name = "Галя";
         public String group = "Торговец";
-        public Image icon = Properties.Resources.Galya_Icon;
-        public List<IItem> inventory = TradeGalya.assortment;
-        public List<Dialog> dialog_tree = Galya_Dialogs.dialog_tree;
-        public List<Skill> skills = new List<Skill>
+
+        public int health = 100; // Здоровье
+        public int stamina = 100; // Выносливость
+
+        public Image icon = Properties.Resources.Galya_Icon; // Иконка
+        public List<IItem> inventory = TradeGalya.assortment; // Инвентарь
+        public List<Dialog> dialog_tree = Galya_Dialogs.dialog_tree; // Диалоги
+        public List<Skill> skills = new List<Skill> // Скиллы
         {
-            new Skill("Сила", 10),
-            new Skill("Ловкость", 10),
-            new Skill("Выносливость", 10),
-            new Skill("Ремесло", 10),
-            new Skill("Харизма", 10),
-            new Skill("Удача", 1)
+            new Skill("Сила", 3),
+            new Skill("Ловкость", 2),
+            new Skill("Выносливость", 3),
+            new Skill("Ремесло", 5),
+            new Skill("Харизма", 2),
+            new Skill("Удача", 4)
         };
 
         public String GetName() { return name; }
         public String GetGroup() { return group; }
+        public int GetHealth() { return health; }
+        public int GetStamina() { return stamina; }
+        public void EditHealth(int health) { this.health += health; this.health = NormalizeParams.NormalizeIntParam(this.health); }
+        public void EditStamina(int stamina) { this.stamina += stamina; this.stamina = NormalizeParams.NormalizeIntParam(this.stamina); }
         public Image GetIcon() { return icon; }
         public List<IItem> GetInventory() { return inventory; }
         public List<Dialog> GetDialogs() { return dialog_tree; }

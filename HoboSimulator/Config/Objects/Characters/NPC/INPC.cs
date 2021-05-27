@@ -12,6 +12,10 @@ namespace HoboSimulator.Config.Objects.Characters.NPC
     {
         public String GetName();
         public String GetGroup();
+        public int GetHealth();
+        public int GetStamina();
+        public void EditHealth(int health);
+        public void EditStamina(int stamina);
         public Image GetIcon();
         public List<IItem> GetInventory();
         public List<Dialog> GetDialogs();

@@ -1,5 +1,6 @@
 ﻿using HoboSimulator.Config.Objects.Characters.NPC;
 using HoboSimulator.Config.Objects.System;
+using HoboSimulator.Scripts.Fight;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -38,6 +39,10 @@ namespace HoboSimulator.Scripts.Windows.MainGame
             user.fightWindow.fxNPCIconPB.Image = NPC.GetIcon();
             user.fightWindow.fxNPCNameLabel.Text = NPC.GetName();
             user.fightWindow.fxNPCGroupLabel.Text = NPC.GetGroup();
+            user.fightWindow.fxNPCHealthPB.Value = NPC.GetHealth();
+            user.fightWindow.fxNPCHealthLabel.Text = NPC.GetHealth().ToString();
+            user.fightWindow.fxNPCStaminaPB.Value = NPC.GetStamina();
+            user.fightWindow.fxNPCStaminaLabel.Text = NPC.GetHealth().ToString();
 
             user.fightWindow.fxNPCParamsDGV.Rows.Clear();
             for (int i = 0; i < NPC.GetSkills().Count; i++)
@@ -89,7 +94,12 @@ namespace HoboSimulator.Scripts.Windows.MainGame
 
         //*ИНТЕРАКТИВНЫЕ ЭЛЕМЕНТЫ ФОРМЫ**//
 
-        // Пока не используется
+        public static void AttackBtn()
+        {
+            FightMain.Fighting(NPC, "Attack", true);
+            UpdateNPC();
+            UpdateActionVariables();
+        }
 
         //**//
 

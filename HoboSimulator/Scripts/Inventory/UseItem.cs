@@ -14,11 +14,11 @@ namespace HoboSimulator.Scripts.Inventory
 
         public static void UseFood(List<Parameter> parameters)
         {
-            user.actor.health += (int)parameters[0].value;
-            user.actor.thirst += (int)parameters[1].value;
-            user.actor.hunger += (int)parameters[2].value;
-            user.actor.stamina += (int)parameters[3].value;
-            user.actor.sleep += (int)parameters[4].value;
+            user.actor.Health = (int)parameters[0].value;
+            user.actor.Thirst += (int)parameters[1].value;
+            user.actor.Hunger += (int)parameters[2].value;
+            user.actor.Stamina += (int)parameters[3].value;
+            user.actor.Sleep += (int)parameters[4].value;
 
             user.actor.inventory.RemoveAt(user.actor.numberOfChosenItem);
 

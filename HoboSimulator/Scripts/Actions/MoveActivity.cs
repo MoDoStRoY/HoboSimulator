@@ -14,10 +14,10 @@ namespace HoboSimulator.Scripts.Actions
         {
             user.actor.zone = user.actor.location.GetListOfZones()[zoneID];
 
-            user.actor.hunger -= distance * 2;
-            user.actor.thirst -= distance * 5;
-            user.actor.sleep -= 3;
-            user.actor.stamina -= (distance * 10) - (user.actor.skills[2].value * 2);
+            user.actor.Hunger -= distance * 2;
+            user.actor.Thirst -= distance * 5;
+            user.actor.Sleep -= 3;
+            user.actor.Stamina -= (distance * 10) - (user.actor.skills[2].value * 2);
 
             TimeFlow.AddMinutes((distance * 1000) / (user.actor.skills[2].value * 10 + 1));
         }

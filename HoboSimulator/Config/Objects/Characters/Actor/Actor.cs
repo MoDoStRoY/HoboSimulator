@@ -1,6 +1,7 @@
 ﻿using HoboSimulator.Config.Objects.Misc.Items;
 using HoboSimulator.Config.Objects.System;
 using HoboSimulator.Config.Objects.World.Maps;
+using HoboSimulator.Scripts.World;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,13 +23,20 @@ namespace HoboSimulator.Config.Objects.Actor
 
         //**СОСТОЯНИЕ ПЕРСОНАЖА**//
 
-        public int health; // Здоровье
-        public int thirst; // Жажда
-        public int hunger; // Голод
-        public int stamina; // Выносливость
-        public int sleep; // Отдых
+        public int health { get; set; } // Здоровье
+        public int thirst { get; set; } // Жажда
+        public int hunger { get; set; } // Голод
+        public int stamina { get; set; } // Выносливость
+        public int sleep { get; set; } // Отдых
+
         public bool inDialog; // Находится ли в диалоге
         public bool inFight; // Находится ли в сражении
+
+        public int Health{ get { return health; } set { health = NormalizeParams.NormalizeIntParam(value); } }
+        public int Thirst { get { return thirst; } set { thirst = NormalizeParams.NormalizeIntParam(value); } }
+        public int Hunger { get { return hunger; } set { hunger = NormalizeParams.NormalizeIntParam(value); } }
+        public int Stamina { get { return stamina; } set { stamina = NormalizeParams.NormalizeIntParam(value); } }
+        public int Sleep { get { return sleep; } set { sleep = NormalizeParams.NormalizeIntParam(value); } }
 
         //**НАВЫКИ**//
 
@@ -54,6 +62,14 @@ namespace HoboSimulator.Config.Objects.Actor
         //**МЕСТОПОЛОЖЕНИЕ**//
         public ILocation location; // Локация
         public IZone zone; // Зона локации
+
+        //**КОНТРОЛЬ СОСТОЯНИЙ ПЕРСОНАЖА**//
+
+        public void EditHealth(int value) { health = NormalizeParams.NormalizeIntParam(value); }
+        public void EditThirst(int value) { thirst = NormalizeParams.NormalizeIntParam(value); }
+        public void EditHunger(int value) { hunger = NormalizeParams.NormalizeIntParam(value); }
+        public void EditStamina(int value) { stamina = NormalizeParams.NormalizeIntParam(value); }
+        public void EditSleep(int value) { sleep = NormalizeParams.NormalizeIntParam(value); }
 
         public Actor(String name, int age, String biography, Image icon, int health, int thirst, int hunger, int stamina, int sleep, int skillPoints, List<IItem> inventory, double maxWeight, int money)
         {

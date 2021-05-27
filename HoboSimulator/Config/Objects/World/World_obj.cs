@@ -1,4 +1,5 @@
-﻿using HoboSimulator.Config.Objects.World.Maps;
+﻿using HoboSimulator.Config.Objects.Characters.NPC;
+using HoboSimulator.Config.Objects.World.Maps;
 using HoboSimulator.Config.Objects.World.Maps.City;
 using System;
 using System.Collections.Generic;

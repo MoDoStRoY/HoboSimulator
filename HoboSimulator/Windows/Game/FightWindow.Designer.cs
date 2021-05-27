@@ -74,6 +74,12 @@ namespace HoboSimulator.Windows.Game
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.fxResultOfActionText = new System.Windows.Forms.RichTextBox();
+            this.fxNPCHealthLabel = new System.Windows.Forms.Label();
+            this.fxNPCHealthPB = new System.Windows.Forms.ProgressBar();
+            this.label8 = new System.Windows.Forms.Label();
+            this.fxNPCStaminaLabel = new System.Windows.Forms.Label();
+            this.fxNPCStaminaPB = new System.Windows.Forms.ProgressBar();
+            this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fxActorIconPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fxNPCIconPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fxNPCParamsDGV)).BeginInit();
@@ -316,7 +322,7 @@ namespace HoboSimulator.Windows.Game
             // fxNPCRelationLabel
             // 
             this.fxNPCRelationLabel.AutoSize = true;
-            this.fxNPCRelationLabel.Location = new System.Drawing.Point(715, 52);
+            this.fxNPCRelationLabel.Location = new System.Drawing.Point(768, 52);
             this.fxNPCRelationLabel.Name = "fxNPCRelationLabel";
             this.fxNPCRelationLabel.Size = new System.Drawing.Size(114, 20);
             this.fxNPCRelationLabel.TabIndex = 129;
@@ -325,7 +331,7 @@ namespace HoboSimulator.Windows.Game
             // fxNPCGroupLabel
             // 
             this.fxNPCGroupLabel.AutoSize = true;
-            this.fxNPCGroupLabel.Location = new System.Drawing.Point(715, 32);
+            this.fxNPCGroupLabel.Location = new System.Drawing.Point(768, 32);
             this.fxNPCGroupLabel.Name = "fxNPCGroupLabel";
             this.fxNPCGroupLabel.Size = new System.Drawing.Size(124, 20);
             this.fxNPCGroupLabel.TabIndex = 128;
@@ -334,7 +340,7 @@ namespace HoboSimulator.Windows.Game
             // fxNPCNameLabel
             // 
             this.fxNPCNameLabel.AutoSize = true;
-            this.fxNPCNameLabel.Location = new System.Drawing.Point(715, 12);
+            this.fxNPCNameLabel.Location = new System.Drawing.Point(768, 12);
             this.fxNPCNameLabel.Name = "fxNPCNameLabel";
             this.fxNPCNameLabel.Size = new System.Drawing.Size(63, 20);
             this.fxNPCNameLabel.TabIndex = 127;
@@ -453,6 +459,7 @@ namespace HoboSimulator.Windows.Game
             this.button2.TabIndex = 160;
             this.button2.Text = "Атаковать";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.AttackBtn);
             // 
             // button3
             // 
@@ -489,11 +496,67 @@ namespace HoboSimulator.Windows.Game
             this.fxResultOfActionText.TabIndex = 164;
             this.fxResultOfActionText.Text = "";
             // 
+            // fxNPCHealthLabel
+            // 
+            this.fxNPCHealthLabel.AutoSize = true;
+            this.fxNPCHealthLabel.Location = new System.Drawing.Point(941, 75);
+            this.fxNPCHealthLabel.Name = "fxNPCHealthLabel";
+            this.fxNPCHealthLabel.Size = new System.Drawing.Size(21, 20);
+            this.fxNPCHealthLabel.TabIndex = 167;
+            this.fxNPCHealthLabel.Text = "%";
+            // 
+            // fxNPCHealthPB
+            // 
+            this.fxNPCHealthPB.Location = new System.Drawing.Point(768, 75);
+            this.fxNPCHealthPB.Name = "fxNPCHealthPB";
+            this.fxNPCHealthPB.Size = new System.Drawing.Size(167, 19);
+            this.fxNPCHealthPB.TabIndex = 166;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(606, 72);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(156, 20);
+            this.label8.TabIndex = 165;
+            this.label8.Text = "Состояние здоровья:";
+            // 
+            // fxNPCStaminaLabel
+            // 
+            this.fxNPCStaminaLabel.AutoSize = true;
+            this.fxNPCStaminaLabel.Location = new System.Drawing.Point(941, 100);
+            this.fxNPCStaminaLabel.Name = "fxNPCStaminaLabel";
+            this.fxNPCStaminaLabel.Size = new System.Drawing.Size(21, 20);
+            this.fxNPCStaminaLabel.TabIndex = 170;
+            this.fxNPCStaminaLabel.Text = "%";
+            // 
+            // fxNPCStaminaPB
+            // 
+            this.fxNPCStaminaPB.Location = new System.Drawing.Point(768, 100);
+            this.fxNPCStaminaPB.Name = "fxNPCStaminaPB";
+            this.fxNPCStaminaPB.Size = new System.Drawing.Size(167, 19);
+            this.fxNPCStaminaPB.TabIndex = 169;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(606, 99);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(112, 20);
+            this.label17.TabIndex = 168;
+            this.label17.Text = "Выносливость:";
+            // 
             // FightWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 778);
+            this.Controls.Add(this.fxNPCStaminaLabel);
+            this.Controls.Add(this.fxNPCStaminaPB);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.fxNPCHealthLabel);
+            this.Controls.Add(this.fxNPCHealthPB);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.fxResultOfActionText);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -595,5 +658,11 @@ namespace HoboSimulator.Windows.Game
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         public System.Windows.Forms.RichTextBox fxResultOfActionText;
+        public System.Windows.Forms.Label fxNPCHealthLabel;
+        public System.Windows.Forms.ProgressBar fxNPCHealthPB;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.Label fxNPCStaminaLabel;
+        public System.Windows.Forms.ProgressBar fxNPCStaminaPB;
+        private System.Windows.Forms.Label label17;
     }
 }
