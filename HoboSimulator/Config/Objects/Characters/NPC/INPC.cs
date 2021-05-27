@@ -1,4 +1,5 @@
 ﻿using HoboSimulator.Config.Dialogs;
+using HoboSimulator.Config.Objects.Actor;
 using HoboSimulator.Config.Objects.Misc.Items;
 using System;
 using System.Collections.Generic;
@@ -14,5 +15,6 @@ namespace HoboSimulator.Config.Objects.Characters.NPC
         public Image GetIcon();
         public List<IItem> GetInventory();
         public List<Dialog> GetDialogs();
+        public List<Skill> GetSkills();
     }
 }

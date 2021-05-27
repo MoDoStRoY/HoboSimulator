@@ -29,8 +29,8 @@ namespace HoboSimulator.Windows.Game.MainGame
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.fxActionBtn = new System.Windows.Forms.Button();
+            this.fxMoveBtn = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.fxActorIconPB = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -69,31 +69,33 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.fxBiography = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.fxResumeDialogBtn = new System.Windows.Forms.Button();
+            this.fxResumeFightBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fxActorIconPB)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fxSkillsDGV)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // fxActionBtn
             // 
-            this.button1.Location = new System.Drawing.Point(13, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(260, 29);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Действия";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.ActionBtn);
+            this.fxActionBtn.Location = new System.Drawing.Point(13, 13);
+            this.fxActionBtn.Name = "fxActionBtn";
+            this.fxActionBtn.Size = new System.Drawing.Size(260, 29);
+            this.fxActionBtn.TabIndex = 0;
+            this.fxActionBtn.Text = "Действия";
+            this.fxActionBtn.UseVisualStyleBackColor = true;
+            this.fxActionBtn.Click += new System.EventHandler(this.ActionBtn);
             // 
-            // button2
+            // fxMoveBtn
             // 
-            this.button2.Location = new System.Drawing.Point(13, 49);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(260, 29);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Перемещения";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.MovingBtn);
+            this.fxMoveBtn.Location = new System.Drawing.Point(13, 49);
+            this.fxMoveBtn.Name = "fxMoveBtn";
+            this.fxMoveBtn.Size = new System.Drawing.Size(260, 29);
+            this.fxMoveBtn.TabIndex = 1;
+            this.fxMoveBtn.Text = "Перемещения";
+            this.fxMoveBtn.UseVisualStyleBackColor = true;
+            this.fxMoveBtn.Click += new System.EventHandler(this.MovingBtn);
             // 
             // button3
             // 
@@ -472,15 +474,39 @@ namespace HoboSimulator.Windows.Game.MainGame
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // fxResumeDialogBtn
+            // 
+            this.fxResumeDialogBtn.Enabled = false;
+            this.fxResumeDialogBtn.Location = new System.Drawing.Point(13, 85);
+            this.fxResumeDialogBtn.Name = "fxResumeDialogBtn";
+            this.fxResumeDialogBtn.Size = new System.Drawing.Size(259, 29);
+            this.fxResumeDialogBtn.TabIndex = 11;
+            this.fxResumeDialogBtn.Text = "Вернуться к диалогу";
+            this.fxResumeDialogBtn.UseVisualStyleBackColor = true;
+            this.fxResumeDialogBtn.Click += new System.EventHandler(this.ResumeDialogBtn);
+            // 
+            // fxResumeFightBtn
+            // 
+            this.fxResumeFightBtn.Enabled = false;
+            this.fxResumeFightBtn.Location = new System.Drawing.Point(12, 120);
+            this.fxResumeFightBtn.Name = "fxResumeFightBtn";
+            this.fxResumeFightBtn.Size = new System.Drawing.Size(259, 29);
+            this.fxResumeFightBtn.TabIndex = 12;
+            this.fxResumeFightBtn.Text = "Вернуться к сражению";
+            this.fxResumeFightBtn.UseVisualStyleBackColor = true;
+            this.fxResumeFightBtn.Click += new System.EventHandler(this.ResumeFightBtn);
+            // 
             // MainGameWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 778);
+            this.Controls.Add(this.fxResumeFightBtn);
+            this.Controls.Add(this.fxResumeDialogBtn);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.fxMoveBtn);
+            this.Controls.Add(this.fxActionBtn);
             this.Name = "MainGameWindow";
             this.Text = "HoboSimulator";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClosedForm);
@@ -495,9 +521,6 @@ namespace HoboSimulator.Windows.Game.MainGame
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label fxNameOfActor;
@@ -536,5 +559,9 @@ namespace HoboSimulator.Windows.Game.MainGame
         public System.Windows.Forms.ProgressBar fxHealthPB;
         private System.Windows.Forms.Label label9;
         public System.Windows.Forms.PictureBox fxActorIconPB;
+        public System.Windows.Forms.Button fxResumeDialogBtn;
+        public System.Windows.Forms.Button fxResumeFightBtn;
+        public System.Windows.Forms.Button fxActionBtn;
+        public System.Windows.Forms.Button fxMoveBtn;
     }
 }

@@ -100,8 +100,14 @@ namespace HoboSimulator.Scripts.Windows.MainGame.Action
             user.dialogWindow.ShowWindow(user.actor.zone.GetNPCList()[0]);
         }
 
+        public static void TestFightBtn()
+        {
+            user.actionWindow.Hide();
+            user.fightWindow.ShowWindow(user.actor.zone.GetNPCList()[0]);
+        }
+
         //**//
-        
+
         //**//
 
         //**//

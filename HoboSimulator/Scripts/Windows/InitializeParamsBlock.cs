@@ -79,7 +79,7 @@ namespace HoboSimulator.Scripts.Windows
             user.inventoryWindow.fxSleepLabel.Text = user.actor.sleep.ToString();
         }
 
-        public static void InitializeParamsBlockTrade() //Окно торговли
+        public static void InitializeParamsBlockTrade() // Окно торговли
         { 
             user.tradeWindow.fxCurrentTimeLabel.Text = user.world.dateTime.ToString();
             user.tradeWindow.fxMoneyLabel.Text = user.actor.money.ToString();
@@ -93,6 +93,22 @@ namespace HoboSimulator.Scripts.Windows
             user.tradeWindow.fxStaminaLabel.Text = user.actor.stamina.ToString();
             user.tradeWindow.fxSleepPB.Value = user.actor.sleep;
             user.tradeWindow.fxSleepLabel.Text = user.actor.sleep.ToString();
+        }
+
+        public static void InitializeParamsBlockFight() // Окно сражения
+        {
+            user.fightWindow.fxCurrentTimeLabel.Text = user.world.dateTime.ToString();
+            user.fightWindow.fxMoneyLabel.Text = user.actor.money.ToString();
+            user.fightWindow.fxHealthPB.Value = user.actor.health;
+            user.fightWindow.fxHealthLabel.Text = user.actor.health.ToString();
+            user.fightWindow.fxThirstPB.Value = user.actor.thirst;
+            user.fightWindow.fxThirstLabel.Text = user.actor.thirst.ToString();
+            user.fightWindow.fxHungerPB.Value = user.actor.hunger;
+            user.fightWindow.fxHungerLabel.Text = user.actor.hunger.ToString();
+            user.fightWindow.fxStaminaPB.Value = user.actor.stamina;
+            user.fightWindow.fxStaminaLabel.Text = user.actor.stamina.ToString();
+            user.fightWindow.fxSleepPB.Value = user.actor.sleep;
+            user.fightWindow.fxSleepLabel.Text = user.actor.sleep.ToString();
         }
     }
 }

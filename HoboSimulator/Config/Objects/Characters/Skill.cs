@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HoboSimulator.Config.Objects.Actor
 {
-    class Skill
+    public class Skill
     {
         public String name;
         public int value;

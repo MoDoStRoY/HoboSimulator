@@ -40,6 +40,7 @@ namespace HoboSimulator.Scripts.Windows.MainGame
         {
             for (int i = 0; i < dialog_tree.Count; i++)
             {
+                user.dialogWindow.fxDialogDGW.Rows.Clear();
                 user.dialogWindow.fxDialogDGW.Rows.Add();
 
                 user.dialogWindow.fxDialogDGW.Rows[i].Cells[0].Value = dialog_tree[i].phrase_actor;
@@ -63,6 +64,12 @@ namespace HoboSimulator.Scripts.Windows.MainGame
             UpdateNPC();
         }
 
+        public static void RShowWindow()
+        {
+            user.dialogWindow.Show();
+            InitializeForm();
+        }
+
         public static void BackBtn() // Кнопка "Назад"
         {
             user.dialogWindow.Hide();
@@ -76,10 +83,21 @@ namespace HoboSimulator.Scripts.Windows.MainGame
 
         //**//
 
+        //**ИНТЕРАКТИВНЫЕ ЭЛЕМЕНТЫ ФОРМЫ**//
+
+        // Пока не используется
+
+        //**//
+
+        //**ЛОГИЧЕСКИЕ МЕТОДЫ ФОРМЫ**//
+
         public static void ChoseDialogVariantDGV(DataGridViewCellEventArgs e) // Выбор варианта фразы в диалоге
         {
             if (e.RowIndex != -1)
             {
+                user.actor.inDialog = true;
+                user.mainGameWindow.fxResumeDialogBtn.Enabled = true;
+
                 user.dialogWindow.fxDialogDGW.Rows.Clear();
 
                 user.dialogWindow.fxNPCAnswersText.AppendText(user.actor.name + ":\n" + dialog_tree[e.RowIndex].phrase_actor + "\n\n" +
@@ -100,9 +118,14 @@ namespace HoboSimulator.Scripts.Windows.MainGame
                 {
                     dialog_tree = NPC.GetDialogs();
                     UpdateDialog();
+
+                    user.actor.inDialog = false;
+                    user.mainGameWindow.fxResumeDialogBtn.Enabled = false;
                 }
             }
             user.dialogWindow.fxNPCAnswersText.ScrollToCaret();
         }
+
+        //**//
     }
 }

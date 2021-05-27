@@ -29,6 +29,17 @@ namespace HoboSimulator.Scripts.Windows.MainGame
                 user.mainGameWindow.fxSkillsDGV.Rows[i].Cells[1].Value = user.actor.skills[i].value;
             }
 
+            if (user.actor.inFight || user.actor.inDialog)
+            {
+                user.mainGameWindow.fxActionBtn.Enabled = false;
+                user.mainGameWindow.fxMoveBtn.Enabled = false;
+            }
+            else
+            {
+                user.mainGameWindow.fxActionBtn.Enabled = true;
+                user.mainGameWindow.fxMoveBtn.Enabled = true;
+            }
+
             InitializeParamsBlock.InitializeParamsBlockMainGame();
         }
 
@@ -73,6 +84,18 @@ namespace HoboSimulator.Scripts.Windows.MainGame
         {
             user.mainGameWindow.Hide();
             user.inventoryWindow.ShowWindow();
+        }
+
+        public static void ResumeDialogBtn() // Кнопка возврата в форму диалога
+        {
+            user.mainGameWindow.Hide();
+            user.dialogWindow.RShowWindow();
+        }
+
+        public static void ResumeFightBtn() // Кнопка возврата в форму сражения
+        {
+            user.mainGameWindow.Hide();
+            user.fightWindow.RShowWindow();
         }
 
         //**//

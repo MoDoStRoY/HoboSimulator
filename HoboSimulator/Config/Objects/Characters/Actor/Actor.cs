@@ -27,6 +27,8 @@ namespace HoboSimulator.Config.Objects.Actor
         public int hunger; // Голод
         public int stamina; // Выносливость
         public int sleep; // Отдых
+        public bool inDialog; // Находится ли в диалоге
+        public bool inFight; // Находится ли в сражении
 
         //**НАВЫКИ**//
 

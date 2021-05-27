@@ -88,6 +88,7 @@ namespace HoboSimulator.Windows.Game.Action
             this.label5 = new System.Windows.Forms.Label();
             this.fxHealthPB = new System.Windows.Forms.ProgressBar();
             this.label12 = new System.Windows.Forms.Label();
+            this.button12 = new System.Windows.Forms.Button();
             this.fxMainTP.SuspendLayout();
             this.ActionTP.SuspendLayout();
             this.fxActionsTP.SuspendLayout();
@@ -256,6 +257,7 @@ namespace HoboSimulator.Windows.Game.Action
             // 
             // City_FoodStoreTP
             // 
+            this.City_FoodStoreTP.Controls.Add(this.button12);
             this.City_FoodStoreTP.Controls.Add(this.button11);
             this.City_FoodStoreTP.Controls.Add(this.button10);
             this.City_FoodStoreTP.Controls.Add(this.label18);
@@ -634,6 +636,16 @@ namespace HoboSimulator.Windows.Game.Action
             this.label12.TabIndex = 115;
             this.label12.Text = "Состояние здоровья:";
             // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(237, 205);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(227, 29);
+            this.button12.TabIndex = 14;
+            this.button12.Text = "Сражение с Галей";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.TestFightBtn);
+            // 
             // ActionWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -739,5 +751,6 @@ namespace HoboSimulator.Windows.Game.Action
         public System.Windows.Forms.ProgressBar fxHealthPB;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
     }
 }

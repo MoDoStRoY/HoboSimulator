@@ -25,6 +25,7 @@ namespace HoboSimulator.Config.Objects.System
         public MoveWindow moveWindow = new MoveWindow();
         public TradeWindow tradeWindow = new TradeWindow();
         public DialogWindow dialogWindow = new DialogWindow();
+        public FightWindow fightWindow = new FightWindow();
 
         //**Игровые переменные**//
 

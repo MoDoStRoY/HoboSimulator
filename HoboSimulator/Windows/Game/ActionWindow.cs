@@ -44,6 +44,8 @@ namespace HoboSimulator.Windows.Game.Action
 
         //**//
 
+        //**ИНТЕРАКТИВНЫЕ ЭЛЕМЕНТЫ ФОРМЫ**//
+
         //**КНОПКИ ДЕЙСТВИЙ В ЛОКАЦИИ**//
 
         //**СПАЛЬНЫЙ РАЙОН**//
@@ -58,6 +60,8 @@ namespace HoboSimulator.Windows.Game.Action
             ActionWindowController.LootTrashCanBigBtn();
         }
 
+        //**//
+
         //**ПЯТЁРОЧКА**//
 
         private void TradeBtn(object sender, EventArgs e) // Торговля
@@ -69,6 +73,15 @@ namespace HoboSimulator.Windows.Game.Action
         {
             ActionWindowController.TestDialogBtn();
         }
+
+        private void TestFightBtn(object sender, EventArgs e)
+        {
+            ActionWindowController.TestFightBtn();
+        }
+
+        //**//
+
+        //**//
 
         //**//
     }

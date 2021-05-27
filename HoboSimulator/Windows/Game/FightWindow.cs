@@ -1,13 +1,18 @@
 ﻿using HoboSimulator.Config.Objects.Characters.NPC;
 using HoboSimulator.Scripts.Windows.MainGame;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 
 namespace HoboSimulator.Windows.Game
 {
-    public partial class DialogWindow : Form
+    public partial class FightWindow : Form
     {
-        public DialogWindow()
+        public FightWindow()
         {
             InitializeComponent();
         }
@@ -16,7 +21,7 @@ namespace HoboSimulator.Windows.Game
         //В данном случае не используется, т.к. форма открывается через ShowWindow, вызывающий инициализацию//
         private void InitializeForm(object sender, EventArgs e)
         {
-            DialogWindowController.InitializeForm();
+            FightWindowController.InitializeForm();
         }
 
         //**//
@@ -25,25 +30,23 @@ namespace HoboSimulator.Windows.Game
 
         public void ShowWindow(INPC NPC) // Метод показа этой формы
         {
-            DialogWindowController.ShowWindow(NPC);
+            FightWindowController.ShowWindow(NPC);
         }
 
         public void RShowWindow() // Метод показа этой формы
         {
-            DialogWindowController.RShowWindow();
+            FightWindowController.RShowWindow();
         }
 
         private void BackBtn(object sender, EventArgs e) // Кнопка "Назад"
         {
-            DialogWindowController.BackBtn();
+            FightWindowController.BackBtn();
         }
 
         private void ClosedForm(object sender, FormClosedEventArgs e) // Закрытие формы
         {
-            DialogWindowController.ClosedForm();
+            FightWindowController.ClosedForm();
         }
-
-        //**//
 
         //**ИНТЕРАКТИВНЫЕ ЭЛЕМЕНТЫ ФОРМЫ**//
 
@@ -53,10 +56,7 @@ namespace HoboSimulator.Windows.Game
 
         //**ЛОГИЧЕСКИЕ МЕТОДЫ ФОРМЫ**//
 
-        private void ChoseDialogVariantDGV(object sender, DataGridViewCellEventArgs e) // Выбор варианта фразы в диалоге
-        {
-            DialogWindowController.ChoseDialogVariantDGV(e);
-        }
+        // Пока не используется
 
         //**//
     }
